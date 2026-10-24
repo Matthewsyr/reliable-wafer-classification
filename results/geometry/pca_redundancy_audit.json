@@ -1,0 +1,8 @@
+{
+  "rows": 54355,
+  "pca_feature_from_existing_covariance_only": true,
+  "maximum_absolute_difference": 8.711422927465406e-08,
+  "all_close_atol_1e_6": true,
+  "difference_reason": "Original covariance cache uses float32 whereas descriptor recomputes moments in float64 before final float32 cast.",
+  "new_information_caveat": "PCA re-expression does not add information. Five strip descriptors capture multipoint organization not determined by global covariance."
+}

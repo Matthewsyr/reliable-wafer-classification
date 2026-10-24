@@ -1,0 +1,5 @@
+{
+  "kind": "cnn", "seed": 42, "fit_roles": ["train"], "validation_role": "tune",
+  "model_size": "medium", "weighting": "none", "epochs": 8, "batch_size": 256,
+  "fixed_epochs": false
+}

@@ -1,0 +1,21 @@
+{
+  "completed": true,
+  "seconds": 344.35661510005593,
+  "selected": {
+    "normalization": "bn",
+    "sampling": "shape_balanced",
+    "alpha": 1,
+    "eligible": true,
+    "mean_metrics": {
+      "normal_to_scratch_rate": 0.0158311345646438,
+      "normal_size_stress_to_scratch_rate": 0.2032442748091603,
+      "scratch_recall": 0.4494949494949495,
+      "macro_f1": 0.817897147418579,
+      "normal_any_defect_rate": 0.036059806508355316
+    }
+  },
+  "audit_evaluations": 8,
+  "final_test_evaluated": false,
+  "official_model_replaced": false,
+  "selection_sha256": "ea90b4323ce438a52acbf34db1d6f7a04ef93c4a26a4cd8635fe7e49ab4b450a"
+}

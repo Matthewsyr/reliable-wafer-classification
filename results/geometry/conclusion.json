@@ -1,0 +1,549 @@
+{
+  "status": "completed_all",
+  "protocol_sha256": "694d55963076f770211075653f423f16c3f62e500f798c70572dbd7efa059a76",
+  "prediction_manifest_sha256": "a6319e56b6a4866b3ff2df3e060ac988d835dc47431eb6b67e1ceeadfa5fbd3e",
+  "hypothesis": "Adding explicit nonlinear line-consensus descriptors to unchanged RF can improve Scratch detection without merely shifting normal errors to other defect labels.",
+  "method": "Two fixed RF feature sets, six fresh fits on identical component-isolated train rows; reuse matched three-seed CNN baseline scores.",
+  "evidence": {
+    "means": [
+      {
+        "role": "tune",
+        "model": "rf_original71",
+        "seeds": [
+          42,
+          123,
+          2026
+        ],
+        "independent_wafer_support_not_multiplied_by_seeds": true,
+        "macro_f1_mean": 0.8170823165839889,
+        "macro_f1_sample_std": 0.0031540748063940884,
+        "scratch_recall_mean": 0.31313131313131315,
+        "scratch_recall_sample_std": 0.017495462702715917,
+        "scratch_precision_mean": 0.31872071483055464,
+        "scratch_precision_sample_std": 0.006423508431678897,
+        "scratch_average_precision_ovr_mean": 0.25987815672936687,
+        "scratch_average_precision_ovr_sample_std": 0.019379459541546587,
+        "normal_any_defect_rate_mean": 0.011140428026971563,
+        "normal_any_defect_rate_sample_std": 0.0006323938882833484,
+        "normal_to_scratch_rate_mean": 0.005989027097206517,
+        "normal_to_scratch_rate_sample_std": 0.0007573456179597572
+      },
+      {
+        "role": "tune",
+        "model": "rf_linearity77",
+        "seeds": [
+          42,
+          123,
+          2026
+        ],
+        "independent_wafer_support_not_multiplied_by_seeds": true,
+        "macro_f1_mean": 0.8510905515605741,
+        "macro_f1_sample_std": 0.002303037988795784,
+        "scratch_recall_mean": 0.3703703703703704,
+        "scratch_recall_sample_std": 0.015429547794464099,
+        "scratch_precision_mean": 0.8269831786009744,
+        "scratch_precision_sample_std": 0.013500131019535835,
+        "scratch_average_precision_ovr_mean": 0.5686352855037162,
+        "scratch_average_precision_ovr_sample_std": 0.00757345482028265,
+        "normal_any_defect_rate_mean": 0.0027641663525568537,
+        "normal_any_defect_rate_sample_std": 0.0005476691724513975,
+        "normal_to_scratch_rate_mean": 0.0005444570088369562,
+        "normal_to_scratch_rate_sample_std": 7.254055398789117e-05
+      },
+      {
+        "role": "tune",
+        "model": "cnn_bn_reference",
+        "seeds": [
+          42,
+          123,
+          2026
+        ],
+        "independent_wafer_support_not_multiplied_by_seeds": true,
+        "macro_f1_mean": 0.8357186827651129,
+        "macro_f1_sample_std": 0.0039454722753753165,
+        "scratch_recall_mean": 0.5016835016835017,
+        "scratch_recall_sample_std": 0.20058412132803344,
+        "scratch_precision_mean": 0.3156099655103639,
+        "scratch_precision_sample_std": 0.18108536296839867,
+        "scratch_average_precision_ovr_mean": 0.3924155042277854,
+        "scratch_average_precision_ovr_sample_std": 0.06640788534368243,
+        "normal_any_defect_rate_mean": 0.02395610838882607,
+        "normal_any_defect_rate_sample_std": 0.015347771031441651,
+        "normal_to_scratch_rate_mean": 0.01687816727394564,
+        "normal_to_scratch_rate_sample_std": 0.014389566741235389
+      },
+      {
+        "role": "audit",
+        "model": "rf_original71",
+        "seeds": [
+          42,
+          123,
+          2026
+        ],
+        "independent_wafer_support_not_multiplied_by_seeds": true,
+        "macro_f1_mean": 0.8387649768129126,
+        "macro_f1_sample_std": 0.002262231689377862,
+        "scratch_recall_mean": 0.3208333333333333,
+        "scratch_recall_sample_std": 0.007216878364870329,
+        "scratch_precision_mean": 0.5026984126984128,
+        "scratch_precision_sample_std": 0.049920761097072205,
+        "scratch_average_precision_ovr_mean": 0.31863881345444284,
+        "scratch_average_precision_ovr_sample_std": 0.009487000016021386,
+        "normal_any_defect_rate_mean": 0.012347223960288659,
+        "normal_any_defect_rate_sample_std": 0.001128582093060416,
+        "normal_to_scratch_rate_mean": 0.0005839903224460852,
+        "normal_to_scratch_rate_sample_std": 0.00047377535942938085
+      },
+      {
+        "role": "audit",
+        "model": "rf_linearity77",
+        "seeds": [
+          42,
+          123,
+          2026
+        ],
+        "independent_wafer_support_not_multiplied_by_seeds": true,
+        "macro_f1_mean": 0.8721627439006242,
+        "macro_f1_sample_std": 0.004244198262488665,
+        "scratch_recall_mean": 0.42083333333333334,
+        "scratch_recall_sample_std": 0.02886751345948128,
+        "scratch_precision_mean": 0.9014009382430435,
+        "scratch_precision_sample_std": 0.017999745374986907,
+        "scratch_average_precision_ovr_mean": 0.5598795659758792,
+        "scratch_average_precision_ovr_sample_std": 0.00728220397107753,
+        "normal_any_defect_rate_mean": 0.007174738247194761,
+        "normal_any_defect_rate_sample_std": 0.00040227133696212216,
+        "normal_to_scratch_rate_mean": 0.00012514078338130396,
+        "normal_to_scratch_rate_sample_std": 0.0
+      },
+      {
+        "role": "audit",
+        "model": "cnn_bn_reference",
+        "seeds": [
+          42,
+          123,
+          2026
+        ],
+        "independent_wafer_support_not_multiplied_by_seeds": true,
+        "macro_f1_mean": 0.8238710645086468,
+        "macro_f1_sample_std": 0.022694189600611862,
+        "scratch_recall_mean": 0.49583333333333335,
+        "scratch_recall_sample_std": 0.1706299602453606,
+        "scratch_precision_mean": 0.20096835144071798,
+        "scratch_precision_sample_std": 0.11074000863285885,
+        "scratch_average_precision_ovr_mean": 0.3004398137500625,
+        "scratch_average_precision_ovr_sample_std": 0.057142789735067895,
+        "normal_any_defect_rate_mean": 0.03312059400158512,
+        "normal_any_defect_rate_sample_std": 0.009989600306873828,
+        "normal_to_scratch_rate_mean": 0.02023109331331081,
+        "normal_to_scratch_rate_sample_std": 0.015591122077274124
+      }
+    ],
+    "paired_differences": [
+      {
+        "role": "tune",
+        "seed": 42,
+        "guards": {
+          "scratch_tp_not_lower": true,
+          "normal_total_fp_not_higher": true,
+          "normal_scratch_fp_not_higher": true,
+          "macro_f1_within_2pp": true
+        },
+        "all_guards_pass": true,
+        "scratch_tp_change": 8,
+        "macro_f1_change": 0.03394842427160194,
+        "scratch_recall_change": 0.08080808080808077,
+        "scratch_precision_change": 0.5,
+        "scratch_average_precision_ovr_change": 0.32886975386785144,
+        "normal_any_defect_count_change": -57,
+        "normal_to_scratch_count_change": -42,
+        "old_scratch_misses_recovered": 13,
+        "old_scratch_hits_lost": 5,
+        "old_normal_scratch_fp_to_none": 41,
+        "old_normal_scratch_fp_to_other_defect": 3,
+        "new_normal_scratch_fp": 2
+      },
+      {
+        "role": "tune",
+        "seed": 123,
+        "guards": {
+          "scratch_tp_not_lower": true,
+          "normal_total_fp_not_higher": true,
+          "normal_scratch_fp_not_higher": true,
+          "macro_f1_within_2pp": true
+        },
+        "all_guards_pass": true,
+        "scratch_tp_change": 2,
+        "macro_f1_change": 0.0301633837452997,
+        "scratch_recall_change": 0.02020202020202022,
+        "scratch_precision_change": 0.49966777408637875,
+        "scratch_average_precision_ovr_change": 0.30228978236273857,
+        "normal_any_defect_count_change": -74,
+        "normal_to_scratch_count_change": -50,
+        "old_scratch_misses_recovered": 8,
+        "old_scratch_hits_lost": 6,
+        "old_normal_scratch_fp_to_none": 51,
+        "old_normal_scratch_fp_to_other_defect": 1,
+        "new_normal_scratch_fp": 2
+      },
+      {
+        "role": "tune",
+        "seed": 2026,
+        "guards": {
+          "scratch_tp_not_lower": true,
+          "normal_total_fp_not_higher": true,
+          "normal_scratch_fp_not_higher": true,
+          "macro_f1_within_2pp": true
+        },
+        "all_guards_pass": true,
+        "scratch_tp_change": 7,
+        "macro_f1_change": 0.03791289691285382,
+        "scratch_recall_change": 0.07070707070707072,
+        "scratch_precision_change": 0.5251196172248804,
+        "scratch_average_precision_ovr_change": 0.2951118500924581,
+        "normal_any_defect_count_change": -69,
+        "normal_to_scratch_count_change": -38,
+        "old_scratch_misses_recovered": 12,
+        "old_scratch_hits_lost": 5,
+        "old_normal_scratch_fp_to_none": 37,
+        "old_normal_scratch_fp_to_other_defect": 2,
+        "new_normal_scratch_fp": 1
+      },
+      {
+        "role": "audit",
+        "seed": 42,
+        "guards": {
+          "scratch_tp_not_lower": true,
+          "normal_total_fp_not_higher": true,
+          "normal_scratch_fp_not_higher": true,
+          "macro_f1_within_2pp": true
+        },
+        "all_guards_pass": true,
+        "scratch_tp_change": 6,
+        "macro_f1_change": 0.031132266598676406,
+        "scratch_recall_change": 0.07500000000000001,
+        "scratch_precision_change": 0.4392857142857142,
+        "scratch_average_precision_ovr_change": 0.2422506567634395,
+        "normal_any_defect_count_change": -47,
+        "normal_to_scratch_count_change": -8,
+        "old_scratch_misses_recovered": 13,
+        "old_scratch_hits_lost": 7,
+        "old_normal_scratch_fp_to_none": 9,
+        "old_normal_scratch_fp_to_other_defect": 0,
+        "new_normal_scratch_fp": 1
+      },
+      {
+        "role": "audit",
+        "seed": 123,
+        "guards": {
+          "scratch_tp_not_lower": true,
+          "normal_total_fp_not_higher": true,
+          "normal_scratch_fp_not_higher": true,
+          "macro_f1_within_2pp": true
+        },
+        "all_guards_pass": true,
+        "scratch_tp_change": 9,
+        "macro_f1_change": 0.034909727589474304,
+        "scratch_recall_change": 0.11249999999999999,
+        "scratch_precision_change": 0.37743589743589745,
+        "scratch_average_precision_ovr_change": 0.2385298786958831,
+        "normal_any_defect_count_change": -35,
+        "normal_to_scratch_count_change": -2,
+        "old_scratch_misses_recovered": 15,
+        "old_scratch_hits_lost": 6,
+        "old_normal_scratch_fp_to_none": 3,
+        "old_normal_scratch_fp_to_other_defect": 0,
+        "new_normal_scratch_fp": 1
+      },
+      {
+        "role": "audit",
+        "seed": 2026,
+        "guards": {
+          "scratch_tp_not_lower": true,
+          "normal_total_fp_not_higher": true,
+          "normal_scratch_fp_not_higher": true,
+          "macro_f1_within_2pp": true
+        },
+        "all_guards_pass": true,
+        "scratch_tp_change": 9,
+        "macro_f1_change": 0.03415130707498393,
+        "scratch_recall_change": 0.11249999999999999,
+        "scratch_precision_change": 0.3793859649122807,
+        "scratch_average_precision_ovr_change": 0.24294172210498655,
+        "normal_any_defect_count_change": -42,
+        "normal_to_scratch_count_change": -1,
+        "old_scratch_misses_recovered": 15,
+        "old_scratch_hits_lost": 6,
+        "old_normal_scratch_fp_to_none": 2,
+        "old_normal_scratch_fp_to_other_defect": 0,
+        "new_normal_scratch_fp": 1
+      }
+    ],
+    "joint_point_improvement_by_role": {
+      "tune": true,
+      "audit": true
+    },
+    "bootstrap": [
+      {
+        "role": "tune",
+        "metric": "scratch_recall",
+        "seed": 42,
+        "estimate": 0.08080808080808081,
+        "ci_low": -0.009811348781937016,
+        "ci_high": 0.16666666666666666,
+        "unique_wafers": 99,
+        "components": 89
+      },
+      {
+        "role": "tune",
+        "metric": "scratch_recall",
+        "seed": 123,
+        "estimate": 0.020202020202020204,
+        "ci_low": -0.054365277223773434,
+        "ci_high": 0.09433962264150944,
+        "unique_wafers": 99,
+        "components": 89
+      },
+      {
+        "role": "tune",
+        "metric": "scratch_recall",
+        "seed": 2026,
+        "estimate": 0.0707070707070707,
+        "ci_low": -0.010419407894736842,
+        "ci_high": 0.15306352270637985,
+        "unique_wafers": 99,
+        "components": 89
+      },
+      {
+        "role": "tune",
+        "metric": "scratch_recall",
+        "seed": "mean_across_seeds",
+        "estimate": 0.05723905723905724,
+        "ci_low": -0.016675170068027212,
+        "ci_high": 0.1292704081632652,
+        "unique_wafers": 99,
+        "components": 89
+      },
+      {
+        "role": "tune",
+        "metric": "normal_to_scratch_rate",
+        "seed": 42,
+        "estimate": -0.005277044854881266,
+        "ci_low": -0.012257715973266912,
+        "ci_high": -0.0002521710374459553,
+        "unique_wafers": 7959,
+        "components": 351
+      },
+      {
+        "role": "tune",
+        "metric": "normal_to_scratch_rate",
+        "seed": 123,
+        "estimate": -0.0062821962558110315,
+        "ci_low": -0.01336581304317279,
+        "ci_high": -0.0011324708034620768,
+        "unique_wafers": 7959,
+        "components": 351
+      },
+      {
+        "role": "tune",
+        "metric": "normal_to_scratch_rate",
+        "seed": 2026,
+        "estimate": -0.004774469154416384,
+        "ci_low": -0.011507804006013202,
+        "ci_high": -0.0001259263474314082,
+        "unique_wafers": 7959,
+        "components": 351
+      },
+      {
+        "role": "tune",
+        "metric": "normal_to_scratch_rate",
+        "seed": "mean_across_seeds",
+        "estimate": -0.00544457008836956,
+        "ci_low": -0.012336210576323737,
+        "ci_high": -0.0005018631946974797,
+        "unique_wafers": 7959,
+        "components": 351
+      },
+      {
+        "role": "tune",
+        "metric": "normal_any_defect_rate",
+        "seed": 42,
+        "estimate": -0.007161703731624576,
+        "ci_low": -0.014280879495639637,
+        "ci_high": -0.0018989385200682335,
+        "unique_wafers": 7959,
+        "components": 351
+      },
+      {
+        "role": "tune",
+        "metric": "normal_any_defect_rate",
+        "seed": 123,
+        "estimate": -0.009297650458600327,
+        "ci_low": -0.017147786503607477,
+        "ci_high": -0.0034762751772158393,
+        "unique_wafers": 7959,
+        "components": 351
+      },
+      {
+        "role": "tune",
+        "metric": "normal_any_defect_rate",
+        "seed": 2026,
+        "estimate": -0.008669430833019224,
+        "ci_low": -0.01611161443868548,
+        "ci_high": -0.0031422036418786506,
+        "unique_wafers": 7959,
+        "components": 351
+      },
+      {
+        "role": "tune",
+        "metric": "normal_any_defect_rate",
+        "seed": "mean_across_seeds",
+        "estimate": -0.008376261674414708,
+        "ci_low": -0.01590357475397488,
+        "ci_high": -0.0029152563345176867,
+        "unique_wafers": 7959,
+        "components": 351
+      },
+      {
+        "role": "audit",
+        "metric": "scratch_recall",
+        "seed": 42,
+        "estimate": 0.075,
+        "ci_low": -0.02598257006151743,
+        "ci_high": 0.18298328816621467,
+        "unique_wafers": 80,
+        "components": 76
+      },
+      {
+        "role": "audit",
+        "metric": "scratch_recall",
+        "seed": 123,
+        "estimate": 0.1125,
+        "ci_low": 0.0125,
+        "ci_high": 0.21518987341772153,
+        "unique_wafers": 80,
+        "components": 76
+      },
+      {
+        "role": "audit",
+        "metric": "scratch_recall",
+        "seed": 2026,
+        "estimate": 0.1125,
+        "ci_low": 0.0125,
+        "ci_high": 0.21794871794871795,
+        "unique_wafers": 80,
+        "components": 76
+      },
+      {
+        "role": "audit",
+        "metric": "scratch_recall",
+        "seed": "mean_across_seeds",
+        "estimate": 0.09999999999999999,
+        "ci_low": 0.008544303797468353,
+        "ci_high": 0.19831474784006428,
+        "unique_wafers": 80,
+        "components": 76
+      },
+      {
+        "role": "audit",
+        "metric": "normal_to_scratch_rate",
+        "seed": 42,
+        "estimate": -0.0010011262670504317,
+        "ci_low": -0.0021333762445198876,
+        "ci_high": -0.00012599179168351878,
+        "unique_wafers": 7991,
+        "components": 344
+      },
+      {
+        "role": "audit",
+        "metric": "normal_to_scratch_rate",
+        "seed": 123,
+        "estimate": -0.0002502815667626079,
+        "ci_low": -0.0006381010367530542,
+        "ci_high": 0.0,
+        "unique_wafers": 7991,
+        "components": 344
+      },
+      {
+        "role": "audit",
+        "metric": "normal_to_scratch_rate",
+        "seed": 2026,
+        "estimate": -0.00012514078338130396,
+        "ci_low": -0.0005251497552526359,
+        "ci_high": 0.0002604633233657065,
+        "unique_wafers": 7991,
+        "components": 344
+      },
+      {
+        "role": "audit",
+        "metric": "normal_to_scratch_rate",
+        "seed": "mean_across_seeds",
+        "estimate": -0.0004588495390647812,
+        "ci_low": -0.000948602009477196,
+        "ci_high": -4.411402864913933e-05,
+        "unique_wafers": 7991,
+        "components": 344
+      },
+      {
+        "role": "audit",
+        "metric": "normal_any_defect_rate",
+        "seed": 42,
+        "estimate": -0.005881616818921287,
+        "ci_low": -0.01020602904632839,
+        "ci_high": -0.0021999946482798268,
+        "unique_wafers": 7991,
+        "components": 344
+      },
+      {
+        "role": "audit",
+        "metric": "normal_any_defect_rate",
+        "seed": 123,
+        "estimate": -0.004379927418345639,
+        "ci_low": -0.0076781172035782054,
+        "ci_high": -0.0017410715680248648,
+        "unique_wafers": 7991,
+        "components": 344
+      },
+      {
+        "role": "audit",
+        "metric": "normal_any_defect_rate",
+        "seed": 2026,
+        "estimate": -0.0052559129020147664,
+        "ci_low": -0.009488810606357834,
+        "ci_high": -0.0017497515392852377,
+        "unique_wafers": 7991,
+        "components": 344
+      },
+      {
+        "role": "audit",
+        "metric": "normal_any_defect_rate",
+        "seed": "mean_across_seeds",
+        "estimate": -0.005172485713093896,
+        "ci_low": -0.008919911480395353,
+        "ci_high": -0.002112391779064298,
+        "unique_wafers": 7991,
+        "components": 344
+      }
+    ]
+  },
+  "interpretation": "Consistent joint point-estimate improvement on reused development audit.",
+  "limitations": [
+    "Already-observed development audit; no independent confirmation and no new official-test score.",
+    "PCA anisotropy is a nonlinear re-expression of existing covariance. The five line-strip features add spatial arrangement descriptors, but the block ablation cannot isolate each feature contribution.",
+    "Three seeds share the same wafers; their averages and spread do not increase sample size.",
+    "Strip width and direction grid were fixed before scores; the descriptor is a coarse heuristic, can respond to chance alignments, and can miss curved or discontinuous scratches.",
+    "Error-feature associations and gallery impressions are descriptive, not causal explanations; original potentially ambiguous labels are retained.",
+    "CPU RF prediction times and reused CNN logits are not a matched hardware latency benchmark."
+  ],
+  "feature_caveat": "71 original features already include full defect covariance. Added six features were evaluated as a single fixed block, not claimed as six independent new signals.",
+  "new_rf_training_runs": 6,
+  "official_test_evaluated": false,
+  "official_model_replaced": false,
+  "independent_confirmation": false,
+  "gallery": "scratch_error_gallery.png",
+  "error_analysis_files": [
+    "scratch_predictions.csv",
+    "error_strata.csv",
+    "scratch_error_cohorts.csv"
+  ]
+}

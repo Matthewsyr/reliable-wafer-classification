@@ -1,0 +1,23 @@
+{
+  "rows": 54355,
+  "scope": "Original development metadata only; no wafer-map arrays or final-test rows",
+  "sources": {
+    "metadata": {
+      "artifact": "development_metadata.csv.gz",
+      "sha256": "4ebd14cd07cae646fe43aaf72f534cf452359698988e79d9d45e69036cd0766c"
+    },
+    "index": {
+      "artifact": "raw_map_stats.csv",
+      "sha256": "73e4a8e54af8548288234a5769e23129c0d0fc4cbd97a812b1faa9b8ce27e85e"
+    },
+    "split": {
+      "artifact": "split_manifest.csv",
+      "sha256": "1d1428153810d7debfa63473ac32f40aa1970ce066566da79f77168a4e2e1500"
+    }
+  },
+  "output_sha256": "4e6564b2b8cd090353f65b7389b9e80eba768f138faf9ef95e3e3130f8fcd879",
+  "wafer_index_origin": "Historical development_metadata.csv.gz, not synthesized",
+  "valid_die_count_origin": "Measured map count from the historical raw-map scanner; original dieSize is not claimed",
+  "lot_hash_cross_role_overlap": 0,
+  "duplicate_policy": "All distinct wafer identities retained; identical maps connected for splitting"
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "checks_total": 5846,
+  "checks_failed": 0,
+  "failures": [],
+  "probability_records_verified": 18,
+  "frozen_tune_thresholds_verified": 9,
+  "nine_class_decisions_verified": 36,
+  "dependencies": "Python standard library only",
+  "threshold_policy": "Verified frozen tune-only choices; audit choices never selected or modified.",
+  "independent_confirmation": false,
+  "official_test_scored": false,
+  "manifest_sha256": "c86c2c3d77762d6d8083545bbb3377b09c13eb09d7119c17426b933602d0a0a7",
+  "verifier_sha256": "32ab1559b912e0bec973cf83bceac3d18761daf1c54740ba861fdfed4fe43097"
+}

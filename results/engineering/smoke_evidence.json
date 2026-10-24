@@ -1,0 +1,40 @@
+{
+  "scope": "Engineering execution only; no scientific performance estimates",
+  "real_development_rows": 90,
+  "train_rows": 54,
+  "tune_rows": 18,
+  "audit_rows_prepared_but_not_evaluated": 18,
+  "classes": 9,
+  "per_class_rows": {
+    "train": 6,
+    "tune": 2,
+    "audit": 2
+  },
+  "all_five_cli_commands_passed": true,
+  "steps": [
+    "prepare: RF 71 features, six geometry features, two-channel CNN images",
+    "RF smoke training",
+    "RF tune evaluation",
+    "CNN small one-epoch CPU smoke training",
+    "CNN tune evaluation"
+  ],
+  "original_final_test_maps_preprocessed_or_evaluated": false,
+  "source_file_checksum_verified": true,
+  "source_sha256": "1d04fccb3dd3176b276878b926b20fead7e077c5751e4d353ea9741a5e7b5c65",
+  "development_identity_metadata_sha256": "4ebd14cd07cae646fe43aaf72f534cf452359698988e79d9d45e69036cd0766c",
+  "fixed_split_sha256": "1d1428153810d7debfa63473ac32f40aa1970ce066566da79f77168a4e2e1500",
+  "environment": {
+    "python": "3.10.11",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "libraries": {
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.6.1",
+      "joblib": "1.6.0",
+      "torch": "2.6.0+cpu"
+    }
+  },
+  "synthetic_fixture": false,
+  "limited_smoke": true,
+  "performance_claim": null
+}

@@ -1,0 +1,13 @@
+{
+  "status": "provisional RF configuration based on development validation",
+  "model": "rf_weighted_full",
+  "specification": {
+    "kind": "rf",
+    "class_weight": "balanced_subsample",
+    "max_depth": null
+  },
+  "selection_rule": "mean group-validation macro-F1 across all three seeds; tie by model name",
+  "final_test_evaluated": false,
+  "cnn_not_trained": true,
+  "selection_bias_note": "These validation data select the RF; their scores are not independent final estimates."
+}

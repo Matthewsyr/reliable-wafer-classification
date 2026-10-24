@@ -1,0 +1,7 @@
+protocol,seed,train_rows,val_rows,train_lots,val_lots,shared_lots,shared_image_hashes,val_rows_with_train_identical_map
+lot,42,43657,10698,4647,1162,0,25,25
+random,42,43657,10698,5305,3209,2705,28,28
+lot,123,43712,10643,4647,1162,0,20,20
+random,123,43712,10643,5316,3198,2705,40,40
+lot,2026,42831,11524,4647,1162,0,21,21
+random,2026,42831,11524,5272,3292,2755,33,34

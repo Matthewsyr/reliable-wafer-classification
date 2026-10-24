@@ -1,0 +1,199 @@
+{
+  "sources": [
+    {
+      "repository_path": "results/historical/cnn_and_final/protocol.json",
+      "source": "Kaggle stage3 version360951977/protocol.json",
+      "sha256": "71583258952d9e3dc899e97628965b98a6a038807723255c8dc7f0fe10e7b102",
+      "bytes": 6951
+    },
+    {
+      "repository_path": "results/historical/cnn_and_final/selection_freeze.json",
+      "source": "Kaggle stage3 version360951977/selection_freeze.json",
+      "sha256": "ab0ba9c73ee60dd992e8945e0a17bc52e3f77ae12609cb932ed757811e57810a",
+      "bytes": 9552
+    },
+    {
+      "repository_path": "results/historical/cnn_and_final/final_test_start.json",
+      "source": "Kaggle stage3 version360951977/final_test_start.json",
+      "sha256": "b80846d37b7efeada7fa7646b0946ac12024f2137ddeb1956f03c936d86a1375",
+      "bytes": 458
+    },
+    {
+      "repository_path": "results/historical/cnn_and_final/final_test_audit.json",
+      "source": "Kaggle stage3 version360951977/final_test_audit.json",
+      "sha256": "8dbd9634ce92bb9fdbee97274c26e06094ca31e08aff759be1b2243a04321948",
+      "bytes": 562
+    },
+    {
+      "repository_path": "results/historical/cnn_and_final/environment.json",
+      "source": "Kaggle stage3 version360951977/environment.json",
+      "sha256": "58520b19e83992528b3d4b64b8fc5326c13b8a81e2f087e8fda404ca5d106156",
+      "bytes": 314
+    },
+    {
+      "repository_path": "results/historical/cnn_and_final/final_test_scores.csv",
+      "source": "Kaggle stage3 version360951977/final_test_scores.csv",
+      "sha256": "7c59ed552ab8e0a7da0faa484891add1f96a83bc60723ae77216c95c4d22ea59",
+      "bytes": 956
+    },
+    {
+      "repository_path": "results/historical/cnn_and_final/final_test_per_class.csv",
+      "source": "Kaggle stage3 version360951977/final_test_per_class.csv",
+      "sha256": "a4580c0b07ce3654ade7c775902e3228c1fb670762518d6c67b8f34872761824",
+      "bytes": 4289
+    },
+    {
+      "repository_path": "results/historical/cnn_and_final/final_test_confusion_matrices.csv",
+      "source": "Kaggle stage3 version360951977/final_test_confusion_matrices.csv",
+      "sha256": "b57e0dd788e40b4671cbd530b6745b158ef5d106e3764703e1bebd6b14ccea3e",
+      "bytes": 18221
+    },
+    {
+      "repository_path": "results/historical/cnn_and_final/validation_scores.csv",
+      "source": "Kaggle stage3 version360951977/validation_scores.csv",
+      "sha256": "d286d7329e7a60da33bd6a703124cb4882383d4974f0b1921adf5b6c9949f757",
+      "bytes": 3254
+    },
+    {
+      "repository_path": "results/historical/cnn_and_final/validation_per_class.csv",
+      "source": "Kaggle stage3 version360951977/validation_per_class.csv",
+      "sha256": "1af790fff7e71b473bc736cff364d41eda616f1d2de93337a11d6df8fa2ceb41",
+      "bytes": 17109
+    },
+    {
+      "repository_path": "results/historical/cnn_and_final/validation_summary.csv",
+      "source": "Kaggle stage3 version360951977/validation_summary.csv",
+      "sha256": "207e0ce582d460bdbbb1911e313472c4394a4faf329920e293da8589f71c3cc2",
+      "bytes": 854
+    },
+    {
+      "repository_path": "results/historical/cnn_and_final/epoch_history.csv",
+      "source": "Kaggle stage3 version360951977/epoch_history.csv",
+      "sha256": "7db83edd813923b6625186c602dabc15aaf11276f91a2d01ee5963b67bb9ca5a",
+      "bytes": 19016
+    },
+    {
+      "repository_path": "results/historical/cnn_and_final/final_cnn_training_history.csv",
+      "source": "Kaggle stage3 version360951977/final_cnn_training_history.csv",
+      "sha256": "fd2cef36ac00be4afd9b98e0809ee048dcaf156a84e8c10104aa1c35bc52e7e0",
+      "bytes": 314
+    },
+    {
+      "repository_path": "results/historical/rf_development/protocol.json",
+      "source": "Kaggle stage2 version360929617/protocol.json",
+      "sha256": "c61caa99df9611fd4a432d27ac6fa2b27a7209939cb81f8080a8114f47f8b993",
+      "bytes": 3708
+    },
+    {
+      "repository_path": "results/historical/rf_development/environment.json",
+      "source": "Kaggle stage2 version360929617/environment.json",
+      "sha256": "08ef9275d56ad338ff91641e678ffb867a569e25360fc88aaaec255c16a11098",
+      "bytes": 237
+    },
+    {
+      "repository_path": "results/historical/rf_development/integrity_audit.json",
+      "source": "Kaggle stage2 version360929617/integrity_audit.json",
+      "sha256": "b156472077133dd7aa9482859bacd3efbeeb0914541a626e6413a6fbfdf7f094",
+      "bytes": 408
+    },
+    {
+      "repository_path": "results/historical/rf_development/validation_scores.csv",
+      "source": "Kaggle stage2 version360929617/validation_scores.csv",
+      "sha256": "05a95dc4b4d7e80948d77036af6388e3badc6ffbf9dfd303add3f05b79376d0e",
+      "bytes": 4414
+    },
+    {
+      "repository_path": "results/historical/rf_development/validation_summary.csv",
+      "source": "Kaggle stage2 version360929617/validation_summary.csv",
+      "sha256": "736da5f5de2ede1226919ee0796b241323ae35b596011f0b33d016926c2efe18",
+      "bytes": 1336
+    },
+    {
+      "repository_path": "results/historical/rf_development/validation_per_class.csv",
+      "source": "Kaggle stage2 version360929617/validation_per_class.csv",
+      "sha256": "c043a8f15feaca8822ad30e7bc5c32f34e5f55936c637b5a26fff2ae5754d336",
+      "bytes": 24478
+    },
+    {
+      "repository_path": "results/historical/rf_development/provisional_rf_selection.json",
+      "source": "Kaggle stage2 version360929617/provisional_rf_selection.json",
+      "sha256": "abd3fdae162ca9d4fd833dea38b46e0585156b664c840768c38bd4e38496fee6",
+      "bytes": 488
+    },
+    {
+      "repository_path": "results/historical/rf_development/split_diagnostics.csv",
+      "source": "Kaggle stage2 version360929617/split_diagnostics.csv",
+      "sha256": "32c1d10434cfdbd21ae259dc78f4655b0962e25a67a798b0cc4b5f3a37b6e1c8",
+      "bytes": 366
+    },
+    {
+      "repository_path": "results/historical/repair_experiments/tune_results.json",
+      "source": "Local development exploration/repair_experiments/tune_results.json",
+      "sha256": "15b5116167ae2825556914137714b5f5edb73eff429e36f084a9c5ff63446b28",
+      "bytes": 71354
+    },
+    {
+      "repository_path": "results/historical/repair_experiments/selection.json",
+      "source": "Local development exploration/repair_experiments/selection.json",
+      "sha256": "ea90b4323ce438a52acbf34db1d6f7a04ef93c4a26a4cd8635fe7e49ab4b450a",
+      "bytes": 13105
+    },
+    {
+      "repository_path": "results/historical/repair_experiments/audit_results.json",
+      "source": "Local development exploration/repair_experiments/audit_results.json",
+      "sha256": "e43dd2a19247c006625faf42b2631155a093c4f9dc18f58268edd64ec8748000",
+      "bytes": 42335
+    },
+    {
+      "repository_path": "results/historical/repair_experiments/completion.json",
+      "source": "Local development exploration/repair_experiments/completion.json",
+      "sha256": "350515ca59e7d946efd947213fe631f7657043ce9e2d1c752f56f126e6b1ef29",
+      "bytes": 659
+    },
+    {
+      "repository_path": "results/historical/repair_round2/tune_results.json",
+      "source": "Local development exploration/repair_round2/tune_results.json",
+      "sha256": "1df78662cecea730c949928125fb80d5e453553735fc366424c0045e4e94ef9c",
+      "bytes": 956447
+    },
+    {
+      "repository_path": "results/historical/repair_round2/selection.json",
+      "source": "Local development exploration/repair_round2/selection.json",
+      "sha256": "b829ec7852b4eb023a80f7ddd29c829f82a76d4473c7e0b7367a2ae59eca0045",
+      "bytes": 89443
+    },
+    {
+      "repository_path": "results/historical/repair_round2/audit_results.json",
+      "source": "Local development exploration/repair_round2/audit_results.json",
+      "sha256": "98f14297ea40d0f7e518071dd53663665aba7b59e8b7ff7d87668e0fbbbb5995",
+      "bytes": 116115
+    },
+    {
+      "repository_path": "results/historical/repair_round2/completion.json",
+      "source": "Local development exploration/repair_round2/completion.json",
+      "sha256": "6b53968dccf439947a108aa2aa7c9966e524bebabea3989e6cfb5699561e9151",
+      "bytes": 3009
+    },
+    {
+      "repository_path": "results/historical/scope_audit.json",
+      "source": "Final-delivery source audit",
+      "sha256": "ea669e50a52b8f21da1dd4ba08b5e107f344f6d4934d888d853e0791e0f1cfbb",
+      "bytes": 16384,
+      "source_sha256_before_path_redaction": "2b9195f950a4973427e510ea0d465d9009634e00f3eac1d10c9e725f3c072bf2",
+      "transformation": "Only two local-machine archive directory strings replaced with <local-archive>; metric/protocol assertions unchanged. Original retained locally."
+    },
+    {
+      "repository_path": "results/historical/WM811K_Local_Verification.json",
+      "source": "Preserved local independent verification",
+      "sha256": "354cf173c59da42b2f2bcda2c10df65e68ef4cfeefbe1838f34efc0eac7cb006",
+      "bytes": 2296
+    },
+    {
+      "repository_path": "results/historical/WM811K_Independent_Audit.json",
+      "source": "Preserved local independent verification",
+      "sha256": "54f0f5b6ccab6d07398565f923331d497e71ab60de68fc879ebb53653b90ae0a",
+      "bytes": 2963
+    }
+  ],
+  "scope": "Historical frozen original test plus explicitly post-test development exploration; original scores are not rerun."
+}

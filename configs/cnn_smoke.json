@@ -1,0 +1,6 @@
+{
+  "kind": "cnn", "seed": 42, "fit_roles": ["train"], "validation_role": "tune",
+  "model_size": "small", "weighting": "none", "epochs": 1, "batch_size": 16,
+  "fixed_epochs": false,
+  "purpose": "Engineering smoke check only; not a scientific model comparison"
+}

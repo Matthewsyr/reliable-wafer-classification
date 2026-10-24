@@ -1,0 +1,240 @@
+{
+  "version": "portable-development-probabilities-v1",
+  "class_order": [
+    "Center",
+    "Donut",
+    "Edge-Loc",
+    "Edge-Ring",
+    "Loc",
+    "Near-full",
+    "Random",
+    "Scratch",
+    "none"
+  ],
+  "probability_columns": [
+    "Center",
+    "Donut",
+    "Edge-Loc",
+    "Edge-Ring",
+    "Loc",
+    "Near-full",
+    "Random",
+    "Scratch",
+    "none"
+  ],
+  "source_row_identity": "Original dataset row identifier, not a local file path.",
+  "scope": "Previously seen development split only; no official test predictions or new independent confirmation.",
+  "float_format": "17 significant decimal digits; exact float64 roundtrip verified for every score.",
+  "split_reference": {
+    "file": "split_reference.csv.gz",
+    "sha256": "e467d05e96c0f477554969048e4c265a3686b0232add057170c2007b1ec27c3a",
+    "bytes": 2546229,
+    "rows": 54355,
+    "original_split_manifest_sha256": "1d1428153810d7debfa63473ac32f40aa1970ce066566da79f77168a4e2e1500"
+  },
+  "decision_reference": {
+    "file": "decision_reference.json",
+    "sha256": "4d2df81bde2c96a7a9dbd520d1c0afcad4445d7bd86aa4902c621c9b7400ff3a",
+    "bytes": 177798
+  },
+  "probability_files": [
+    {
+      "file": "rf_original71_s42_tune.csv.gz",
+      "sha256": "50cdc054edbd5501cb7a1015cf38c3ff753425dfc39716ecb06b426b94607aa7",
+      "bytes": 338464,
+      "model": "rf_original71",
+      "seed": 42,
+      "role": "tune",
+      "rows": 11307,
+      "original_probability_npy_sha256": "51871a09f7b9885f851c114f8de0fcca9b0e197097bd01c255fcfb62fa2f70e0",
+      "float64_exact_roundtrip": true
+    },
+    {
+      "file": "rf_original71_s123_tune.csv.gz",
+      "sha256": "76db4c2d6ec5f1285ec4928d023812a189f8b706c54af8c9e6b8b19fc384041a",
+      "bytes": 340605,
+      "model": "rf_original71",
+      "seed": 123,
+      "role": "tune",
+      "rows": 11307,
+      "original_probability_npy_sha256": "e50889a796737ced0cbd3d9cdc7fc5c62d3a990ea7a02241a2920a6ac61119c1",
+      "float64_exact_roundtrip": true
+    },
+    {
+      "file": "rf_original71_s2026_tune.csv.gz",
+      "sha256": "6109aaf438f27a73aa162dc9b08664b97184a9883407b0232348c38472fecb36",
+      "bytes": 345308,
+      "model": "rf_original71",
+      "seed": 2026,
+      "role": "tune",
+      "rows": 11307,
+      "original_probability_npy_sha256": "3cbb4e75b62964b7b159287d76cdcf99987148760d083e444a29c212f1a0c202",
+      "float64_exact_roundtrip": true
+    },
+    {
+      "file": "rf_linearity77_s42_tune.csv.gz",
+      "sha256": "5179e91f32ce8a5e5192f999ce9e88fda68825d4ce111fa70df78bda805ecb52",
+      "bytes": 347180,
+      "model": "rf_linearity77",
+      "seed": 42,
+      "role": "tune",
+      "rows": 11307,
+      "original_probability_npy_sha256": "12df328bc3fff20f7e3a7be45fa9053a1f3d3c284a02ea4a41ef8291ef792c97",
+      "float64_exact_roundtrip": true
+    },
+    {
+      "file": "rf_linearity77_s123_tune.csv.gz",
+      "sha256": "ca6a12b4544b3febcab0e31a1f2ac786f91645a4c046f4c16c12efb3700466aa",
+      "bytes": 344997,
+      "model": "rf_linearity77",
+      "seed": 123,
+      "role": "tune",
+      "rows": 11307,
+      "original_probability_npy_sha256": "1e7735a9800603acc74d2448d1a7abb58a74e3c1afe23fb8a43cf88acdbd9ce5",
+      "float64_exact_roundtrip": true
+    },
+    {
+      "file": "rf_linearity77_s2026_tune.csv.gz",
+      "sha256": "00c28b258d3fbc93f3616695113b32a3026d1061813b9f1921d1729c5e30ba3b",
+      "bytes": 347166,
+      "model": "rf_linearity77",
+      "seed": 2026,
+      "role": "tune",
+      "rows": 11307,
+      "original_probability_npy_sha256": "948846229181bb1191c0903422621fbfafd598dbca9872fc92324f0b56972e6c",
+      "float64_exact_roundtrip": true
+    },
+    {
+      "file": "cnn_bn_natural_7ep_s42_tune.csv.gz",
+      "sha256": "564b0a1dc5a6cc88a0ef746ad9038f361fc8cdcd34334b6ac39f941f41cbd681",
+      "bytes": 1060410,
+      "model": "cnn_bn_natural_7ep",
+      "seed": 42,
+      "role": "tune",
+      "rows": 11307,
+      "original_probability_npy_sha256": "6224cab394c78e499bca0528028d2af59f823cbd8f17c145ab400c65a37f83ed",
+      "float64_exact_roundtrip": true
+    },
+    {
+      "file": "cnn_bn_natural_7ep_s123_tune.csv.gz",
+      "sha256": "740133fe3f2915b93ad8660098eaaa36b1012007060a15919ff516e79491aa0c",
+      "bytes": 1063301,
+      "model": "cnn_bn_natural_7ep",
+      "seed": 123,
+      "role": "tune",
+      "rows": 11307,
+      "original_probability_npy_sha256": "4561ff48b8b7b0fda52c2f3b1ac150df1f4717da4e689a007309b09bc1ab6710",
+      "float64_exact_roundtrip": true
+    },
+    {
+      "file": "cnn_bn_natural_7ep_s2026_tune.csv.gz",
+      "sha256": "ee884433f9f651532bdcb56d14c61fef3207ab8864de3f99c7ec8cff0f131c2e",
+      "bytes": 1062203,
+      "model": "cnn_bn_natural_7ep",
+      "seed": 2026,
+      "role": "tune",
+      "rows": 11307,
+      "original_probability_npy_sha256": "3aad4adacb540f26cc8aa3e7745a4ebf20d84df7f46f14476cdea0eabb47ca4c",
+      "float64_exact_roundtrip": true
+    },
+    {
+      "file": "rf_original71_s42_audit.csv.gz",
+      "sha256": "3b35158896762752e0f34e43894830f45ce782d4bd1f1b799a9fd00b06747fbc",
+      "bytes": 349502,
+      "model": "rf_original71",
+      "seed": 42,
+      "role": "audit",
+      "rows": 11591,
+      "original_probability_npy_sha256": "acd2da982e749cbb0ac3af3415ac44a3889d8372368461a2f1f49eb49b837056",
+      "float64_exact_roundtrip": true
+    },
+    {
+      "file": "rf_original71_s123_audit.csv.gz",
+      "sha256": "270fec712ab06bfbc6589ab26a4fab624647a33bfbc716576441fa9acf858653",
+      "bytes": 351284,
+      "model": "rf_original71",
+      "seed": 123,
+      "role": "audit",
+      "rows": 11591,
+      "original_probability_npy_sha256": "c05bcac05fd0d3c0b4e6b3e9510fe3eb03bb65e9c24fd950c63b2af696479147",
+      "float64_exact_roundtrip": true
+    },
+    {
+      "file": "rf_original71_s2026_audit.csv.gz",
+      "sha256": "68fadfb057ac6245300eadfdfc55535c8cb920bddd9a058225005283d54fe3ba",
+      "bytes": 353380,
+      "model": "rf_original71",
+      "seed": 2026,
+      "role": "audit",
+      "rows": 11591,
+      "original_probability_npy_sha256": "ef41f06a6a8191823a5c423f510eb7edd65f0bd549abdb0c1282ed503f574261",
+      "float64_exact_roundtrip": true
+    },
+    {
+      "file": "rf_linearity77_s42_audit.csv.gz",
+      "sha256": "583f874c5cea40c890238029067553bff39ff2d9d657dc8f4c08e562e8c0e7cf",
+      "bytes": 358074,
+      "model": "rf_linearity77",
+      "seed": 42,
+      "role": "audit",
+      "rows": 11591,
+      "original_probability_npy_sha256": "c63c47c4474606f84fa20e454037c768339c364192d9ce581a82ea4ebc6ac0be",
+      "float64_exact_roundtrip": true
+    },
+    {
+      "file": "rf_linearity77_s123_audit.csv.gz",
+      "sha256": "4b4305326cef6d86ea587d351a219419d77ded074d5dbfff512402a19c2ceb05",
+      "bytes": 356410,
+      "model": "rf_linearity77",
+      "seed": 123,
+      "role": "audit",
+      "rows": 11591,
+      "original_probability_npy_sha256": "85b2bc3847cf27bce4d70797fbb122258ab1051da2fc602cb0c5ef976e644bf2",
+      "float64_exact_roundtrip": true
+    },
+    {
+      "file": "rf_linearity77_s2026_audit.csv.gz",
+      "sha256": "2aa48f017fafb26236f774cf7b4104e5ac58215ce02550affe87fc63f85f6697",
+      "bytes": 358232,
+      "model": "rf_linearity77",
+      "seed": 2026,
+      "role": "audit",
+      "rows": 11591,
+      "original_probability_npy_sha256": "812f1012d0c5fd8f94b667aa76af4b9eb22c775a3efdcc1feb359d4217e4c47f",
+      "float64_exact_roundtrip": true
+    },
+    {
+      "file": "cnn_bn_natural_7ep_s42_audit.csv.gz",
+      "sha256": "b2fd288b8fcb22b660ef981cf301602a28e264190cb12d9f57c897b27f717a60",
+      "bytes": 1087427,
+      "model": "cnn_bn_natural_7ep",
+      "seed": 42,
+      "role": "audit",
+      "rows": 11591,
+      "original_probability_npy_sha256": "f5e35b4977a0a0a0db197266b0cd9a9c55ca30b2ae0252764fa0c0947f4c3bce",
+      "float64_exact_roundtrip": true
+    },
+    {
+      "file": "cnn_bn_natural_7ep_s123_audit.csv.gz",
+      "sha256": "b57bb2727db1a056e5726f1e2e8049c1fe4f4a6f81d22e3b6e550da2e8ca15bb",
+      "bytes": 1089289,
+      "model": "cnn_bn_natural_7ep",
+      "seed": 123,
+      "role": "audit",
+      "rows": 11591,
+      "original_probability_npy_sha256": "71d943c383946f112f1a7d90e23771c851bcf4ee3e67667d56c4a9bdfb04a60f",
+      "float64_exact_roundtrip": true
+    },
+    {
+      "file": "cnn_bn_natural_7ep_s2026_audit.csv.gz",
+      "sha256": "4cd2c6ae743397a780856f2b9e10802cb829129cefddc8b39a59c57db53df79e",
+      "bytes": 1088514,
+      "model": "cnn_bn_natural_7ep",
+      "seed": 2026,
+      "role": "audit",
+      "rows": 11591,
+      "original_probability_npy_sha256": "453045f1cdba714337b5e6e8cd63e797e2bc5aa32fce17a35312e86db698f3a8",
+      "float64_exact_roundtrip": true
+    }
+  ]
+}

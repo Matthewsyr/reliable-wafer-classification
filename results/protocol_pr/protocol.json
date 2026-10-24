@@ -1,0 +1,55 @@
+{
+  "version": "final-delivery-pr-v1",
+  "frozen_at_utc": "2026-10-24T13:52:51.142648+00:00",
+  "scope": "Development-only exploratory precision-recall decision analysis. The original final test was completed under its historical freeze on 2026-10-22, then examined diagnostically. No new independent test is available. The previously seen development audit is an exploratory fixed-rule recheck.",
+  "original_final_test_images_or_predictions_to_be_loaded": false,
+  "model_training_in_this_module": false,
+  "class_order": [
+    "Center",
+    "Donut",
+    "Edge-Loc",
+    "Edge-Ring",
+    "Loc",
+    "Near-full",
+    "Random",
+    "Scratch",
+    "none"
+  ],
+  "scratch_index": 7,
+  "normal_index": 8,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "split_manifest": "work\\repair_experiments\\protocol_audit\\split_manifest.csv",
+  "split_manifest_sha256": "1d1428153810d7debfa63473ac32f40aa1970ce066566da79f77168a4e2e1500",
+  "comparison_models": [
+    "rf_original71",
+    "rf_linearity77",
+    "cnn_bn_natural_7ep"
+  ],
+  "fit_scope": "All matched models trained on the same fixed train partition; no refit in this final decision analysis. RF probabilities come from the geometry experiment; CNN probabilities are stable softmax of already saved round2 screen baseline logits, with zero logit biases.",
+  "probability_contract": "Nine fixed columns, finite nonnegative rows summing to one, ordered by increasing development cache index within tune/audit. Scores are uncalibrated model outputs; a threshold of t is not a calibrated real-world failure probability.",
+  "hypothetical_precision_floor": 0.8,
+  "business_assumption": "Precision >= 80% is an experimental illustration, not a factory-approved cost or operational requirement.",
+  "threshold_selection_unit": "One threshold per fitted model and seed, chosen on tune only; this is a model-specific validation procedure, not one universal threshold for all fits.",
+  "eligible_thresholds": "Every distinct Scratch score observed in tune; predict Scratch one-vs-rest iff score >= threshold. At least one predicted positive is mandatory. Precision feasibility is exactly 5*TP >= 4*(TP+FP), avoiding floating-point feasibility boundaries.",
+  "selection_order": "Maximize true-positive count (equivalently recall because tune support is fixed); ties prefer larger exact TP/(TP+FP), then larger threshold.",
+  "no_feasible_threshold": "Record threshold=null, status=no_rule_selected. Do not count an all-negative rule as Precision=1 and do not pick a best-effort threshold. No thresholded nine-class audit result is generated for such a model; argmax and AP remain reportable.",
+  "decision_grids": "Save a descriptive grid at t=0,0.05,...,1 plus any selected threshold for both tune and fixed exploratory audit. The audit grid is descriptive only and must never select or alter a threshold. Save all tune candidate operating points for exact selection reproducibility.",
+  "binary_metrics": [
+    "Scratch TP,FP,FN,TN",
+    "Scratch precision,recall,F1",
+    "Scratch Average Precision",
+    "predicted-positive count",
+    "normal-to-Scratch false positives per 1000 true normal wafers"
+  ],
+  "average_precision": "Non-interpolated step area sum over increasing recall increments times precision at each tied-score boundary. Do not substitute trapezoidal PR area.",
+  "zero_denominator": "Precision is null when no examples are predicted positive. Plotting may include the conventional recall=0/precision=1 endpoint but it is labeled as a convention and is never eligible for threshold selection.",
+  "nine_class_rule": "If p(Scratch)>=frozen threshold, output Scratch; otherwise output argmax of the remaining eight class scores. Report the full confusion matrix, fixed-nine-class Macro-F1, accuracy, per-class precision/recall/F1/support, Scratch errors and total normal-to-any-defect errors alongside the unmodified nine-class argmax reference.",
+  "freeze_and_audit_sequence": "Write a single threshold_selection.json with all model/seed thresholds and tune probability source hashes before loading any audit probability or audit logits for this analysis. Then apply those exact decisions to fixed audit rows; no threshold, model, seed, subset or preprocessing adjustment follows the audit.",
+  "historical_reference": "Historical official RF/CNN lot-validation and original final-test metrics are retained in separate tables with their original partitions and frozen provenance. They must not be merged into matched new-split comparison claims.",
+  "uncertainty": "Three seeds share the same heldout wafers. Do not count seed repetitions as independent samples. Tune contains 99 and audit 80 true Scratches; precision-floor feasibility is an observed point estimate, not a confidence-bound guarantee.",
+  "stop_rule": "Run this fixed PR analysis once for the declared models; no extra model training, bias search, retuning on audit, or fresh official-test scoring."
+}

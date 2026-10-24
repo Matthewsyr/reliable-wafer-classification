@@ -1,0 +1,233 @@
+{
+  "scope": "Previously observed development audit; not independent test",
+  "files": [
+    {
+      "path": "results/geometry/protocol.json",
+      "sha256": "694d55963076f770211075653f423f16c3f62e500f798c70572dbd7efa059a76",
+      "bytes": 9938,
+      "origin": "local frozen final-delivery/geometry/protocol.json"
+    },
+    {
+      "path": "results/geometry/protocol.sha256",
+      "sha256": "f6a7ef39c5f1266b7583c9db05ed684c626badeb21639edfcd6b13a99a066979",
+      "bytes": 66,
+      "origin": "local frozen final-delivery/geometry/protocol.sha256"
+    },
+    {
+      "path": "results/geometry/environment.json",
+      "sha256": "ff3b3a439a63e3aeffcf152cbbee96af3360a32184ac4c68c48c5739992e56fd",
+      "bytes": 260,
+      "origin": "local frozen final-delivery/geometry/environment.json"
+    },
+    {
+      "path": "results/geometry/feature_contract_checks.json",
+      "sha256": "f684775a7f9488a0d57958cbb295850a509deef5a6616150d541d11d431c9814",
+      "bytes": 811,
+      "origin": "local frozen final-delivery/geometry/feature_contract_checks.json"
+    },
+    {
+      "path": "results/geometry/feature_extraction_audit.json",
+      "sha256": "ecde6f049c89be0ec6c175132f92dc27c1b3f5769c57a3ed02214a86702ce1be",
+      "bytes": 707,
+      "origin": "local frozen final-delivery/geometry/feature_extraction_audit.json"
+    },
+    {
+      "path": "results/geometry/pca_redundancy_audit.json",
+      "sha256": "3e8f7b2abf6ee013df7f4b8a3ce831b0dc6ade2bafed60cf86576b853c947810",
+      "bytes": 474,
+      "origin": "local frozen final-delivery/geometry/pca_redundancy_audit.json"
+    },
+    {
+      "path": "results/geometry/cnn_reference_lineage.json",
+      "sha256": "c657adffd781a488fa8d58b2a446e0d0d41218fa882983341053a2e82cc4fce7",
+      "bytes": 1687,
+      "origin": "local frozen final-delivery/geometry/cnn_reference_lineage.json"
+    },
+    {
+      "path": "results/geometry/metrics.csv",
+      "sha256": "3e4449dca7b7e9571f4c86dcf123689258e0b6d5109f4b73e3e52eb39dcfad15",
+      "bytes": 3732,
+      "origin": "local frozen final-delivery/geometry/metrics.csv"
+    },
+    {
+      "path": "results/geometry/per_class.csv",
+      "sha256": "0c080089696413248259b624cc3a12991de9a0b6954ac88bf224ed03fa546fec",
+      "bytes": 15188,
+      "origin": "local frozen final-delivery/geometry/per_class.csv"
+    },
+    {
+      "path": "results/geometry/confusions.csv",
+      "sha256": "90a0afe5db3318812f99ba5d6344d50baaebb1d04680d9a22f5cf8e4ee89bdbd",
+      "bytes": 62532,
+      "origin": "local frozen final-delivery/geometry/confusions.csv"
+    },
+    {
+      "path": "results/geometry/conclusion.json",
+      "sha256": "1bec9cc70f82f0e8ba6072650cda2510ff0e77d585d728ff6aff81ffbccd1cac",
+      "bytes": 20355,
+      "origin": "local frozen final-delivery/geometry/conclusion.json"
+    },
+    {
+      "path": "results/geometry/scratch_predictions.csv",
+      "sha256": "f345b3d81170ea887bbce9386299fb6a1c5d0380392882dfe51357babb947cbe",
+      "bytes": 523268,
+      "origin": "local frozen final-delivery/geometry/scratch_predictions.csv"
+    },
+    {
+      "path": "results/geometry/scratch_error_cohorts.csv",
+      "sha256": "f733cc556f3b23ef3f58bc46dfae6c570a8611c18a9ab61f83f093a1f0de71dc",
+      "bytes": 9419,
+      "origin": "local frozen final-delivery/geometry/scratch_error_cohorts.csv"
+    },
+    {
+      "path": "results/geometry/error_strata.csv",
+      "sha256": "40625630ceb34372a86c53057f2207309632c3155f40e2d75b78ddb6112b694c",
+      "bytes": 32227,
+      "origin": "local frozen final-delivery/geometry/error_strata.csv"
+    },
+    {
+      "path": "results/geometry/gallery_selection.json",
+      "sha256": "4632f6e0cf36c070681fe2450feb1b059d408ff990e4c44f7ef9fbfc4ec22d3c",
+      "bytes": 7981,
+      "origin": "local frozen final-delivery/geometry/gallery_selection.json"
+    },
+    {
+      "path": "results/geometry/training.log",
+      "sha256": "bbd33a872bf3e4c82ca7417985ef6646eec2359d5338cb3e25d4e04cbb3481f5",
+      "bytes": 628,
+      "origin": "local frozen final-delivery/geometry/training.log"
+    },
+    {
+      "path": "results/protocol_pr/protocol.json",
+      "sha256": "bf33f6f4b65788ddc0a770ceac9eaa922116b162ceee52a11f71e2828227889a",
+      "bytes": 4985,
+      "origin": "local frozen final-delivery/protocol_pr/protocol.json"
+    },
+    {
+      "path": "results/protocol_pr/protocol.sha256",
+      "sha256": "e683a5851f2ace87dfb6b389afd402800cd7087bffdf533715c15f2d02d398fe",
+      "bytes": 81,
+      "origin": "local frozen final-delivery/protocol_pr/protocol.sha256"
+    },
+    {
+      "path": "results/protocol_pr/threshold_selection.json",
+      "sha256": "1ec272e31c88335fc049bf01845611ac8f30ed5c2744f287bc0e5c0fa90e7b5a",
+      "bytes": 12978,
+      "origin": "local frozen final-delivery/protocol_pr/threshold_selection.json"
+    },
+    {
+      "path": "results/protocol_pr/threshold_selection.sha256",
+      "sha256": "99d5fccfbd045154f0dcb0326ff976a8f779fa4df703cd7a9439a2e95644e38a",
+      "bytes": 92,
+      "origin": "local frozen final-delivery/protocol_pr/threshold_selection.sha256"
+    },
+    {
+      "path": "results/protocol_pr/pr_results.json",
+      "sha256": "0a29c8648defa187ba21e39d56131f24b07af970b37f88e318a00a028d7a4633",
+      "bytes": 181878,
+      "origin": "local frozen final-delivery/protocol_pr/pr_results.json"
+    },
+    {
+      "path": "results/protocol_pr/pr_summary.csv",
+      "sha256": "d29b55f1e3b5f9ebc62f1a4f914ba53f28cef2991857d0f18fc6deb77c44a425",
+      "bytes": 2935,
+      "origin": "local frozen final-delivery/protocol_pr/pr_summary.csv"
+    },
+    {
+      "path": "results/protocol_pr/nine_class_results.csv",
+      "sha256": "d8d95310156caf4cf46f8f7ac9129c355b6bd0f9ba788ca218f9e9c5511ece52",
+      "bytes": 7144,
+      "origin": "local frozen final-delivery/protocol_pr/nine_class_results.csv"
+    },
+    {
+      "path": "results/protocol_pr/per_class_metrics.csv",
+      "sha256": "e8129f72a5742acf7e20cdc1df227444cc6219e0ee6f23db31cfdfbb4fc6077c",
+      "bytes": 34381,
+      "origin": "local frozen final-delivery/protocol_pr/per_class_metrics.csv"
+    },
+    {
+      "path": "results/protocol_pr/operating_points.csv",
+      "sha256": "5717b48a26898a9dc1e7cd3f2fd351c92f43bd64bd16edbd9e4c4eb88386591d",
+      "bytes": 3063,
+      "origin": "local frozen final-delivery/protocol_pr/operating_points.csv"
+    },
+    {
+      "path": "results/protocol_pr/threshold_grid.csv",
+      "sha256": "6f477d290d018766a4d40248a6f395bd53d8cc1aa2da0ceef32f0dd0b0dd68af",
+      "bytes": 51118,
+      "origin": "local frozen final-delivery/protocol_pr/threshold_grid.csv"
+    },
+    {
+      "path": "results/protocol_pr/decision_tradeoffs.csv",
+      "sha256": "aa1941b1037d76f5b635423b241fc62b781e5e74fb8d5b1cbd1cdd170cf91321",
+      "bytes": 1854,
+      "origin": "local frozen final-delivery/protocol_pr/decision_tradeoffs.csv"
+    },
+    {
+      "path": "results/protocol_pr/geometry_incremental_value.csv",
+      "sha256": "2633abfbcb3ea258393acf93c57e7d47633ccb88fd39a300522ee31be39cf562",
+      "bytes": 734,
+      "origin": "local frozen final-delivery/protocol_pr/geometry_incremental_value.csv"
+    },
+    {
+      "path": "results/protocol_pr/independent_pr_geometry_audit.json",
+      "sha256": "1c57a15119006e8574442485cb7dab16494d85b0f4968ae8eba88bdbfb6f042f",
+      "bytes": 3266,
+      "origin": "local frozen final-delivery/protocol_pr/independent_pr_geometry_audit.json"
+    },
+    {
+      "path": "results/protocol_pr/pr_unit_verification.json",
+      "sha256": "bcdb9feb8dddf8dae6a66a34ae1116c51612611923a10bfbdbd1d40059f5fb6a",
+      "bytes": 292,
+      "origin": "local frozen final-delivery/protocol_pr/pr_unit_verification.json"
+    },
+    {
+      "path": "results/protocol_pr/precision_recall_curves.csv.gz",
+      "sha256": "fd8f688f1f89b998aaf8d8e200d78cf22945e59d109f5b7a6a71856e28e97fe4",
+      "bytes": 4905991,
+      "origin": "local frozen final-delivery/protocol_pr/precision_recall_curves.csv.gz"
+    },
+    {
+      "path": "results/protocol_pr/tune_candidate_operating_points.csv.gz",
+      "sha256": "bbf57c062e4dce9a84175f8441eecf47999fb342d86fc61524658db492922270",
+      "bytes": 2419865,
+      "origin": "local frozen final-delivery/protocol_pr/tune_candidate_operating_points.csv.gz"
+    },
+    {
+      "path": "results/geometry/delivery_evidence.json",
+      "sha256": "1f29631c7e2a80bc58200aaba298a4038266e52dc28b2eb1f42f2ec711063f0d",
+      "bytes": 68734,
+      "origin": "local frozen final-delivery/geometry/delivery_evidence.json"
+    },
+    {
+      "path": "results/geometry/runtime_cost_summary.json",
+      "sha256": "5557b8458ccb966f5bbcc070a32402d068e5c41c447955ff3b60323366cd4d38",
+      "bytes": 6904,
+      "origin": "local frozen final-delivery/geometry/runtime_cost_summary.json"
+    },
+    {
+      "path": "results/geometry/delivery_qa.json",
+      "sha256": "05f5ef51955c6f0bd45f859a196c0c916833ddf3d994d6b99a525735cd9b285e",
+      "bytes": 3344,
+      "origin": "local frozen final-delivery/geometry/delivery_qa.json"
+    },
+    {
+      "path": "results/geometry/error_analysis_en.md",
+      "sha256": "65ebb178b83f171986394ab7416ce07b49f841e39f92eaf9ebed1651edbe1987",
+      "bytes": 5933,
+      "origin": "local frozen final-delivery/geometry/error_analysis_en.md"
+    },
+    {
+      "path": "results/protocol_pr/independent_geometry_summary_audit.json",
+      "sha256": "d86d2de4a70c95ca8b5ab73b091dc128c062f298165ce2318da5241fb66e008d",
+      "bytes": 636,
+      "origin": "local frozen final-delivery/protocol_pr/independent_geometry_summary_audit.json"
+    },
+    {
+      "path": "results/protocol_pr/pr_interpretation.md",
+      "sha256": "200b2c9ff2d95fd01117d116846206176969b04ceec7ea3af3ce059a176547b4",
+      "bytes": 2839,
+      "origin": "local frozen final-delivery/protocol_pr/pr_interpretation.md"
+    }
+  ]
+}

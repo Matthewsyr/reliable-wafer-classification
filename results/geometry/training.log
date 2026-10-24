@@ -1,0 +1,7 @@
+{"event": "fit_complete", "model": "rf_original71", "seed": 42, "seconds": 17.596732900012285}
+{"event": "fit_complete", "model": "rf_original71", "seed": 123, "seconds": 17.845849200035445}
+{"event": "fit_complete", "model": "rf_original71", "seed": 2026, "seconds": 5522.783544400008}
+{"event": "fit_complete", "model": "rf_linearity77", "seed": 42, "seconds": 25.34005839994643}
+{"event": "fit_complete", "model": "rf_linearity77", "seed": 123, "seconds": 8021.138420100091}
+{"event": "fit_complete", "model": "rf_linearity77", "seed": 2026, "seconds": 18.121935300063342}
+{"event": "tune_complete", "new_rf_fits": 6}

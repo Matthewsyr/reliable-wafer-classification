@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "checks_total": 260,
+  "checks_failed": 0,
+  "failures": [],
+  "checked_at_utc": "2026-10-24T17:59:12.676959+00:00",
+  "scope": "Independent paired transitions and guards, means/sample standard deviations, and explicit component-bootstrap aggregation. No training or official test access.",
+  "conclusion_sha256": "1bec9cc70f82f0e8ba6072650cda2510ff0e77d585d728ff6aff81ffbccd1cac",
+  "bootstrap_interpretation": "Seed replications do not enlarge wafer count. Point-estimate improvements are exploratory and do not imply simultaneous noninferiority confidence across all seeds or deployment readiness."
+}

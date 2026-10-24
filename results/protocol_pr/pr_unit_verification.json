@@ -1,0 +1,8 @@
+{
+  "synthetic_only": true,
+  "tie_boundary_exact_precision_80_pass": true,
+  "zero_predictions_precision_null_ineligible": true,
+  "noninterpolated_ap_matches_sklearn_21_cases": true,
+  "all_unique_score_boundaries_match_direct_decisions": true,
+  "no_real_predictions_opened": true
+}

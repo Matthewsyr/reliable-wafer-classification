@@ -1,0 +1,5 @@
+-r requirements.txt
+# CPU: install this version from https://download.pytorch.org/whl/cpu
+# CUDA: select the supported wheel for your device; do not claim cross-device bit identity.
+torch==2.7.1
+

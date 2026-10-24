@@ -1,0 +1,129 @@
+{
+  "test_rows": 118595,
+  "development_rows": 54355,
+  "test_unique_source_rows": 118595,
+  "development_unique_source_rows": 54355,
+  "shared_source_rows": 0,
+  "test_lots": 4953,
+  "development_lots": 5809,
+  "shared_lots": 0,
+  "test_identical_by_independent_hash_membership": 3158,
+  "test_label_counts": {
+    "none": 110701,
+    "Loc": 1973,
+    "Edge-Loc": 2772,
+    "Center": 832,
+    "Random": 257,
+    "Scratch": 693,
+    "Edge-Ring": 1126,
+    "Near-full": 95,
+    "Donut": 146
+  },
+  "development_label_counts": {
+    "none": 36730,
+    "Loc": 1620,
+    "Edge-Loc": 2417,
+    "Center": 3462,
+    "Edge-Ring": 8554,
+    "Scratch": 500,
+    "Random": 609,
+    "Near-full": 54,
+    "Donut": 409
+  },
+  "duplicate_test_maps_by_label": {
+    "none": 3057,
+    "Edge-Loc": 37,
+    "Loc": 21,
+    "Random": 14,
+    "Edge-Ring": 6,
+    "Scratch": 11,
+    "Center": 6,
+    "Near-full": 6
+  },
+  "test_source_split_counts": {
+    "test": 118595
+  },
+  "development_source_split_counts": {
+    "train": 54355
+  },
+  "test_source_row_range": [
+    639663,
+    811454
+  ],
+  "development_source_row_range": [
+    0,
+    791476
+  ],
+  "models": {
+    "cnn_medium_unweighted": {
+      "rows": 118595,
+      "unique_rows": 118595,
+      "missing_test_ids": 0,
+      "unexpected_ids": 0,
+      "prediction_manifest_problems": {},
+      "prediction_counts": {
+        "none": 52899,
+        "Center": 3021,
+        "Edge-Loc": 10029,
+        "Edge-Ring": 2176,
+        "Loc": 13606,
+        "Scratch": 36304,
+        "Random": 313,
+        "Near-full": 82,
+        "Donut": 165
+      }
+    },
+    "rf_weighted_full": {
+      "rows": 118595,
+      "unique_rows": 118595,
+      "missing_test_ids": 0,
+      "unexpected_ids": 0,
+      "prediction_manifest_problems": {},
+      "prediction_counts": {
+        "none": 81603,
+        "Center": 2284,
+        "Edge-Loc": 18167,
+        "Loc": 10985,
+        "Random": 206,
+        "Edge-Ring": 1274,
+        "Scratch": 3887,
+        "Near-full": 98,
+        "Donut": 91
+      }
+    }
+  },
+  "max_absolute_score_difference": 0.0,
+  "max_absolute_per_class_difference": 0.0,
+  "all_none_baseline_accuracy": 0.9334373287238079,
+  "all_none_baseline_macro_f1": 0.10728587599531707,
+  "metadata_contains_wafer_dimensions": false,
+  "development_wafers_per_lot": {
+    "mean": 9.357032191427097,
+    "median": 2,
+    "min": 1,
+    "max": 25
+  },
+  "test_wafers_per_lot": {
+    "mean": 23.944074298405006,
+    "median": 25,
+    "min": 2,
+    "max": 25
+  },
+  "cnn_lot_validation_normal_recall": {
+    "42": {
+      "support": 7288,
+      "correct": 7277,
+      "recall": 0.9984906695938529
+    },
+    "123": {
+      "support": 7059,
+      "correct": 6804,
+      "recall": 0.9638759031024224
+    },
+    "2026": {
+      "support": 7956,
+      "correct": 7908,
+      "recall": 0.9939668174962293
+    }
+  }
+}

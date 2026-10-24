@@ -1,0 +1,147 @@
+{
+  "stage": "development_validation_only",
+  "final_test_evaluated": false,
+  "class_order": [
+    "Center",
+    "Donut",
+    "Edge-Loc",
+    "Edge-Ring",
+    "Loc",
+    "Near-full",
+    "Random",
+    "Scratch",
+    "none"
+  ],
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "group_validation": "GroupShuffleSplit, test_size=0.2 of lots, first and only split per seed",
+  "random_validation": "stratified wafer split, same validation row count as paired group split",
+  "rf": {
+    "n_estimators": 200,
+    "max_depth": 12,
+    "min_samples_leaf": 2,
+    "max_features": "sqrt",
+    "n_jobs": 2
+  },
+  "weights": [
+    null,
+    "balanced_subsample"
+  ],
+  "depth_ablation": [
+    6,
+    12,
+    null
+  ],
+  "training_fractions": [
+    0.1,
+    0.3,
+    1.0
+  ],
+  "selection_rule": "mean group-validation macro-F1 across all three seeds; tie by model name",
+  "final_test_policy": "No test features or test predictions. Freeze RF and CNN before separate final evaluation.",
+  "features": [
+    "defect_ratio",
+    "valid_occupancy",
+    "defect_centroid_x",
+    "defect_centroid_y",
+    "defect_variance_x",
+    "defect_variance_y",
+    "defect_covariance_xy",
+    "defect_mean_radius",
+    "defect_std_radius",
+    "defect_centroid_radius",
+    "valid_centroid_x",
+    "valid_centroid_y",
+    "valid_variance_x",
+    "valid_variance_y",
+    "valid_covariance_xy",
+    "grid_r0_c0_defect_rate",
+    "grid_r0_c1_defect_rate",
+    "grid_r0_c2_defect_rate",
+    "grid_r0_c3_defect_rate",
+    "grid_r1_c0_defect_rate",
+    "grid_r1_c1_defect_rate",
+    "grid_r1_c2_defect_rate",
+    "grid_r1_c3_defect_rate",
+    "grid_r2_c0_defect_rate",
+    "grid_r2_c1_defect_rate",
+    "grid_r2_c2_defect_rate",
+    "grid_r2_c3_defect_rate",
+    "grid_r3_c0_defect_rate",
+    "grid_r3_c1_defect_rate",
+    "grid_r3_c2_defect_rate",
+    "grid_r3_c3_defect_rate",
+    "grid_r0_c0_occupancy",
+    "grid_r0_c1_occupancy",
+    "grid_r0_c2_occupancy",
+    "grid_r0_c3_occupancy",
+    "grid_r1_c0_occupancy",
+    "grid_r1_c1_occupancy",
+    "grid_r1_c2_occupancy",
+    "grid_r1_c3_occupancy",
+    "grid_r2_c0_occupancy",
+    "grid_r2_c1_occupancy",
+    "grid_r2_c2_occupancy",
+    "grid_r2_c3_occupancy",
+    "grid_r3_c0_occupancy",
+    "grid_r3_c1_occupancy",
+    "grid_r3_c2_occupancy",
+    "grid_r3_c3_occupancy",
+    "ring_0_defect_rate",
+    "ring_1_defect_rate",
+    "ring_2_defect_rate",
+    "ring_3_defect_rate",
+    "ring_0_valid_share",
+    "ring_1_valid_share",
+    "ring_2_valid_share",
+    "ring_3_valid_share",
+    "sector_0_defect_rate",
+    "sector_1_defect_rate",
+    "sector_2_defect_rate",
+    "sector_3_defect_rate",
+    "sector_4_defect_rate",
+    "sector_5_defect_rate",
+    "sector_6_defect_rate",
+    "sector_7_defect_rate",
+    "sector_0_valid_share",
+    "sector_1_valid_share",
+    "sector_2_valid_share",
+    "sector_3_valid_share",
+    "sector_4_valid_share",
+    "sector_5_valid_share",
+    "sector_6_valid_share",
+    "sector_7_valid_share"
+  ],
+  "source_sha256": {
+    "wafer_features.py": "0dc546f82fe12a1ec054db26692597ae727c8195e24c428eb0b9c0afceb3e0f4",
+    "baseline_pipeline.py": "1f1c9f8d0d80f5a7896f06f79064e5a5aa75b8e2cc7677d69930ded6d5dd37be"
+  },
+  "model_specs": {
+    "dummy_most_frequent": {
+      "kind": "dummy"
+    },
+    "rf_unweighted_d12": {
+      "kind": "rf",
+      "class_weight": null,
+      "max_depth": 12
+    },
+    "rf_weighted_d12": {
+      "kind": "rf",
+      "class_weight": "balanced_subsample",
+      "max_depth": 12
+    },
+    "rf_weighted_d6": {
+      "kind": "rf",
+      "class_weight": "balanced_subsample",
+      "max_depth": 6
+    },
+    "rf_weighted_full": {
+      "kind": "rf",
+      "class_weight": "balanced_subsample",
+      "max_depth": null
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-10-24T18:02:10.8967891+00:00",
+  "frozen_source_checks": [
+    {
+      "file": "linearity_features.py",
+      "pass": true
+    },
+    {
+      "file": "original_features.py",
+      "pass": true
+    },
+    {
+      "file": "run_geometry.py",
+      "pass": true
+    }
+  ],
+  "prediction_file_checks": [
+    {
+      "model": "rf_original71",
+      "seed": 42,
+      "role": "tune",
+      "pass": true
+    },
+    {
+      "model": "rf_original71",
+      "seed": 123,
+      "role": "tune",
+      "pass": true
+    },
+    {
+      "model": "rf_original71",
+      "seed": 2026,
+      "role": "tune",
+      "pass": true
+    },
+    {
+      "model": "rf_linearity77",
+      "seed": 42,
+      "role": "tune",
+      "pass": true
+    },
+    {
+      "model": "rf_linearity77",
+      "seed": 123,
+      "role": "tune",
+      "pass": true
+    },
+    {
+      "model": "rf_linearity77",
+      "seed": 2026,
+      "role": "tune",
+      "pass": true
+    },
+    {
+      "model": "cnn_bn_reference",
+      "seed": 42,
+      "role": "tune",
+      "pass": true
+    },
+    {
+      "model": "cnn_bn_reference",
+      "seed": 123,
+      "role": "tune",
+      "pass": true
+    },
+    {
+      "model": "cnn_bn_reference",
+      "seed": 2026,
+      "role": "tune",
+      "pass": true
+    },
+    {
+      "model": "rf_original71",
+      "seed": 42,
+      "role": "audit",
+      "pass": true
+    },
+    {
+      "model": "rf_original71",
+      "seed": 123,
+      "role": "audit",
+      "pass": true
+    },
+    {
+      "model": "rf_original71",
+      "seed": 2026,
+      "role": "audit",
+      "pass": true
+    },
+    {
+      "model": "rf_linearity77",
+      "seed": 42,
+      "role": "audit",
+      "pass": true
+    },
+    {
+      "model": "rf_linearity77",
+      "seed": 123,
+      "role": "audit",
+      "pass": true
+    },
+    {
+      "model": "rf_linearity77",
+      "seed": 2026,
+      "role": "audit",
+      "pass": true
+    },
+    {
+      "model": "cnn_bn_reference",
+      "seed": 42,
+      "role": "audit",
+      "pass": true
+    },
+    {
+      "model": "cnn_bn_reference",
+      "seed": 123,
+      "role": "audit",
+      "pass": true
+    },
+    {
+      "model": "cnn_bn_reference",
+      "seed": 2026,
+      "role": "audit",
+      "pass": true
+    }
+  ],
+  "new_rf_models": 6,
+  "official_test_rescored": false,
+  "gallery": {
+    "file": "scratch_error_gallery.png",
+    "sha256": "757608c874ce808bd6dad0d3f6a9eba819a30ad441e03fd4cfcc6d69491a6d00",
+    "visually_inspected": true,
+    "rendering": "All 12 original-map panels, labels and probabilities are legible; no clipping or overlap observed. Legend, tune scope, original-label provenance and conjecture limitation are visible.",
+    "actual_dataset_maps": true,
+    "deterministic_selection_metadata": "gallery_selection.json",
+    "computed_and_conjecture_separated": true
+  },
+  "independent_review": "../protocol_pr/independent_pr_geometry_audit.json",
+  "independent_review_status": "PASS, 14317 checks, 0 failures",
+  "reporting_note": "The gallery caption was clarified after scores to say dataset labels are inherited; no predictions, sources bound by protocol, feature definitions or model selections were changed."
+}

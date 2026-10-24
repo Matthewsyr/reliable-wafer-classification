@@ -1,0 +1,5 @@
+{
+  "kind": "rf", "seed": 42, "fit_roles": ["train"], "validation_role": "tune",
+  "feature_set": "spatial71+linearity",
+  "rf": {"n_estimators": 200, "max_depth": null, "min_samples_leaf": 2, "max_features": "sqrt", "class_weight": "balanced_subsample", "n_jobs": 2}
+}

@@ -1,0 +1,270 @@
+{
+  "version": "geometry-v1.1",
+  "frozen_at_utc": "2026-10-24T13:59:11.147334+00:00",
+  "new_training_started": false,
+  "scope": "Only original development data. Reuse fixed lot/hash-component train/tune/audit. Audit has already been observed and is exploratory, not a new independent final test.",
+  "hypothesis": "Adding explicit nonlinear line-consensus descriptors to unchanged RF can improve Scratch detection without merely shifting normal errors to other defect labels.",
+  "prior_feature_audit": {
+    "original_count": 71,
+    "has_explicit_pca_ratio": false,
+    "has_full_defect_covariance": true,
+    "existing_columns": [
+      "defect_variance_x",
+      "defect_variance_y",
+      "defect_covariance_xy"
+    ],
+    "caveat": "PCA eigenvalue anisotropy is mathematically derived from existing covariance for nondegenerate samples, not new information. The experiment tests the whole six-feature block; gains cannot be attributed uniquely to PCA or any component."
+  },
+  "features": {
+    "baseline": [
+      "defect_ratio",
+      "valid_occupancy",
+      "defect_centroid_x",
+      "defect_centroid_y",
+      "defect_variance_x",
+      "defect_variance_y",
+      "defect_covariance_xy",
+      "defect_mean_radius",
+      "defect_std_radius",
+      "defect_centroid_radius",
+      "valid_centroid_x",
+      "valid_centroid_y",
+      "valid_variance_x",
+      "valid_variance_y",
+      "valid_covariance_xy",
+      "grid_r0_c0_defect_rate",
+      "grid_r0_c1_defect_rate",
+      "grid_r0_c2_defect_rate",
+      "grid_r0_c3_defect_rate",
+      "grid_r1_c0_defect_rate",
+      "grid_r1_c1_defect_rate",
+      "grid_r1_c2_defect_rate",
+      "grid_r1_c3_defect_rate",
+      "grid_r2_c0_defect_rate",
+      "grid_r2_c1_defect_rate",
+      "grid_r2_c2_defect_rate",
+      "grid_r2_c3_defect_rate",
+      "grid_r3_c0_defect_rate",
+      "grid_r3_c1_defect_rate",
+      "grid_r3_c2_defect_rate",
+      "grid_r3_c3_defect_rate",
+      "grid_r0_c0_occupancy",
+      "grid_r0_c1_occupancy",
+      "grid_r0_c2_occupancy",
+      "grid_r0_c3_occupancy",
+      "grid_r1_c0_occupancy",
+      "grid_r1_c1_occupancy",
+      "grid_r1_c2_occupancy",
+      "grid_r1_c3_occupancy",
+      "grid_r2_c0_occupancy",
+      "grid_r2_c1_occupancy",
+      "grid_r2_c2_occupancy",
+      "grid_r2_c3_occupancy",
+      "grid_r3_c0_occupancy",
+      "grid_r3_c1_occupancy",
+      "grid_r3_c2_occupancy",
+      "grid_r3_c3_occupancy",
+      "ring_0_defect_rate",
+      "ring_1_defect_rate",
+      "ring_2_defect_rate",
+      "ring_3_defect_rate",
+      "ring_0_valid_share",
+      "ring_1_valid_share",
+      "ring_2_valid_share",
+      "ring_3_valid_share",
+      "sector_0_defect_rate",
+      "sector_1_defect_rate",
+      "sector_2_defect_rate",
+      "sector_3_defect_rate",
+      "sector_4_defect_rate",
+      "sector_5_defect_rate",
+      "sector_6_defect_rate",
+      "sector_7_defect_rate",
+      "sector_0_valid_share",
+      "sector_1_valid_share",
+      "sector_2_valid_share",
+      "sector_3_valid_share",
+      "sector_4_valid_share",
+      "sector_5_valid_share",
+      "sector_6_valid_share",
+      "sector_7_valid_share"
+    ],
+    "added": [
+      "pca_anisotropy_existing_moments",
+      "strip_failed_share",
+      "strip_excess_failed_share",
+      "strip_span_fraction",
+      "strip_axial_occupancy",
+      "strip_rms_halfwidth"
+    ],
+    "definition_source": "linearity_features.py",
+    "angles_degrees": [
+      0,
+      5,
+      10,
+      15,
+      20,
+      25,
+      30,
+      35,
+      40,
+      45,
+      50,
+      55,
+      60,
+      65,
+      70,
+      75,
+      80,
+      85,
+      90,
+      95,
+      100,
+      105,
+      110,
+      115,
+      120,
+      125,
+      130,
+      135,
+      140,
+      145,
+      150,
+      155,
+      160,
+      165,
+      170,
+      175
+    ],
+    "strip_width_die_units": 2.0,
+    "strip_bin_phases": [
+      0.0,
+      0.5
+    ],
+    "axial_bin_width_die_units": 2.0,
+    "minimum_failed_dies": {
+      "pca": 2,
+      "strip": 3
+    },
+    "span_quantiles": [
+      0.05,
+      0.95
+    ],
+    "ties": "Maximum failed count; retain first ascending angle, phase, then lowest bin.",
+    "coordinate_system": "Original cell centres, same cell unit for x/y strip geometry. PCA uses original independent H/W-normalized coordinates.",
+    "no_fitted_preprocessing": true,
+    "no_label_input": true,
+    "raw_height_width_not_added_as_features": true,
+    "degenerate_rule": "PCA=0 for n<2; five strip features=0 for n<3; two distinct failures retain covariance-derived PCA anisotropy 1."
+  },
+  "variants": {
+    "rf_original71": 71,
+    "rf_linearity77": 77
+  },
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "random_forest": {
+    "n_estimators": 200,
+    "max_depth": null,
+    "min_samples_leaf": 2,
+    "max_features": "sqrt",
+    "class_weight": "balanced_subsample",
+    "n_jobs": 4
+  },
+  "controls": "Same train rows, labels, seed, RF hyperparameters, class order and argmax decision. Only append frozen feature block. sqrt feature sampling yields floor(sqrt(71))=floor(sqrt(77))=8 features at each node.",
+  "split": {
+    "source": "work/repair_experiments/protocol_audit/split_manifest.csv",
+    "train": 31457,
+    "tune": 11307,
+    "audit": 11591,
+    "grouping": "Connected components joining lots via exact image hashes; no lot/hash/component crosses roles.",
+    "use": "Fit each RF only on train once; emit tune probabilities; wait for PR threshold freeze then emit existing-audit probabilities. No RF train+tune refit in this ablation."
+  },
+  "cnn_reference": "Existing round2 screen baseline BN-natural 7-epoch raw logits, seeds42/123/2026, trained on exactly the same train rows. Convert with stable float64 softmax; do not retrain, choose biases, or imply conversion runtime is model inference.",
+  "metrics": [
+    "fixed-nine-class Macro-F1",
+    "per-class precision/recall/F1/support",
+    "confusion matrix",
+    "Scratch recall and OvR AP",
+    "normal-to-Scratch and normal-to-any-defect counts/rates",
+    "RF fit and predict times"
+  ],
+  "analysis_rule": "Report all seed-wise and paired differences. Consistent joint point-estimate improvement requires every seed: Scratch TP not lower, total normal FP and normal-to-Scratch FP not higher, Macro-F1 drop <=0.02; at least one strict Scratch TP increase and summed normal-to-Scratch FP strictly lower. Failing this rule is a tradeoff/no qualifying repair, not a hidden success.",
+  "uncertainty": {
+    "method": "Paired lot/hash-component bootstrap for mean-across-seed Scratch recall and normal error deltas, preserving each wafer across seeds.",
+    "replicates": 2000,
+    "seed": 20261030,
+    "limitation": "Exploratory conditional intervals, not selection-adjusted or independent confirmation; seeds share the same wafers."
+  },
+  "error_strata": {
+    "failure_count_edges": [
+      10,
+      50,
+      200
+    ],
+    "failure_rate_edges": [
+      0.01,
+      0.05,
+      0.1
+    ],
+    "pca_anisotropy_edges": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "strip_failed_share_edges": [
+      0.2,
+      0.5,
+      0.8
+    ],
+    "max_side_edges": [
+      32,
+      64
+    ],
+    "normal_shape_training_support_bins": [
+      "0",
+      "1-24",
+      "25+"
+    ],
+    "low_confidence": "maximum class probability <0.5, descriptive only; no decision rule changes",
+    "label_ambiguity": "Flag exact hashes with conflicting labels within original development only; do not relabel or remove."
+  },
+  "gallery": {
+    "partition": "tune",
+    "seed": 42,
+    "groups": [
+      "RF-original true Scratch hits",
+      "RF-original true Scratch missed to none",
+      "RF-original true Scratch missed to Loc/other",
+      "True Scratch with lowest RF-original maximum class probability"
+    ],
+    "per_group": 3,
+    "selection": "First 3 by sha256(geometry-gallery|source_row), except low-confidence group sorted by max probability then source row. Empty groups explicitly shown; overlap across groups allowed.",
+    "annotation": "Computed label, pixels, dimensions, failure count and model outputs; any visual causal explanation labeled conjecture."
+  },
+  "stop_rule": "Exactly two fixed feature sets times three seeds = six new RF fits maximum. No result-driven feature edits, hyperparameter expansion, split changes, or new CNN training. Preserve negative findings. No new official-test evaluation or model promotion.",
+  "input_sha256": {
+    "development_manifest": "e44fdc4cd4653328c53a69c952c36accabceab8c3a9b389699fa35015531bd33",
+    "split_manifest": "1d1428153810d7debfa63473ac32f40aa1970ce066566da79f77168a4e2e1500",
+    "original_features": "61c98d4dc415687e20386cd180b48a3ab3f87099e54b31defbae6606329d745b"
+  },
+  "bound_sources": {
+    "linearity_features.py": "36228305e1cc824798bec07fb559d1f6bc4798339e776a981b0ecf23b8975b24",
+    "original_features.py": "0dc546f82fe12a1ec054db26692597ae727c8195e24c428eb0b9c0afceb3e0f4",
+    "run_geometry.py": "96ff46d347dac3fff83fbca7d789b3bfe0c2d42894df4de6b4ad231e1c441c72"
+  },
+  "original_source_sha256": "0dc546f82fe12a1ec054db26692597ae727c8195e24c428eb0b9c0afceb3e0f4",
+  "formal_test_access": false,
+  "amendments": [
+    {
+      "previous_protocol_sha256": "14a7e6e7b9282b0a04fe25096ede2a941df8e410e4bd8baac32c6159db479e88",
+      "archive": "protocol_v1_initial.json",
+      "reason": "Independent pre-training review: retain covariance-derived PCA anisotropy for two failures; only strip features require three. Prevent min-count gating from being misdescribed as pure moment re-expression.",
+      "new_training_or_scores_observed": false,
+      "changed_parameters": "Degenerate PCA handling only; fixed 36x2 strip grid and six-feature block unchanged."
+    }
+  ]
+}

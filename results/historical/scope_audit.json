@@ -1,0 +1,474 @@
+{
+  "reviewed_at_utc": "2026-10-24T13:54:27.183027+00:00",
+  "status": "PASS",
+  "checks": {
+    "freeze_hash_matches_start_and_status": true,
+    "freeze_precedes_first_processing": true,
+    "processing_precedes_score_completion": true,
+    "historical_run_completed_real_data": true,
+    "saved_verification_passed": true,
+    "frozen_source:cnn_pipeline.py": true,
+    "frozen_source:wafer_cnn.py": true,
+    "frozen_source:wafer_features.py": true,
+    "frozen_manifest:development_metadata.csv.gz": true,
+    "frozen_manifest:protected_final_test_manifest.csv.gz": true,
+    "frozen_manifest:split_manifests.csv.gz": true,
+    "frozen_manifest:learning_curve_manifests.csv.gz": true,
+    "frozen_cnn_checkpoint": true,
+    "frozen_rf_checkpoint": true,
+    "duplicate_group_counts_match_historical_record": true,
+    "cross_split_test_rows_match_original_test_audit": true,
+    "new_split_no_lot_hash_component_overlap": true
+  },
+  "historical_freeze": {
+    "sha256": "ab0ba9c73ee60dd992e8945e0a17bc52e3f77ae12609cb932ed757811e57810a",
+    "frozen_utc": "2026-10-22T06:48:42.503373+00:00",
+    "first_test_processing_utc": "2026-10-22T07:42:49.117800+00:00",
+    "scoring_completed_utc": "2026-10-22T07:51:38.855605+00:00"
+  },
+  "formal_results_status": "Completed historically and retained unchanged. Saved source/checkpoint/manifests, freeze receipt, start/completion records and prior independent recomputation support the historical RF/CNN official result. This audit does not claim that timestamps alone prove the absence of all out-of-band activity.",
+  "official_test_new_scoring_this_task": false,
+  "official_test_images_loaded_this_task": false,
+  "official_test_predictions_loaded_this_task": false,
+  "geometry_and_threshold_scope": "Only development exploratory. Test failures motivated prior repairs and the final test is no longer untouched. No new independent test or industrial deployment readiness is claimed. Previously seen development audit is also reused exploration.",
+  "duplicate_and_conflict_audit": {
+    "duplicate_hash_groups": 3250,
+    "conflicting_label_hash_groups": 14,
+    "conflicting_label_rows": 28,
+    "cross_original_train_test_hash_groups": 3158,
+    "cross_original_test_rows": 3158,
+    "policy": "Preserve all original sample identities and labels; identical content can occur naturally and is not proof of accidental copies. Report conflicting-label groups explicitly; do not relabel or remove them using model/test performance. Original formal primary scores use all original test rows, with the predeclared nonidentical sensitivity table separately.",
+    "development_validation_policy": "Original lot-wise validation removes lot overlap but permits some exact content duplicates across lots. New split uses lot-plus-hash connected components, eliminating cross-role exact-image overlap without deleting samples."
+  },
+  "conflict_groups": [
+    {
+      "map_sha256": "fc2f77d6f896758c2b2c6ae9ad2e1bed50191673253ee3e8d3bad5ada1a66e24",
+      "rows": 2,
+      "labels": [
+        "Edge-Loc",
+        "none"
+      ],
+      "source_splits": [
+        "test",
+        "train"
+      ],
+      "lots": 2
+    },
+    {
+      "map_sha256": "6bf32a1e070cdc39c59047c1848ce680c17e4541760042f1e211fbdca00cb3c9",
+      "rows": 2,
+      "labels": [
+        "Edge-Loc",
+        "none"
+      ],
+      "source_splits": [
+        "test",
+        "train"
+      ],
+      "lots": 2
+    },
+    {
+      "map_sha256": "1b0af3d1eab07cf83a47aaf5deb2f25d1163dffaa141aee9ddc3581c08af29e9",
+      "rows": 2,
+      "labels": [
+        "Edge-Loc",
+        "none"
+      ],
+      "source_splits": [
+        "test",
+        "train"
+      ],
+      "lots": 2
+    },
+    {
+      "map_sha256": "72d86a9441cc11e6ac9d18afbc677973968518ff840447a6c2e19533cb517cda",
+      "rows": 2,
+      "labels": [
+        "Center",
+        "none"
+      ],
+      "source_splits": [
+        "test",
+        "train"
+      ],
+      "lots": 2
+    },
+    {
+      "map_sha256": "c57eb0c14a900f042cf714353f0642753d31223b4f522b339bcabb5fdb3d2f29",
+      "rows": 2,
+      "labels": [
+        "Loc",
+        "none"
+      ],
+      "source_splits": [
+        "test",
+        "train"
+      ],
+      "lots": 2
+    },
+    {
+      "map_sha256": "1cde5894242fa49979a77ed3235a5453ee7467a2af0ba6ece74227f65966de8d",
+      "rows": 2,
+      "labels": [
+        "Edge-Loc",
+        "none"
+      ],
+      "source_splits": [
+        "test",
+        "train"
+      ],
+      "lots": 2
+    },
+    {
+      "map_sha256": "aabdcb1045de531bb6e91704cd938abe5b19ed3d2b4d5d12763caf80ef59fea5",
+      "rows": 2,
+      "labels": [
+        "Edge-Loc",
+        "none"
+      ],
+      "source_splits": [
+        "test",
+        "train"
+      ],
+      "lots": 2
+    },
+    {
+      "map_sha256": "b6224878a48ca11e08579c03d3614124240b2ae7aa3c49712875aee177c805ed",
+      "rows": 2,
+      "labels": [
+        "Center",
+        "none"
+      ],
+      "source_splits": [
+        "test",
+        "train"
+      ],
+      "lots": 2
+    },
+    {
+      "map_sha256": "d536c0f574cd75ba950946b7a7ef6d9b4cd98d7f97fc54c999af30a3b88ac8e2",
+      "rows": 2,
+      "labels": [
+        "Edge-Loc",
+        "none"
+      ],
+      "source_splits": [
+        "test",
+        "train"
+      ],
+      "lots": 2
+    },
+    {
+      "map_sha256": "e12d18fb76f58ae06fac5abecf8ff783d060e08b3b6718ccccc1984959c8ea00",
+      "rows": 2,
+      "labels": [
+        "Center",
+        "Loc"
+      ],
+      "source_splits": [
+        "test",
+        "train"
+      ],
+      "lots": 2
+    },
+    {
+      "map_sha256": "1e748cf9545d4d8f7798410e6a98c0848d07a556bfdc60af68d8fb6763966173",
+      "rows": 2,
+      "labels": [
+        "Loc",
+        "none"
+      ],
+      "source_splits": [
+        "test",
+        "train"
+      ],
+      "lots": 2
+    },
+    {
+      "map_sha256": "5c8df005e61630cbecdf944d629c5997d8c9f7ab8d7526e2aef9be08a3d07bf4",
+      "rows": 2,
+      "labels": [
+        "Edge-Loc",
+        "Edge-Ring"
+      ],
+      "source_splits": [
+        "test",
+        "train"
+      ],
+      "lots": 2
+    },
+    {
+      "map_sha256": "d523f4fd2e364592b4393d64510c96f3fe87b55a5b0b8d15676019638ae1ee87",
+      "rows": 2,
+      "labels": [
+        "Edge-Loc",
+        "Edge-Ring"
+      ],
+      "source_splits": [
+        "test",
+        "train"
+      ],
+      "lots": 2
+    },
+    {
+      "map_sha256": "1c1d72467a7396ce63c9b85155723fe2833fba29ed529dcebe890d705b476f55",
+      "rows": 2,
+      "labels": [
+        "Edge-Loc",
+        "none"
+      ],
+      "source_splits": [
+        "test",
+        "train"
+      ],
+      "lots": 2
+    }
+  ],
+  "historical_split_diagnostics": [
+    {
+      "protocol": "lot",
+      "seed": "42",
+      "train_rows": "43657",
+      "val_rows": "10698",
+      "train_lots": "4647",
+      "val_lots": "1162",
+      "shared_lots": "0",
+      "shared_image_hashes": "25",
+      "val_rows_with_train_identical_map": "25"
+    },
+    {
+      "protocol": "random",
+      "seed": "42",
+      "train_rows": "43657",
+      "val_rows": "10698",
+      "train_lots": "5305",
+      "val_lots": "3209",
+      "shared_lots": "2705",
+      "shared_image_hashes": "28",
+      "val_rows_with_train_identical_map": "28"
+    },
+    {
+      "protocol": "lot",
+      "seed": "123",
+      "train_rows": "43712",
+      "val_rows": "10643",
+      "train_lots": "4647",
+      "val_lots": "1162",
+      "shared_lots": "0",
+      "shared_image_hashes": "20",
+      "val_rows_with_train_identical_map": "20"
+    },
+    {
+      "protocol": "random",
+      "seed": "123",
+      "train_rows": "43712",
+      "val_rows": "10643",
+      "train_lots": "5316",
+      "val_lots": "3198",
+      "shared_lots": "2705",
+      "shared_image_hashes": "40",
+      "val_rows_with_train_identical_map": "40"
+    },
+    {
+      "protocol": "lot",
+      "seed": "2026",
+      "train_rows": "42831",
+      "val_rows": "11524",
+      "train_lots": "4647",
+      "val_lots": "1162",
+      "shared_lots": "0",
+      "shared_image_hashes": "21",
+      "val_rows_with_train_identical_map": "21"
+    },
+    {
+      "protocol": "random",
+      "seed": "2026",
+      "train_rows": "42831",
+      "val_rows": "11524",
+      "train_lots": "5272",
+      "val_lots": "3292",
+      "shared_lots": "2755",
+      "shared_image_hashes": "33",
+      "val_rows_with_train_identical_map": "34"
+    }
+  ],
+  "new_split_overlap_checks": {
+    "lot_cross_role_groups": 0,
+    "map_sha256_cross_role_groups": 0,
+    "component_cross_role_groups": 0
+  },
+  "new_split_support": {
+    "train": {
+      "none": 20780,
+      "Edge-Loc": 1375,
+      "Loc": 1005,
+      "Center": 2022,
+      "Edge-Ring": 5318,
+      "Scratch": 321,
+      "Random": 377,
+      "Near-full": 36,
+      "Donut": 223
+    },
+    "tune": {
+      "none": 7959,
+      "Loc": 296,
+      "Edge-Ring": 1541,
+      "Edge-Loc": 535,
+      "Random": 116,
+      "Near-full": 11,
+      "Center": 652,
+      "Scratch": 99,
+      "Donut": 98
+    },
+    "audit": {
+      "none": 7991,
+      "Edge-Loc": 507,
+      "Loc": 319,
+      "Scratch": 80,
+      "Random": 116,
+      "Edge-Ring": 1695,
+      "Center": 788,
+      "Donut": 88,
+      "Near-full": 7
+    }
+  },
+  "code_review": {
+    "label_order": "Fixed nine classes across original CNN/RF and current probabilities.",
+    "input_encoding": "Two continuous coverage channels derived from valid/failed binary masks; centered padding then area resize. Original map values are categorical, and interpolation operates on channels rather than categorical numeric codes.",
+    "fitted_transforms": "Original RF features are deterministic per-map features; CNN preprocessing has no fitted normalization. New geometry per-map deterministic features; RF train-only fitting. BN recalibration, balancing and augmentation in previous repairs were restricted to the declared fit indices.",
+    "data_identity": "No silent deletion of duplicate content, no model-based relabeling of normal maps, and no changing test composition to improve scores.",
+    "class_support": "New tune has 99 and reused audit 80 Scratch examples; rare-class conclusions need exact counts and small-sample caveats."
+  },
+  "reproducibility_limits": [
+    "Historical RF/CNN numerical verification was already independently completed; this task verifies preserved artifact identity and extracts saved metrics rather than rerunning test inference.",
+    "Historical original lot-validation files include class predictions but no saved class probabilities. Their saved per-class metrics are kept as a separate reference; new matched PR analysis reuses existing CNN logits and the two newly controlled RF ablations.",
+    "Three seeds on overlapping or identical heldout wafers describe training sensitivity; they are not independent sample replicates."
+  ],
+  "source_paths": {
+    "historical_artifacts": "<local-archive>/kaggle_cnn_v3/wm811k_cnn",
+    "original_baseline_artifacts": "<local-archive>/wm811k_baseline/kaggle_v1/wm811k_baseline",
+    "current_split": "work/repair_experiments/protocol_audit/split_manifest.csv"
+  },
+  "historical_metrics": [
+    {
+      "scope": "historical_original_lot_validation",
+      "model": "rf_weighted_full",
+      "seed": 42,
+      "macro_f1": 0.8446246488922159,
+      "accuracy": 0.9656010469246589,
+      "scratch_precision": 0.7708333333333334,
+      "scratch_recall": 0.3394495412844037,
+      "scratch_f1": 0.4713375796178344,
+      "scratch_support": 109,
+      "comparability": "Original seed-specific 80/20 lot holdouts; not the new fixed train/tune/audit partition."
+    },
+    {
+      "scope": "historical_original_lot_validation",
+      "model": "rf_weighted_full",
+      "seed": 123,
+      "macro_f1": 0.8517318838624314,
+      "accuracy": 0.9675843277271446,
+      "scratch_precision": 0.7551020408163265,
+      "scratch_recall": 0.3135593220338983,
+      "scratch_f1": 0.4431137724550898,
+      "scratch_support": 118,
+      "comparability": "Original seed-specific 80/20 lot holdouts; not the new fixed train/tune/audit partition."
+    },
+    {
+      "scope": "historical_original_lot_validation",
+      "model": "rf_weighted_full",
+      "seed": 2026,
+      "macro_f1": 0.8620972583353801,
+      "accuracy": 0.9672856646997571,
+      "scratch_precision": 0.8409090909090909,
+      "scratch_recall": 0.3490566037735849,
+      "scratch_f1": 0.49333333333333335,
+      "scratch_support": 106,
+      "comparability": "Original seed-specific 80/20 lot holdouts; not the new fixed train/tune/audit partition."
+    },
+    {
+      "scope": "historical_original_lot_validation",
+      "model": "cnn_medium_unweighted",
+      "seed": 42,
+      "macro_f1": 0.8425770692545177,
+      "accuracy": 0.9661618994204524,
+      "scratch_precision": 0.44166666666666665,
+      "scratch_recall": 0.48623853211009177,
+      "scratch_f1": 0.462882096069869,
+      "scratch_support": 109,
+      "comparability": "Original seed-specific 80/20 lot holdouts; not the new fixed train/tune/audit partition."
+    },
+    {
+      "scope": "historical_original_lot_validation",
+      "model": "cnn_medium_unweighted",
+      "seed": 123,
+      "macro_f1": 0.8374789286833182,
+      "accuracy": 0.951517429296251,
+      "scratch_precision": 0.6226415094339622,
+      "scratch_recall": 0.2796610169491525,
+      "scratch_f1": 0.38596491228070173,
+      "scratch_support": 118,
+      "comparability": "Original seed-specific 80/20 lot holdouts; not the new fixed train/tune/audit partition."
+    },
+    {
+      "scope": "historical_original_lot_validation",
+      "model": "cnn_medium_unweighted",
+      "seed": 2026,
+      "macro_f1": 0.8617608542856505,
+      "accuracy": 0.9651162790697675,
+      "scratch_precision": 0.5930232558139535,
+      "scratch_recall": 0.4811320754716981,
+      "scratch_f1": 0.53125,
+      "scratch_support": 106,
+      "comparability": "Original seed-specific 80/20 lot holdouts; not the new fixed train/tune/audit partition."
+    },
+    {
+      "scope": "historical_frozen_final_test",
+      "model": "rf_weighted_full",
+      "seed": 42,
+      "macro_f1": 0.4486722365067695,
+      "accuracy": 0.697145748134407,
+      "scratch_precision": 0.006946231026498585,
+      "scratch_recall": 0.03896103896103896,
+      "scratch_f1": 0.011790393013100437,
+      "scratch_support": 693,
+      "comparability": "Original frozen one-time evaluation; retained unchanged, not reused to select the 2026-10-24 geometry/threshold additions."
+    },
+    {
+      "scope": "historical_predeclared_nonidentical_sensitivity",
+      "model": "rf_weighted_full",
+      "seed": 42,
+      "macro_f1": 0.4443465013540441,
+      "accuracy": 0.6889818688981869,
+      "scratch_precision": 0.0041279669762641896,
+      "scratch_recall": 0.02346041055718475,
+      "scratch_f1": 0.007020623080298377,
+      "scratch_support": 682,
+      "comparability": "Original frozen one-time evaluation; retained unchanged, not reused to select the 2026-10-24 geometry/threshold additions."
+    },
+    {
+      "scope": "historical_frozen_final_test",
+      "model": "cnn_medium_unweighted",
+      "seed": 42,
+      "macro_f1": 0.4515509840207399,
+      "accuracy": 0.4778784940343185,
+      "scratch_precision": 0.010301895107977082,
+      "scratch_recall": 0.5396825396825397,
+      "scratch_f1": 0.020217855501797444,
+      "scratch_support": 693,
+      "comparability": "Original frozen one-time evaluation; retained unchanged, not reused to select the 2026-10-24 geometry/threshold additions."
+    },
+    {
+      "scope": "historical_predeclared_nonidentical_sensitivity",
+      "model": "cnn_medium_unweighted",
+      "seed": 42,
+      "macro_f1": 0.448847048554895,
+      "accuracy": 0.46406264889073695,
+      "scratch_precision": 0.010112978782033618,
+      "scratch_recall": 0.5381231671554252,
+      "scratch_f1": 0.019852861625013523,
+      "scratch_support": 682,
+      "comparability": "Original frozen one-time evaluation; retained unchanged, not reused to select the 2026-10-24 geometry/threshold additions."
+    }
+  ]
+}

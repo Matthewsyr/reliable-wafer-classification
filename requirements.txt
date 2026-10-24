@@ -1,0 +1,7 @@
+# Exact versions used by the portable-package validation environment.
+# Historical experiments preserve their own environment records.
+numpy==2.1.3
+pandas==2.3.3
+scikit-learn==1.6.1
+joblib==1.6.0
+

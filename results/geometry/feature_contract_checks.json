@@ -1,0 +1,22 @@
+{
+  "scope": "Synthetic pre-training feature contract checks; n=2 PCA correction verified. No model metrics.",
+  "passed": true,
+  "checks": {
+    "input_unchanged": true,
+    "finite_shape_dtype": true,
+    "clean_line_all_failures_in_strip": true,
+    "clean_line_zero_width": true,
+    "quarter_turn_clean_line": true,
+    "line_more_consensus_than_fixed_scatter": true,
+    "0_failures_zero_vector": true,
+    "1_failures_zero_vector": true,
+    "full_failure_zero_excess": true,
+    "invalid_0_rejected": true,
+    "invalid_1_rejected": true,
+    "invalid_2_rejected": true,
+    "invalid_3_rejected": true,
+    "invalid_4_rejected": true,
+    "two_failures_pca_one_strip_zero": true
+  },
+  "linearity_source_sha256": "36228305e1cc824798bec07fb559d1f6bc4798339e776a981b0ecf23b8975b24"
+}

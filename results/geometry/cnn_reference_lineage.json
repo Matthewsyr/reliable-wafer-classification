@@ -1,0 +1,38 @@
+{
+  "scope": "Metadata/hashes only; no inference and no new CNN training",
+  "train_indices_match": true,
+  "split_sha256": "1d1428153810d7debfa63473ac32f40aa1970ce066566da79f77168a4e2e1500",
+  "references": [
+    {
+      "seed": 42,
+      "training_rows": 31457,
+      "epochs": 7,
+      "normalization": "BN",
+      "sampler": "natural",
+      "training_record_sha256": "a4234c14f33483d43f38cd7043f7fd37dd2d572fd4c4d0b2a72d924003255967",
+      "weights_sha256": "3c9fbb2c2b58d20d3986b80186a692474137ef40694f98aceaac58ef5277179e",
+      "raw_tune_logits_sha256": "210a4e127f13993847e7a4b1e68d3189c913d19cf038c86e1ad036f6cde3541e"
+    },
+    {
+      "seed": 123,
+      "training_rows": 31457,
+      "epochs": 7,
+      "normalization": "BN",
+      "sampler": "natural",
+      "training_record_sha256": "d762449f926038bb51d795c6f2dc538ca3ccec0090664747a4c8cad0e12a5349",
+      "weights_sha256": "6a81fa4f6b101c005329e7f54234ae03ec4a5c75acc3569fd66ff51487ac359d",
+      "raw_tune_logits_sha256": "9736e96c62cea87efb75b19293c3b5871baee431b7e276393fd7416e6f3fe9cc"
+    },
+    {
+      "seed": 2026,
+      "training_rows": 31457,
+      "epochs": 7,
+      "normalization": "BN",
+      "sampler": "natural",
+      "training_record_sha256": "0a6a5b8db33af2a4858361299306e1b5de8d1d9c00f6470176cfab0c20839b82",
+      "weights_sha256": "7c419dd523715339f822b5c46349b0b6822550089f67c0a316a9c9904525b3dc",
+      "raw_tune_logits_sha256": "3907302239cd697f72b669f9523cff23b77bd31f2157af954e0a218ff4078899"
+    }
+  ],
+  "note": "All three existing CNNs trained on precisely this ablation train partition; heldout audit remains previously observed development data."
+}

@@ -1,0 +1,101 @@
+{
+  "experiment_completed": true,
+  "seconds": 716.2232517999364,
+  "chosen": {
+    "variant": "gn_swa_w4",
+    "scratch_bias": -0.5,
+    "normal_bias": 1.5,
+    "eligible": true,
+    "guards_by_seed": [
+      {
+        "seed": 42,
+        "scratch_recall_noninferior": true,
+        "normal_total_fp_not_increased": true,
+        "normal_scratch_fp_not_increased": true,
+        "macro_f1_within_2pp": true
+      },
+      {
+        "seed": 123,
+        "scratch_recall_noninferior": true,
+        "normal_total_fp_not_increased": true,
+        "normal_scratch_fp_not_increased": true,
+        "macro_f1_within_2pp": true
+      },
+      {
+        "seed": 2026,
+        "scratch_recall_noninferior": true,
+        "normal_total_fp_not_increased": true,
+        "normal_scratch_fp_not_increased": true,
+        "macro_f1_within_2pp": true
+      }
+    ],
+    "both_mean_fp_strictly_lower": true,
+    "mean_metrics": {
+      "normal_any_defect_rate": 0.003643673828370398,
+      "normal_to_scratch_rate": 0.0027222850441847805,
+      "scratch_recall": 0.5690235690235691,
+      "macro_f1": 0.899179613583244
+    }
+  },
+  "audit_evaluations": 12,
+  "joint_guards_by_stage_seed": [
+    {
+      "stage": "screen",
+      "seed": 42,
+      "scratch_recall_noninferior": true,
+      "normal_total_fp_not_increased": true,
+      "normal_scratch_fp_not_increased": true,
+      "macro_f1_within_2pp": true
+    },
+    {
+      "stage": "screen",
+      "seed": 123,
+      "scratch_recall_noninferior": true,
+      "normal_total_fp_not_increased": true,
+      "normal_scratch_fp_not_increased": true,
+      "macro_f1_within_2pp": true
+    },
+    {
+      "stage": "screen",
+      "seed": 2026,
+      "scratch_recall_noninferior": true,
+      "normal_total_fp_not_increased": true,
+      "normal_scratch_fp_not_increased": true,
+      "macro_f1_within_2pp": true
+    },
+    {
+      "stage": "refit",
+      "seed": 42,
+      "scratch_recall_noninferior": false,
+      "normal_total_fp_not_increased": true,
+      "normal_scratch_fp_not_increased": true,
+      "macro_f1_within_2pp": true
+    },
+    {
+      "stage": "refit",
+      "seed": 123,
+      "scratch_recall_noninferior": true,
+      "normal_total_fp_not_increased": false,
+      "normal_scratch_fp_not_increased": false,
+      "macro_f1_within_2pp": true
+    },
+    {
+      "stage": "refit",
+      "seed": 2026,
+      "scratch_recall_noninferior": false,
+      "normal_total_fp_not_increased": true,
+      "normal_scratch_fp_not_increased": true,
+      "macro_f1_within_2pp": true
+    }
+  ],
+  "all_exploratory_point_guards_pass": false,
+  "strict_both_mean_fp_improvement_by_stage": {
+    "screen": true,
+    "refit": true
+  },
+  "exploratory_point_objective_pass": false,
+  "independent_confirmation": false,
+  "final_test_evaluated": false,
+  "official_model_replaced": false,
+  "selection_sha256": "b829ec7852b4eb023a80f7ddd29c829f82a76d4473c7e0b7367a2ae59eca0045"
+}

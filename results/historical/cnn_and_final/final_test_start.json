@@ -1,0 +1,11 @@
+{
+  "first_test_processing_utc": "2026-10-22T07:42:49.117800+00:00",
+  "freeze_sha256": "ab0ba9c73ee60dd992e8945e0a17bc52e3f77ae12609cb932ed757811e57810a",
+  "final_cnn_checkpoint_sha256": "498ad29916f42d249bb39d06a01fb405b5cc29781cc62707f9edee7c94210b0d",
+  "final_rf_checkpoint_sha256": "e1e6b62653e5f9504f16e8ef3ba21e9de92bdb08446eb12e82256c769df40f9b",
+  "models": [
+    "rf_weighted_full",
+    "cnn_medium_unweighted"
+  ],
+  "final_test_scored": false
+}

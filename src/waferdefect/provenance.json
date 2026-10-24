@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "project": "Reliable Wafer Defect Classification: Generalization, Rare-Class Detection, and Decision Trade-offs",
+  "source_commit_policy": "Recovered workspace had no Git repository; no historical commit IDs are invented. Kaggle saved-version IDs and SHA-256 pin source evidence. The publication commit is separate.",
+  "original_dataset_sha256": "1d04fccb3dd3176b276878b926b20fead7e077c5751e4d353ea9741a5e7b5c65",
+  "files": [
+    {
+      "packaged_path": "src/waferdefect/features.py",
+      "source_artifact": "stage03/source/wafer_features.py",
+      "sha256": "0dc546f82fe12a1ec054db26692597ae727c8195e24c428eb0b9c0afceb3e0f4",
+      "source_commit": null,
+      "kaggle_script_version": "360951977",
+      "adaptation": "byte-identical copied source; filename/location only"
+    },
+    {
+      "packaged_path": "src/waferdefect/cnn.py",
+      "source_artifact": "stage03/source/wafer_cnn.py",
+      "sha256": "88671864f38eb400c9ee9678a71cfa3abf8015c74e5fa6b48b911cf00c71582d",
+      "source_commit": null,
+      "kaggle_script_version": "360951977",
+      "adaptation": "byte-identical copied source; filename/location only"
+    },
+    {
+      "packaged_path": "scripts/legacy/cnn_pipeline.py",
+      "source_artifact": "stage03/source/cnn_pipeline.py",
+      "sha256": "af419ed89c7c70ef538f40df3337a0f1396f8397ff0857c722ddfa05770a02c4",
+      "source_commit": null,
+      "kaggle_script_version": "360951977",
+      "adaptation": "byte-identical copied source; filename/location only"
+    },
+    {
+      "packaged_path": "scripts/legacy/baseline_pipeline.py",
+      "source_artifact": "stage02/baseline_pipeline.py",
+      "sha256": "1f1c9f8d0d80f5a7896f06f79064e5a5aa75b8e2cc7677d69930ded6d5dd37be",
+      "source_commit": null,
+      "kaggle_script_version": "360929617",
+      "adaptation": "byte-identical copied source; filename/location only"
+    },
+    {
+      "packaged_path": "src/waferdefect/geometry.py",
+      "source_artifact": "final_delivery/geometry/linearity_features.py",
+      "sha256": "36228305e1cc824798bec07fb559d1f6bc4798339e776a981b0ecf23b8975b24",
+      "source_commit": null,
+      "kaggle_script_version": null,
+      "adaptation": "byte-identical copied source; filename/location only"
+    }
+  ],
+  "new_portable_modules": [
+    "labels.py",
+    "io.py",
+    "split.py",
+    "evaluation.py",
+    "data.py",
+    "experiment.py",
+    "cli.py"
+  ],
+  "new_split_policy": "Connected lot OR exact-map components; historical lot-only results remain historical and are not silently redefined by the new default split."
+}

@@ -1,0 +1,11 @@
+{
+  "labeled_rows": 172950,
+  "development_rows": 54355,
+  "protected_final_test_rows": 118595,
+  "development_lots": 5809,
+  "original_train_test_shared_lots": 0,
+  "duplicate_map_groups": 3250,
+  "duplicate_groups_with_conflicting_labels": 14,
+  "duplicate_groups_across_original_train_test": 3158,
+  "duplicate_policy": "Report without silently removing naturally identical maps, including normal maps."
+}

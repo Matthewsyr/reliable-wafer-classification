@@ -1,0 +1,3317 @@
+{
+  "status": "completed",
+  "protocol_sha256": "694d55963076f770211075653f423f16c3f62e500f798c70572dbd7efa059a76",
+  "sources": {
+    "metrics.csv": "3e4449dca7b7e9571f4c86dcf123689258e0b6d5109f4b73e3e52eb39dcfad15",
+    "error_strata.csv": "40625630ceb34372a86c53057f2207309632c3155f40e2d75b78ddb6112b694c",
+    "scratch_error_cohorts.csv": "f733cc556f3b23ef3f58bc46dfae6c570a8611c18a9ab61f83f093a1f0de71dc",
+    "conclusion.json": "1bec9cc70f82f0e8ba6072650cda2510ff0e77d585d728ff6aff81ffbccd1cac",
+    "gallery_selection.json": "4632f6e0cf36c070681fe2450feb1b059d408ff990e4c44f7ef9fbfc4ec22d3c"
+  },
+  "model_summaries": [
+    {
+      "role": "tune",
+      "model": "rf_original71",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "wafer_count": 11307,
+      "true_scratch_count": 99,
+      "normal_count": 7959,
+      "scratch_correct_count_by_seed": [
+        30,
+        33,
+        30
+      ],
+      "normal_to_scratch_count_by_seed": [
+        47,
+        54,
+        42
+      ],
+      "normal_any_defect_count_by_seed": [
+        84,
+        94,
+        88
+      ],
+      "macro_f1": {
+        "mean": 0.8170823165839889,
+        "sample_std": 0.0031540748063940884,
+        "min": 0.8149574410822513,
+        "max": 0.8207063682716008
+      },
+      "scratch_recall": {
+        "mean": 0.31313131313131315,
+        "sample_std": 0.017495462702715917,
+        "min": 0.30303030303030304,
+        "max": 0.3333333333333333
+      },
+      "scratch_precision": {
+        "mean": 0.31872071483055464,
+        "sample_std": 0.006423508431678897,
+        "min": 0.3142857142857143,
+        "max": 0.32608695652173914
+      },
+      "scratch_average_precision_ovr": {
+        "mean": 0.25987815672936687,
+        "sample_std": 0.019379459541546587,
+        "min": 0.2379391412540597,
+        "max": 0.2746651442774603
+      },
+      "worst_seed": {
+        "scratch_recall": 42,
+        "normal_to_scratch_count": 123,
+        "normal_any_defect_count": 123,
+        "ties": "If a metric ties, the first fixed seed is listed; full seed counts remain available."
+      }
+    },
+    {
+      "role": "tune",
+      "model": "rf_linearity77",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "wafer_count": 11307,
+      "true_scratch_count": 99,
+      "normal_count": 7959,
+      "scratch_correct_count_by_seed": [
+        38,
+        35,
+        37
+      ],
+      "normal_to_scratch_count_by_seed": [
+        5,
+        4,
+        4
+      ],
+      "normal_any_defect_count_by_seed": [
+        27,
+        20,
+        19
+      ],
+      "macro_f1": {
+        "mean": 0.8510905515605741,
+        "sample_std": 0.002303037988795784,
+        "min": 0.8489058653538533,
+        "max": 0.8534960373109685
+      },
+      "scratch_recall": {
+        "mean": 0.37037037037037035,
+        "sample_std": 0.015429547794464097,
+        "min": 0.35353535353535354,
+        "max": 0.3838383838383838
+      },
+      "scratch_precision": {
+        "mean": 0.8269831786009744,
+        "sample_std": 0.013500131019535833,
+        "min": 0.813953488372093,
+        "max": 0.8409090909090909
+      },
+      "scratch_average_precision_ovr": {
+        "mean": 0.5686352855037162,
+        "sample_std": 0.007573454820282649,
+        "min": 0.5621420347490387,
+        "max": 0.5769549266401989
+      },
+      "worst_seed": {
+        "scratch_recall": 123,
+        "normal_to_scratch_count": 42,
+        "normal_any_defect_count": 42,
+        "ties": "If a metric ties, the first fixed seed is listed; full seed counts remain available."
+      }
+    },
+    {
+      "role": "tune",
+      "model": "cnn_bn_reference",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "wafer_count": 11307,
+      "true_scratch_count": 99,
+      "normal_count": 7959,
+      "scratch_correct_count_by_seed": [
+        58,
+        27,
+        64
+      ],
+      "normal_to_scratch_count_by_seed": [
+        242,
+        14,
+        147
+      ],
+      "normal_any_defect_count_by_seed": [
+        252,
+        50,
+        270
+      ],
+      "macro_f1": {
+        "mean": 0.8357186827651129,
+        "sample_std": 0.0039454722753753165,
+        "min": 0.8314761215658741,
+        "max": 0.8392777593616633
+      },
+      "scratch_recall": {
+        "mean": 0.5016835016835017,
+        "sample_std": 0.20058412132803344,
+        "min": 0.2727272727272727,
+        "max": 0.6464646464646465
+      },
+      "scratch_precision": {
+        "mean": 0.3156099655103639,
+        "sample_std": 0.18108536296839864,
+        "min": 0.17261904761904762,
+        "max": 0.5192307692307693
+      },
+      "scratch_average_precision_ovr": {
+        "mean": 0.3924155042277854,
+        "sample_std": 0.06640788534368243,
+        "min": 0.31579203114327264,
+        "max": 0.43330401494910425
+      },
+      "worst_seed": {
+        "scratch_recall": 123,
+        "normal_to_scratch_count": 42,
+        "normal_any_defect_count": 2026,
+        "ties": "If a metric ties, the first fixed seed is listed; full seed counts remain available."
+      }
+    },
+    {
+      "role": "audit",
+      "model": "rf_original71",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "wafer_count": 11591,
+      "true_scratch_count": 80,
+      "normal_count": 7991,
+      "scratch_correct_count_by_seed": [
+        25,
+        26,
+        26
+      ],
+      "normal_to_scratch_count_by_seed": [
+        9,
+        3,
+        2
+      ],
+      "normal_any_defect_count_by_seed": [
+        108,
+        90,
+        98
+      ],
+      "macro_f1": {
+        "mean": 0.8387649768129127,
+        "sample_std": 0.002262231689377862,
+        "min": 0.836326167399915,
+        "max": 0.8407948435492013
+      },
+      "scratch_recall": {
+        "mean": 0.32083333333333336,
+        "sample_std": 0.007216878364870329,
+        "min": 0.3125,
+        "max": 0.325
+      },
+      "scratch_precision": {
+        "mean": 0.5026984126984126,
+        "sample_std": 0.049920761097072205,
+        "min": 0.44642857142857145,
+        "max": 0.5416666666666666
+      },
+      "scratch_average_precision_ovr": {
+        "mean": 0.3186388134544429,
+        "sample_std": 0.009487000016021386,
+        "min": 0.3094257559958574,
+        "max": 0.3283778706544401
+      },
+      "worst_seed": {
+        "scratch_recall": 42,
+        "normal_to_scratch_count": 42,
+        "normal_any_defect_count": 42,
+        "ties": "If a metric ties, the first fixed seed is listed; full seed counts remain available."
+      }
+    },
+    {
+      "role": "audit",
+      "model": "rf_linearity77",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "wafer_count": 11591,
+      "true_scratch_count": 80,
+      "normal_count": 7991,
+      "scratch_correct_count_by_seed": [
+        31,
+        35,
+        35
+      ],
+      "normal_to_scratch_count_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "normal_any_defect_count_by_seed": [
+        61,
+        55,
+        56
+      ],
+      "macro_f1": {
+        "mean": 0.8721627439006242,
+        "sample_std": 0.004244198262488665,
+        "min": 0.8674584339985915,
+        "max": 0.8757045711386756
+      },
+      "scratch_recall": {
+        "mean": 0.42083333333333334,
+        "sample_std": 0.02886751345948128,
+        "min": 0.3875,
+        "max": 0.4375
+      },
+      "scratch_precision": {
+        "mean": 0.9014009382430435,
+        "sample_std": 0.017999745374986907,
+        "min": 0.8857142857142857,
+        "max": 0.9210526315789473
+      },
+      "scratch_average_precision_ovr": {
+        "mean": 0.5598795659758793,
+        "sample_std": 0.00728220397107753,
+        "min": 0.552367478100844,
+        "max": 0.5669077493503232
+      },
+      "worst_seed": {
+        "scratch_recall": 42,
+        "normal_to_scratch_count": 42,
+        "normal_any_defect_count": 42,
+        "ties": "If a metric ties, the first fixed seed is listed; full seed counts remain available."
+      }
+    },
+    {
+      "role": "audit",
+      "model": "cnn_bn_reference",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "wafer_count": 11591,
+      "true_scratch_count": 80,
+      "normal_count": 7991,
+      "scratch_correct_count_by_seed": [
+        46,
+        24,
+        49
+      ],
+      "normal_to_scratch_count_by_seed": [
+        227,
+        18,
+        240
+      ],
+      "normal_any_defect_count_by_seed": [
+        291,
+        175,
+        328
+      ],
+      "macro_f1": {
+        "mean": 0.8238710645086468,
+        "sample_std": 0.022694189600611866,
+        "min": 0.798963303549021,
+        "max": 0.8433768117350826
+      },
+      "scratch_recall": {
+        "mean": 0.49583333333333335,
+        "sample_std": 0.1706299602453606,
+        "min": 0.3,
+        "max": 0.6125
+      },
+      "scratch_precision": {
+        "mean": 0.20096835144071798,
+        "sample_std": 0.11074000863285885,
+        "min": 0.13333333333333333,
+        "max": 0.3287671232876712
+      },
+      "scratch_average_precision_ovr": {
+        "mean": 0.3004398137500625,
+        "sample_std": 0.057142789735067895,
+        "min": 0.2513722023621394,
+        "max": 0.36317801124940424
+      },
+      "worst_seed": {
+        "scratch_recall": 123,
+        "normal_to_scratch_count": 2026,
+        "normal_any_defect_count": 2026,
+        "ties": "If a metric ties, the first fixed seed is listed; full seed counts remain available."
+      }
+    }
+  ],
+  "normal_shape_coverage": [
+    {
+      "role": "tune",
+      "model": "rf_original71",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "support_definition": "Count of training none examples with the exact same original height,width.",
+      "0": {
+        "normal_wafers": 663,
+        "normal_to_scratch_by_seed": [
+          47,
+          54,
+          42
+        ],
+        "normal_any_defect_by_seed": [
+          79,
+          90,
+          84
+        ]
+      },
+      "1-24": {
+        "normal_wafers": 26,
+        "normal_to_scratch_by_seed": [
+          0,
+          0,
+          0
+        ],
+        "normal_any_defect_by_seed": [
+          1,
+          1,
+          1
+        ]
+      },
+      "25+": {
+        "normal_wafers": 7270,
+        "normal_to_scratch_by_seed": [
+          0,
+          0,
+          0
+        ],
+        "normal_any_defect_by_seed": [
+          4,
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "role": "tune",
+      "model": "rf_linearity77",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "support_definition": "Count of training none examples with the exact same original height,width.",
+      "0": {
+        "normal_wafers": 663,
+        "normal_to_scratch_by_seed": [
+          5,
+          4,
+          4
+        ],
+        "normal_any_defect_by_seed": [
+          23,
+          15,
+          14
+        ]
+      },
+      "1-24": {
+        "normal_wafers": 26,
+        "normal_to_scratch_by_seed": [
+          0,
+          0,
+          0
+        ],
+        "normal_any_defect_by_seed": [
+          1,
+          1,
+          1
+        ]
+      },
+      "25+": {
+        "normal_wafers": 7270,
+        "normal_to_scratch_by_seed": [
+          0,
+          0,
+          0
+        ],
+        "normal_any_defect_by_seed": [
+          3,
+          4,
+          4
+        ]
+      }
+    },
+    {
+      "role": "tune",
+      "model": "cnn_bn_reference",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "support_definition": "Count of training none examples with the exact same original height,width.",
+      "0": {
+        "normal_wafers": 663,
+        "normal_to_scratch_by_seed": [
+          242,
+          14,
+          139
+        ],
+        "normal_any_defect_by_seed": [
+          243,
+          39,
+          238
+        ]
+      },
+      "1-24": {
+        "normal_wafers": 26,
+        "normal_to_scratch_by_seed": [
+          0,
+          0,
+          0
+        ],
+        "normal_any_defect_by_seed": [
+          1,
+          1,
+          1
+        ]
+      },
+      "25+": {
+        "normal_wafers": 7270,
+        "normal_to_scratch_by_seed": [
+          0,
+          0,
+          8
+        ],
+        "normal_any_defect_by_seed": [
+          8,
+          10,
+          31
+        ]
+      }
+    },
+    {
+      "role": "audit",
+      "model": "rf_original71",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "support_definition": "Count of training none examples with the exact same original height,width.",
+      "0": {
+        "normal_wafers": 643,
+        "normal_to_scratch_by_seed": [
+          9,
+          3,
+          2
+        ],
+        "normal_any_defect_by_seed": [
+          104,
+          86,
+          93
+        ]
+      },
+      "1-24": {
+        "normal_wafers": 50,
+        "normal_to_scratch_by_seed": [
+          0,
+          0,
+          0
+        ],
+        "normal_any_defect_by_seed": [
+          1,
+          1,
+          1
+        ]
+      },
+      "25+": {
+        "normal_wafers": 7298,
+        "normal_to_scratch_by_seed": [
+          0,
+          0,
+          0
+        ],
+        "normal_any_defect_by_seed": [
+          3,
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "role": "audit",
+      "model": "rf_linearity77",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "support_definition": "Count of training none examples with the exact same original height,width.",
+      "0": {
+        "normal_wafers": 643,
+        "normal_to_scratch_by_seed": [
+          1,
+          1,
+          1
+        ],
+        "normal_any_defect_by_seed": [
+          54,
+          50,
+          50
+        ]
+      },
+      "1-24": {
+        "normal_wafers": 50,
+        "normal_to_scratch_by_seed": [
+          0,
+          0,
+          0
+        ],
+        "normal_any_defect_by_seed": [
+          1,
+          1,
+          1
+        ]
+      },
+      "25+": {
+        "normal_wafers": 7298,
+        "normal_to_scratch_by_seed": [
+          0,
+          0,
+          0
+        ],
+        "normal_any_defect_by_seed": [
+          6,
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "role": "audit",
+      "model": "cnn_bn_reference",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "support_definition": "Count of training none examples with the exact same original height,width.",
+      "0": {
+        "normal_wafers": 643,
+        "normal_to_scratch_by_seed": [
+          227,
+          18,
+          227
+        ],
+        "normal_any_defect_by_seed": [
+          279,
+          165,
+          302
+        ]
+      },
+      "1-24": {
+        "normal_wafers": 50,
+        "normal_to_scratch_by_seed": [
+          0,
+          0,
+          0
+        ],
+        "normal_any_defect_by_seed": [
+          1,
+          1,
+          1
+        ]
+      },
+      "25+": {
+        "normal_wafers": 7298,
+        "normal_to_scratch_by_seed": [
+          0,
+          0,
+          13
+        ],
+        "normal_any_defect_by_seed": [
+          11,
+          9,
+          25
+        ]
+      }
+    }
+  ],
+  "scratch_strata": [
+    {
+      "role": "tune",
+      "model": "rf_original71",
+      "dimension": "failure_count",
+      "bin": "10-49",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 3,
+      "scratch_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "missed_to_none_by_seed": [
+        3,
+        3,
+        3
+      ],
+      "missed_to_loc_by_seed": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_original71",
+      "dimension": "failure_count",
+      "bin": "200+",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 17,
+      "scratch_hits_by_seed": [
+        8,
+        9,
+        9
+      ],
+      "missed_to_none_by_seed": [
+        4,
+        4,
+        4
+      ],
+      "missed_to_loc_by_seed": [
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_original71",
+      "dimension": "failure_count",
+      "bin": "50-199",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 79,
+      "scratch_hits_by_seed": [
+        22,
+        24,
+        21
+      ],
+      "missed_to_none_by_seed": [
+        32,
+        30,
+        29
+      ],
+      "missed_to_loc_by_seed": [
+        16,
+        17,
+        21
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_original71",
+      "dimension": "failure_rate",
+      "bin": "1-5%",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 52,
+      "scratch_hits_by_seed": [
+        16,
+        17,
+        15
+      ],
+      "missed_to_none_by_seed": [
+        20,
+        18,
+        18
+      ],
+      "missed_to_loc_by_seed": [
+        15,
+        16,
+        18
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_original71",
+      "dimension": "failure_rate",
+      "bin": "10%+",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 22,
+      "scratch_hits_by_seed": [
+        7,
+        9,
+        8
+      ],
+      "missed_to_none_by_seed": [
+        7,
+        7,
+        7
+      ],
+      "missed_to_loc_by_seed": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_original71",
+      "dimension": "failure_rate",
+      "bin": "5-10%",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 25,
+      "scratch_hits_by_seed": [
+        7,
+        7,
+        7
+      ],
+      "missed_to_none_by_seed": [
+        12,
+        12,
+        11
+      ],
+      "missed_to_loc_by_seed": [
+        2,
+        2,
+        4
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_original71",
+      "dimension": "pca_anisotropy",
+      "bin": ".25-.50",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 15,
+      "scratch_hits_by_seed": [
+        2,
+        3,
+        3
+      ],
+      "missed_to_none_by_seed": [
+        8,
+        8,
+        7
+      ],
+      "missed_to_loc_by_seed": [
+        4,
+        3,
+        4
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_original71",
+      "dimension": "pca_anisotropy",
+      "bin": "<.25",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 84,
+      "scratch_hits_by_seed": [
+        28,
+        30,
+        27
+      ],
+      "missed_to_none_by_seed": [
+        31,
+        29,
+        29
+      ],
+      "missed_to_loc_by_seed": [
+        15,
+        17,
+        20
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_original71",
+      "dimension": "strip_failed_share",
+      "bin": ".2-.5",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 44,
+      "scratch_hits_by_seed": [
+        9,
+        10,
+        9
+      ],
+      "missed_to_none_by_seed": [
+        18,
+        17,
+        17
+      ],
+      "missed_to_loc_by_seed": [
+        12,
+        12,
+        14
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_original71",
+      "dimension": "strip_failed_share",
+      "bin": "<.2",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 55,
+      "scratch_hits_by_seed": [
+        21,
+        23,
+        21
+      ],
+      "missed_to_none_by_seed": [
+        21,
+        20,
+        19
+      ],
+      "missed_to_loc_by_seed": [
+        7,
+        8,
+        10
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_original71",
+      "dimension": "max_side",
+      "bin": "33-64",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 59,
+      "scratch_hits_by_seed": [
+        16,
+        17,
+        16
+      ],
+      "missed_to_none_by_seed": [
+        24,
+        24,
+        23
+      ],
+      "missed_to_loc_by_seed": [
+        9,
+        9,
+        12
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_original71",
+      "dimension": "max_side",
+      "bin": "65+",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 31,
+      "scratch_hits_by_seed": [
+        12,
+        13,
+        12
+      ],
+      "missed_to_none_by_seed": [
+        11,
+        9,
+        9
+      ],
+      "missed_to_loc_by_seed": [
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_original71",
+      "dimension": "max_side",
+      "bin": "<=32",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 9,
+      "scratch_hits_by_seed": [
+        2,
+        3,
+        2
+      ],
+      "missed_to_none_by_seed": [
+        4,
+        4,
+        4
+      ],
+      "missed_to_loc_by_seed": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_original71",
+      "dimension": "exact_hash_label_ambiguity",
+      "bin": "no_known_conflict",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 99,
+      "scratch_hits_by_seed": [
+        30,
+        33,
+        30
+      ],
+      "missed_to_none_by_seed": [
+        39,
+        37,
+        36
+      ],
+      "missed_to_loc_by_seed": [
+        19,
+        20,
+        24
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_linearity77",
+      "dimension": "failure_count",
+      "bin": "10-49",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 3,
+      "scratch_hits_by_seed": [
+        1,
+        0,
+        1
+      ],
+      "missed_to_none_by_seed": [
+        2,
+        3,
+        2
+      ],
+      "missed_to_loc_by_seed": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_linearity77",
+      "dimension": "failure_count",
+      "bin": "200+",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 17,
+      "scratch_hits_by_seed": [
+        7,
+        7,
+        6
+      ],
+      "missed_to_none_by_seed": [
+        7,
+        7,
+        7
+      ],
+      "missed_to_loc_by_seed": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_linearity77",
+      "dimension": "failure_count",
+      "bin": "50-199",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 79,
+      "scratch_hits_by_seed": [
+        30,
+        28,
+        30
+      ],
+      "missed_to_none_by_seed": [
+        28,
+        30,
+        29
+      ],
+      "missed_to_loc_by_seed": [
+        13,
+        13,
+        12
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_linearity77",
+      "dimension": "failure_rate",
+      "bin": "1-5%",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 52,
+      "scratch_hits_by_seed": [
+        23,
+        21,
+        23
+      ],
+      "missed_to_none_by_seed": [
+        16,
+        18,
+        17
+      ],
+      "missed_to_loc_by_seed": [
+        11,
+        13,
+        11
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_linearity77",
+      "dimension": "failure_rate",
+      "bin": "10%+",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 22,
+      "scratch_hits_by_seed": [
+        9,
+        8,
+        8
+      ],
+      "missed_to_none_by_seed": [
+        7,
+        8,
+        7
+      ],
+      "missed_to_loc_by_seed": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_linearity77",
+      "dimension": "failure_rate",
+      "bin": "5-10%",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 25,
+      "scratch_hits_by_seed": [
+        6,
+        6,
+        6
+      ],
+      "missed_to_none_by_seed": [
+        14,
+        14,
+        14
+      ],
+      "missed_to_loc_by_seed": [
+        2,
+        0,
+        1
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_linearity77",
+      "dimension": "pca_anisotropy",
+      "bin": ".25-.50",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 15,
+      "scratch_hits_by_seed": [
+        5,
+        5,
+        5
+      ],
+      "missed_to_none_by_seed": [
+        8,
+        8,
+        8
+      ],
+      "missed_to_loc_by_seed": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_linearity77",
+      "dimension": "pca_anisotropy",
+      "bin": "<.25",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 84,
+      "scratch_hits_by_seed": [
+        33,
+        30,
+        32
+      ],
+      "missed_to_none_by_seed": [
+        29,
+        32,
+        30
+      ],
+      "missed_to_loc_by_seed": [
+        14,
+        14,
+        13
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_linearity77",
+      "dimension": "strip_failed_share",
+      "bin": ".2-.5",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 44,
+      "scratch_hits_by_seed": [
+        19,
+        17,
+        19
+      ],
+      "missed_to_none_by_seed": [
+        13,
+        16,
+        14
+      ],
+      "missed_to_loc_by_seed": [
+        7,
+        7,
+        6
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_linearity77",
+      "dimension": "strip_failed_share",
+      "bin": "<.2",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 55,
+      "scratch_hits_by_seed": [
+        19,
+        18,
+        18
+      ],
+      "missed_to_none_by_seed": [
+        24,
+        24,
+        24
+      ],
+      "missed_to_loc_by_seed": [
+        8,
+        8,
+        8
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_linearity77",
+      "dimension": "max_side",
+      "bin": "33-64",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 59,
+      "scratch_hits_by_seed": [
+        24,
+        21,
+        23
+      ],
+      "missed_to_none_by_seed": [
+        24,
+        26,
+        24
+      ],
+      "missed_to_loc_by_seed": [
+        4,
+        4,
+        3
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_linearity77",
+      "dimension": "max_side",
+      "bin": "65+",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 31,
+      "scratch_hits_by_seed": [
+        12,
+        12,
+        12
+      ],
+      "missed_to_none_by_seed": [
+        9,
+        10,
+        10
+      ],
+      "missed_to_loc_by_seed": [
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_linearity77",
+      "dimension": "max_side",
+      "bin": "<=32",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 9,
+      "scratch_hits_by_seed": [
+        2,
+        2,
+        2
+      ],
+      "missed_to_none_by_seed": [
+        4,
+        4,
+        4
+      ],
+      "missed_to_loc_by_seed": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "rf_linearity77",
+      "dimension": "exact_hash_label_ambiguity",
+      "bin": "no_known_conflict",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 99,
+      "scratch_hits_by_seed": [
+        38,
+        35,
+        37
+      ],
+      "missed_to_none_by_seed": [
+        37,
+        40,
+        38
+      ],
+      "missed_to_loc_by_seed": [
+        15,
+        15,
+        14
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "cnn_bn_reference",
+      "dimension": "failure_count",
+      "bin": "10-49",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 3,
+      "scratch_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "missed_to_none_by_seed": [
+        3,
+        3,
+        3
+      ],
+      "missed_to_loc_by_seed": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "cnn_bn_reference",
+      "dimension": "failure_count",
+      "bin": "200+",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 17,
+      "scratch_hits_by_seed": [
+        11,
+        7,
+        15
+      ],
+      "missed_to_none_by_seed": [
+        1,
+        5,
+        0
+      ],
+      "missed_to_loc_by_seed": [
+        0,
+        4,
+        1
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "cnn_bn_reference",
+      "dimension": "failure_count",
+      "bin": "50-199",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 79,
+      "scratch_hits_by_seed": [
+        47,
+        20,
+        49
+      ],
+      "missed_to_none_by_seed": [
+        25,
+        44,
+        21
+      ],
+      "missed_to_loc_by_seed": [
+        2,
+        13,
+        7
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "cnn_bn_reference",
+      "dimension": "failure_rate",
+      "bin": "1-5%",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 52,
+      "scratch_hits_by_seed": [
+        36,
+        17,
+        38
+      ],
+      "missed_to_none_by_seed": [
+        11,
+        25,
+        11
+      ],
+      "missed_to_loc_by_seed": [
+        1,
+        9,
+        3
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "cnn_bn_reference",
+      "dimension": "failure_rate",
+      "bin": "10%+",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 22,
+      "scratch_hits_by_seed": [
+        12,
+        5,
+        14
+      ],
+      "missed_to_none_by_seed": [
+        3,
+        9,
+        2
+      ],
+      "missed_to_loc_by_seed": [
+        1,
+        6,
+        4
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "cnn_bn_reference",
+      "dimension": "failure_rate",
+      "bin": "5-10%",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 25,
+      "scratch_hits_by_seed": [
+        10,
+        5,
+        12
+      ],
+      "missed_to_none_by_seed": [
+        15,
+        18,
+        11
+      ],
+      "missed_to_loc_by_seed": [
+        0,
+        2,
+        1
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "cnn_bn_reference",
+      "dimension": "pca_anisotropy",
+      "bin": ".25-.50",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 15,
+      "scratch_hits_by_seed": [
+        8,
+        3,
+        7
+      ],
+      "missed_to_none_by_seed": [
+        6,
+        8,
+        5
+      ],
+      "missed_to_loc_by_seed": [
+        0,
+        4,
+        3
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "cnn_bn_reference",
+      "dimension": "pca_anisotropy",
+      "bin": "<.25",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 84,
+      "scratch_hits_by_seed": [
+        50,
+        24,
+        57
+      ],
+      "missed_to_none_by_seed": [
+        23,
+        44,
+        19
+      ],
+      "missed_to_loc_by_seed": [
+        2,
+        13,
+        5
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "cnn_bn_reference",
+      "dimension": "strip_failed_share",
+      "bin": ".2-.5",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 44,
+      "scratch_hits_by_seed": [
+        25,
+        12,
+        28
+      ],
+      "missed_to_none_by_seed": [
+        15,
+        22,
+        11
+      ],
+      "missed_to_loc_by_seed": [
+        1,
+        9,
+        3
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "cnn_bn_reference",
+      "dimension": "strip_failed_share",
+      "bin": "<.2",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 55,
+      "scratch_hits_by_seed": [
+        33,
+        15,
+        36
+      ],
+      "missed_to_none_by_seed": [
+        14,
+        30,
+        13
+      ],
+      "missed_to_loc_by_seed": [
+        1,
+        8,
+        5
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "cnn_bn_reference",
+      "dimension": "max_side",
+      "bin": "33-64",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 59,
+      "scratch_hits_by_seed": [
+        25,
+        17,
+        33
+      ],
+      "missed_to_none_by_seed": [
+        26,
+        34,
+        21
+      ],
+      "missed_to_loc_by_seed": [
+        0,
+        7,
+        4
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "cnn_bn_reference",
+      "dimension": "max_side",
+      "bin": "65+",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 31,
+      "scratch_hits_by_seed": [
+        28,
+        8,
+        28
+      ],
+      "missed_to_none_by_seed": [
+        1,
+        16,
+        1
+      ],
+      "missed_to_loc_by_seed": [
+        1,
+        6,
+        1
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "cnn_bn_reference",
+      "dimension": "max_side",
+      "bin": "<=32",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 9,
+      "scratch_hits_by_seed": [
+        5,
+        2,
+        3
+      ],
+      "missed_to_none_by_seed": [
+        2,
+        2,
+        2
+      ],
+      "missed_to_loc_by_seed": [
+        1,
+        4,
+        3
+      ]
+    },
+    {
+      "role": "tune",
+      "model": "cnn_bn_reference",
+      "dimension": "exact_hash_label_ambiguity",
+      "bin": "no_known_conflict",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 99,
+      "scratch_hits_by_seed": [
+        58,
+        27,
+        64
+      ],
+      "missed_to_none_by_seed": [
+        29,
+        52,
+        24
+      ],
+      "missed_to_loc_by_seed": [
+        2,
+        17,
+        8
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_original71",
+      "dimension": "failure_count",
+      "bin": "10-49",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 1,
+      "scratch_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "missed_to_none_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "missed_to_loc_by_seed": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_original71",
+      "dimension": "failure_count",
+      "bin": "200+",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 23,
+      "scratch_hits_by_seed": [
+        12,
+        12,
+        12
+      ],
+      "missed_to_none_by_seed": [
+        2,
+        1,
+        1
+      ],
+      "missed_to_loc_by_seed": [
+        6,
+        7,
+        7
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_original71",
+      "dimension": "failure_count",
+      "bin": "50-199",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 56,
+      "scratch_hits_by_seed": [
+        13,
+        14,
+        14
+      ],
+      "missed_to_none_by_seed": [
+        25,
+        24,
+        22
+      ],
+      "missed_to_loc_by_seed": [
+        11,
+        13,
+        11
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_original71",
+      "dimension": "failure_rate",
+      "bin": "1-5%",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 30,
+      "scratch_hits_by_seed": [
+        12,
+        12,
+        13
+      ],
+      "missed_to_none_by_seed": [
+        9,
+        7,
+        7
+      ],
+      "missed_to_loc_by_seed": [
+        9,
+        11,
+        10
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_original71",
+      "dimension": "failure_rate",
+      "bin": "10%+",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 25,
+      "scratch_hits_by_seed": [
+        5,
+        5,
+        5
+      ],
+      "missed_to_none_by_seed": [
+        9,
+        11,
+        9
+      ],
+      "missed_to_loc_by_seed": [
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_original71",
+      "dimension": "failure_rate",
+      "bin": "5-10%",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 25,
+      "scratch_hits_by_seed": [
+        8,
+        9,
+        8
+      ],
+      "missed_to_none_by_seed": [
+        10,
+        8,
+        8
+      ],
+      "missed_to_loc_by_seed": [
+        6,
+        7,
+        7
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_original71",
+      "dimension": "pca_anisotropy",
+      "bin": ".25-.50",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 14,
+      "scratch_hits_by_seed": [
+        3,
+        2,
+        3
+      ],
+      "missed_to_none_by_seed": [
+        4,
+        1,
+        3
+      ],
+      "missed_to_loc_by_seed": [
+        6,
+        9,
+        6
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_original71",
+      "dimension": "pca_anisotropy",
+      "bin": "<.25",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 66,
+      "scratch_hits_by_seed": [
+        22,
+        24,
+        23
+      ],
+      "missed_to_none_by_seed": [
+        24,
+        25,
+        21
+      ],
+      "missed_to_loc_by_seed": [
+        11,
+        11,
+        12
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_original71",
+      "dimension": "strip_failed_share",
+      "bin": ".2-.5",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 27,
+      "scratch_hits_by_seed": [
+        2,
+        4,
+        3
+      ],
+      "missed_to_none_by_seed": [
+        16,
+        13,
+        13
+      ],
+      "missed_to_loc_by_seed": [
+        8,
+        8,
+        8
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_original71",
+      "dimension": "strip_failed_share",
+      "bin": "<.2",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 53,
+      "scratch_hits_by_seed": [
+        23,
+        22,
+        23
+      ],
+      "missed_to_none_by_seed": [
+        12,
+        13,
+        11
+      ],
+      "missed_to_loc_by_seed": [
+        9,
+        12,
+        10
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_original71",
+      "dimension": "max_side",
+      "bin": "33-64",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 38,
+      "scratch_hits_by_seed": [
+        14,
+        14,
+        14
+      ],
+      "missed_to_none_by_seed": [
+        11,
+        11,
+        10
+      ],
+      "missed_to_loc_by_seed": [
+        6,
+        7,
+        6
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_original71",
+      "dimension": "max_side",
+      "bin": "65+",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 29,
+      "scratch_hits_by_seed": [
+        11,
+        12,
+        12
+      ],
+      "missed_to_none_by_seed": [
+        8,
+        5,
+        5
+      ],
+      "missed_to_loc_by_seed": [
+        9,
+        11,
+        11
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_original71",
+      "dimension": "max_side",
+      "bin": "<=32",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 13,
+      "scratch_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "missed_to_none_by_seed": [
+        9,
+        10,
+        9
+      ],
+      "missed_to_loc_by_seed": [
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_original71",
+      "dimension": "exact_hash_label_ambiguity",
+      "bin": "no_known_conflict",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 80,
+      "scratch_hits_by_seed": [
+        25,
+        26,
+        26
+      ],
+      "missed_to_none_by_seed": [
+        28,
+        26,
+        24
+      ],
+      "missed_to_loc_by_seed": [
+        17,
+        20,
+        18
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_linearity77",
+      "dimension": "failure_count",
+      "bin": "10-49",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 1,
+      "scratch_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "missed_to_none_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "missed_to_loc_by_seed": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_linearity77",
+      "dimension": "failure_count",
+      "bin": "200+",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 23,
+      "scratch_hits_by_seed": [
+        10,
+        11,
+        11
+      ],
+      "missed_to_none_by_seed": [
+        5,
+        5,
+        3
+      ],
+      "missed_to_loc_by_seed": [
+        5,
+        5,
+        6
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_linearity77",
+      "dimension": "failure_count",
+      "bin": "50-199",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 56,
+      "scratch_hits_by_seed": [
+        21,
+        24,
+        24
+      ],
+      "missed_to_none_by_seed": [
+        20,
+        19,
+        21
+      ],
+      "missed_to_loc_by_seed": [
+        8,
+        7,
+        6
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_linearity77",
+      "dimension": "failure_rate",
+      "bin": "1-5%",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 30,
+      "scratch_hits_by_seed": [
+        17,
+        19,
+        20
+      ],
+      "missed_to_none_by_seed": [
+        8,
+        9,
+        6
+      ],
+      "missed_to_loc_by_seed": [
+        5,
+        2,
+        4
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_linearity77",
+      "dimension": "failure_rate",
+      "bin": "10%+",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 25,
+      "scratch_hits_by_seed": [
+        5,
+        6,
+        6
+      ],
+      "missed_to_none_by_seed": [
+        10,
+        10,
+        10
+      ],
+      "missed_to_loc_by_seed": [
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_linearity77",
+      "dimension": "failure_rate",
+      "bin": "5-10%",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 25,
+      "scratch_hits_by_seed": [
+        9,
+        10,
+        9
+      ],
+      "missed_to_none_by_seed": [
+        8,
+        6,
+        9
+      ],
+      "missed_to_loc_by_seed": [
+        5,
+        7,
+        5
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_linearity77",
+      "dimension": "pca_anisotropy",
+      "bin": ".25-.50",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 14,
+      "scratch_hits_by_seed": [
+        5,
+        5,
+        5
+      ],
+      "missed_to_none_by_seed": [
+        2,
+        2,
+        2
+      ],
+      "missed_to_loc_by_seed": [
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_linearity77",
+      "dimension": "pca_anisotropy",
+      "bin": "<.25",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 66,
+      "scratch_hits_by_seed": [
+        26,
+        30,
+        30
+      ],
+      "missed_to_none_by_seed": [
+        24,
+        23,
+        23
+      ],
+      "missed_to_loc_by_seed": [
+        8,
+        7,
+        7
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_linearity77",
+      "dimension": "strip_failed_share",
+      "bin": ".2-.5",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 27,
+      "scratch_hits_by_seed": [
+        10,
+        12,
+        11
+      ],
+      "missed_to_none_by_seed": [
+        12,
+        12,
+        13
+      ],
+      "missed_to_loc_by_seed": [
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_linearity77",
+      "dimension": "strip_failed_share",
+      "bin": "<.2",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 53,
+      "scratch_hits_by_seed": [
+        21,
+        23,
+        24
+      ],
+      "missed_to_none_by_seed": [
+        14,
+        13,
+        12
+      ],
+      "missed_to_loc_by_seed": [
+        10,
+        11,
+        11
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_linearity77",
+      "dimension": "max_side",
+      "bin": "33-64",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 38,
+      "scratch_hits_by_seed": [
+        17,
+        19,
+        18
+      ],
+      "missed_to_none_by_seed": [
+        11,
+        10,
+        13
+      ],
+      "missed_to_loc_by_seed": [
+        4,
+        4,
+        3
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_linearity77",
+      "dimension": "max_side",
+      "bin": "65+",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 29,
+      "scratch_hits_by_seed": [
+        14,
+        16,
+        17
+      ],
+      "missed_to_none_by_seed": [
+        6,
+        6,
+        3
+      ],
+      "missed_to_loc_by_seed": [
+        7,
+        6,
+        7
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_linearity77",
+      "dimension": "max_side",
+      "bin": "<=32",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 13,
+      "scratch_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "missed_to_none_by_seed": [
+        9,
+        9,
+        9
+      ],
+      "missed_to_loc_by_seed": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "rf_linearity77",
+      "dimension": "exact_hash_label_ambiguity",
+      "bin": "no_known_conflict",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 80,
+      "scratch_hits_by_seed": [
+        31,
+        35,
+        35
+      ],
+      "missed_to_none_by_seed": [
+        26,
+        25,
+        25
+      ],
+      "missed_to_loc_by_seed": [
+        13,
+        12,
+        12
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "cnn_bn_reference",
+      "dimension": "failure_count",
+      "bin": "10-49",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 1,
+      "scratch_hits_by_seed": [
+        0,
+        0,
+        0
+      ],
+      "missed_to_none_by_seed": [
+        1,
+        1,
+        1
+      ],
+      "missed_to_loc_by_seed": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "cnn_bn_reference",
+      "dimension": "failure_count",
+      "bin": "200+",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 23,
+      "scratch_hits_by_seed": [
+        19,
+        8,
+        19
+      ],
+      "missed_to_none_by_seed": [
+        0,
+        10,
+        1
+      ],
+      "missed_to_loc_by_seed": [
+        0,
+        2,
+        1
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "cnn_bn_reference",
+      "dimension": "failure_count",
+      "bin": "50-199",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 56,
+      "scratch_hits_by_seed": [
+        27,
+        16,
+        30
+      ],
+      "missed_to_none_by_seed": [
+        21,
+        30,
+        19
+      ],
+      "missed_to_loc_by_seed": [
+        1,
+        7,
+        4
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "cnn_bn_reference",
+      "dimension": "failure_rate",
+      "bin": "1-5%",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 30,
+      "scratch_hits_by_seed": [
+        23,
+        13,
+        20
+      ],
+      "missed_to_none_by_seed": [
+        5,
+        13,
+        8
+      ],
+      "missed_to_loc_by_seed": [
+        1,
+        4,
+        2
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "cnn_bn_reference",
+      "dimension": "failure_rate",
+      "bin": "10%+",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 25,
+      "scratch_hits_by_seed": [
+        7,
+        3,
+        9
+      ],
+      "missed_to_none_by_seed": [
+        9,
+        13,
+        9
+      ],
+      "missed_to_loc_by_seed": [
+        0,
+        4,
+        3
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "cnn_bn_reference",
+      "dimension": "failure_rate",
+      "bin": "5-10%",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 25,
+      "scratch_hits_by_seed": [
+        16,
+        8,
+        20
+      ],
+      "missed_to_none_by_seed": [
+        8,
+        15,
+        4
+      ],
+      "missed_to_loc_by_seed": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "cnn_bn_reference",
+      "dimension": "pca_anisotropy",
+      "bin": ".25-.50",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 14,
+      "scratch_hits_by_seed": [
+        10,
+        3,
+        9
+      ],
+      "missed_to_none_by_seed": [
+        2,
+        7,
+        4
+      ],
+      "missed_to_loc_by_seed": [
+        0,
+        3,
+        0
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "cnn_bn_reference",
+      "dimension": "pca_anisotropy",
+      "bin": "<.25",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 66,
+      "scratch_hits_by_seed": [
+        36,
+        21,
+        40
+      ],
+      "missed_to_none_by_seed": [
+        20,
+        34,
+        17
+      ],
+      "missed_to_loc_by_seed": [
+        1,
+        6,
+        5
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "cnn_bn_reference",
+      "dimension": "strip_failed_share",
+      "bin": ".2-.5",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 27,
+      "scratch_hits_by_seed": [
+        11,
+        7,
+        14
+      ],
+      "missed_to_none_by_seed": [
+        12,
+        15,
+        9
+      ],
+      "missed_to_loc_by_seed": [
+        1,
+        3,
+        1
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "cnn_bn_reference",
+      "dimension": "strip_failed_share",
+      "bin": "<.2",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 53,
+      "scratch_hits_by_seed": [
+        35,
+        17,
+        35
+      ],
+      "missed_to_none_by_seed": [
+        10,
+        26,
+        12
+      ],
+      "missed_to_loc_by_seed": [
+        0,
+        6,
+        4
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "cnn_bn_reference",
+      "dimension": "max_side",
+      "bin": "33-64",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 38,
+      "scratch_hits_by_seed": [
+        17,
+        12,
+        23
+      ],
+      "missed_to_none_by_seed": [
+        13,
+        18,
+        10
+      ],
+      "missed_to_loc_by_seed": [
+        0,
+        3,
+        1
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "cnn_bn_reference",
+      "dimension": "max_side",
+      "bin": "65+",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 29,
+      "scratch_hits_by_seed": [
+        27,
+        11,
+        24
+      ],
+      "missed_to_none_by_seed": [
+        0,
+        14,
+        3
+      ],
+      "missed_to_loc_by_seed": [
+        1,
+        4,
+        2
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "cnn_bn_reference",
+      "dimension": "max_side",
+      "bin": "<=32",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 13,
+      "scratch_hits_by_seed": [
+        2,
+        1,
+        2
+      ],
+      "missed_to_none_by_seed": [
+        9,
+        9,
+        8
+      ],
+      "missed_to_loc_by_seed": [
+        0,
+        2,
+        2
+      ]
+    },
+    {
+      "role": "audit",
+      "model": "cnn_bn_reference",
+      "dimension": "exact_hash_label_ambiguity",
+      "bin": "no_known_conflict",
+      "seed_order": [
+        42,
+        123,
+        2026
+      ],
+      "scratch_wafers": 80,
+      "scratch_hits_by_seed": [
+        46,
+        24,
+        49
+      ],
+      "missed_to_none_by_seed": [
+        22,
+        41,
+        21
+      ],
+      "missed_to_loc_by_seed": [
+        1,
+        9,
+        5
+      ]
+    }
+  ],
+  "paired_differences": [
+    {
+      "role": "tune",
+      "seed": 42,
+      "guards": {
+        "scratch_tp_not_lower": true,
+        "normal_total_fp_not_higher": true,
+        "normal_scratch_fp_not_higher": true,
+        "macro_f1_within_2pp": true
+      },
+      "all_guards_pass": true,
+      "scratch_tp_change": 8,
+      "macro_f1_change": 0.03394842427160194,
+      "scratch_recall_change": 0.08080808080808077,
+      "scratch_precision_change": 0.5,
+      "scratch_average_precision_ovr_change": 0.32886975386785144,
+      "normal_any_defect_count_change": -57,
+      "normal_to_scratch_count_change": -42,
+      "old_scratch_misses_recovered": 13,
+      "old_scratch_hits_lost": 5,
+      "old_normal_scratch_fp_to_none": 41,
+      "old_normal_scratch_fp_to_other_defect": 3,
+      "new_normal_scratch_fp": 2
+    },
+    {
+      "role": "tune",
+      "seed": 123,
+      "guards": {
+        "scratch_tp_not_lower": true,
+        "normal_total_fp_not_higher": true,
+        "normal_scratch_fp_not_higher": true,
+        "macro_f1_within_2pp": true
+      },
+      "all_guards_pass": true,
+      "scratch_tp_change": 2,
+      "macro_f1_change": 0.0301633837452997,
+      "scratch_recall_change": 0.02020202020202022,
+      "scratch_precision_change": 0.49966777408637875,
+      "scratch_average_precision_ovr_change": 0.30228978236273857,
+      "normal_any_defect_count_change": -74,
+      "normal_to_scratch_count_change": -50,
+      "old_scratch_misses_recovered": 8,
+      "old_scratch_hits_lost": 6,
+      "old_normal_scratch_fp_to_none": 51,
+      "old_normal_scratch_fp_to_other_defect": 1,
+      "new_normal_scratch_fp": 2
+    },
+    {
+      "role": "tune",
+      "seed": 2026,
+      "guards": {
+        "scratch_tp_not_lower": true,
+        "normal_total_fp_not_higher": true,
+        "normal_scratch_fp_not_higher": true,
+        "macro_f1_within_2pp": true
+      },
+      "all_guards_pass": true,
+      "scratch_tp_change": 7,
+      "macro_f1_change": 0.03791289691285382,
+      "scratch_recall_change": 0.07070707070707072,
+      "scratch_precision_change": 0.5251196172248804,
+      "scratch_average_precision_ovr_change": 0.2951118500924581,
+      "normal_any_defect_count_change": -69,
+      "normal_to_scratch_count_change": -38,
+      "old_scratch_misses_recovered": 12,
+      "old_scratch_hits_lost": 5,
+      "old_normal_scratch_fp_to_none": 37,
+      "old_normal_scratch_fp_to_other_defect": 2,
+      "new_normal_scratch_fp": 1
+    },
+    {
+      "role": "audit",
+      "seed": 42,
+      "guards": {
+        "scratch_tp_not_lower": true,
+        "normal_total_fp_not_higher": true,
+        "normal_scratch_fp_not_higher": true,
+        "macro_f1_within_2pp": true
+      },
+      "all_guards_pass": true,
+      "scratch_tp_change": 6,
+      "macro_f1_change": 0.031132266598676406,
+      "scratch_recall_change": 0.07500000000000001,
+      "scratch_precision_change": 0.4392857142857142,
+      "scratch_average_precision_ovr_change": 0.2422506567634395,
+      "normal_any_defect_count_change": -47,
+      "normal_to_scratch_count_change": -8,
+      "old_scratch_misses_recovered": 13,
+      "old_scratch_hits_lost": 7,
+      "old_normal_scratch_fp_to_none": 9,
+      "old_normal_scratch_fp_to_other_defect": 0,
+      "new_normal_scratch_fp": 1
+    },
+    {
+      "role": "audit",
+      "seed": 123,
+      "guards": {
+        "scratch_tp_not_lower": true,
+        "normal_total_fp_not_higher": true,
+        "normal_scratch_fp_not_higher": true,
+        "macro_f1_within_2pp": true
+      },
+      "all_guards_pass": true,
+      "scratch_tp_change": 9,
+      "macro_f1_change": 0.034909727589474304,
+      "scratch_recall_change": 0.11249999999999999,
+      "scratch_precision_change": 0.37743589743589745,
+      "scratch_average_precision_ovr_change": 0.2385298786958831,
+      "normal_any_defect_count_change": -35,
+      "normal_to_scratch_count_change": -2,
+      "old_scratch_misses_recovered": 15,
+      "old_scratch_hits_lost": 6,
+      "old_normal_scratch_fp_to_none": 3,
+      "old_normal_scratch_fp_to_other_defect": 0,
+      "new_normal_scratch_fp": 1
+    },
+    {
+      "role": "audit",
+      "seed": 2026,
+      "guards": {
+        "scratch_tp_not_lower": true,
+        "normal_total_fp_not_higher": true,
+        "normal_scratch_fp_not_higher": true,
+        "macro_f1_within_2pp": true
+      },
+      "all_guards_pass": true,
+      "scratch_tp_change": 9,
+      "macro_f1_change": 0.03415130707498393,
+      "scratch_recall_change": 0.11249999999999999,
+      "scratch_precision_change": 0.3793859649122807,
+      "scratch_average_precision_ovr_change": 0.24294172210498655,
+      "normal_any_defect_count_change": -42,
+      "normal_to_scratch_count_change": -1,
+      "old_scratch_misses_recovered": 15,
+      "old_scratch_hits_lost": 6,
+      "old_normal_scratch_fp_to_none": 2,
+      "old_normal_scratch_fp_to_other_defect": 0,
+      "new_normal_scratch_fp": 1
+    }
+  ],
+  "paired_component_bootstrap": [
+    {
+      "role": "tune",
+      "metric": "scratch_recall",
+      "seed": 42,
+      "estimate": 0.08080808080808081,
+      "ci_low": -0.009811348781937016,
+      "ci_high": 0.16666666666666666,
+      "unique_wafers": 99,
+      "components": 89
+    },
+    {
+      "role": "tune",
+      "metric": "scratch_recall",
+      "seed": 123,
+      "estimate": 0.020202020202020204,
+      "ci_low": -0.054365277223773434,
+      "ci_high": 0.09433962264150944,
+      "unique_wafers": 99,
+      "components": 89
+    },
+    {
+      "role": "tune",
+      "metric": "scratch_recall",
+      "seed": 2026,
+      "estimate": 0.0707070707070707,
+      "ci_low": -0.010419407894736842,
+      "ci_high": 0.15306352270637985,
+      "unique_wafers": 99,
+      "components": 89
+    },
+    {
+      "role": "tune",
+      "metric": "scratch_recall",
+      "seed": "mean_across_seeds",
+      "estimate": 0.05723905723905724,
+      "ci_low": -0.016675170068027212,
+      "ci_high": 0.1292704081632652,
+      "unique_wafers": 99,
+      "components": 89
+    },
+    {
+      "role": "tune",
+      "metric": "normal_to_scratch_rate",
+      "seed": 42,
+      "estimate": -0.005277044854881266,
+      "ci_low": -0.012257715973266912,
+      "ci_high": -0.0002521710374459553,
+      "unique_wafers": 7959,
+      "components": 351
+    },
+    {
+      "role": "tune",
+      "metric": "normal_to_scratch_rate",
+      "seed": 123,
+      "estimate": -0.0062821962558110315,
+      "ci_low": -0.01336581304317279,
+      "ci_high": -0.0011324708034620768,
+      "unique_wafers": 7959,
+      "components": 351
+    },
+    {
+      "role": "tune",
+      "metric": "normal_to_scratch_rate",
+      "seed": 2026,
+      "estimate": -0.004774469154416384,
+      "ci_low": -0.011507804006013202,
+      "ci_high": -0.0001259263474314082,
+      "unique_wafers": 7959,
+      "components": 351
+    },
+    {
+      "role": "tune",
+      "metric": "normal_to_scratch_rate",
+      "seed": "mean_across_seeds",
+      "estimate": -0.00544457008836956,
+      "ci_low": -0.012336210576323737,
+      "ci_high": -0.0005018631946974797,
+      "unique_wafers": 7959,
+      "components": 351
+    },
+    {
+      "role": "tune",
+      "metric": "normal_any_defect_rate",
+      "seed": 42,
+      "estimate": -0.007161703731624576,
+      "ci_low": -0.014280879495639637,
+      "ci_high": -0.0018989385200682335,
+      "unique_wafers": 7959,
+      "components": 351
+    },
+    {
+      "role": "tune",
+      "metric": "normal_any_defect_rate",
+      "seed": 123,
+      "estimate": -0.009297650458600327,
+      "ci_low": -0.017147786503607477,
+      "ci_high": -0.0034762751772158393,
+      "unique_wafers": 7959,
+      "components": 351
+    },
+    {
+      "role": "tune",
+      "metric": "normal_any_defect_rate",
+      "seed": 2026,
+      "estimate": -0.008669430833019224,
+      "ci_low": -0.01611161443868548,
+      "ci_high": -0.0031422036418786506,
+      "unique_wafers": 7959,
+      "components": 351
+    },
+    {
+      "role": "tune",
+      "metric": "normal_any_defect_rate",
+      "seed": "mean_across_seeds",
+      "estimate": -0.008376261674414708,
+      "ci_low": -0.01590357475397488,
+      "ci_high": -0.0029152563345176867,
+      "unique_wafers": 7959,
+      "components": 351
+    },
+    {
+      "role": "audit",
+      "metric": "scratch_recall",
+      "seed": 42,
+      "estimate": 0.075,
+      "ci_low": -0.02598257006151743,
+      "ci_high": 0.18298328816621467,
+      "unique_wafers": 80,
+      "components": 76
+    },
+    {
+      "role": "audit",
+      "metric": "scratch_recall",
+      "seed": 123,
+      "estimate": 0.1125,
+      "ci_low": 0.0125,
+      "ci_high": 0.21518987341772153,
+      "unique_wafers": 80,
+      "components": 76
+    },
+    {
+      "role": "audit",
+      "metric": "scratch_recall",
+      "seed": 2026,
+      "estimate": 0.1125,
+      "ci_low": 0.0125,
+      "ci_high": 0.21794871794871795,
+      "unique_wafers": 80,
+      "components": 76
+    },
+    {
+      "role": "audit",
+      "metric": "scratch_recall",
+      "seed": "mean_across_seeds",
+      "estimate": 0.09999999999999999,
+      "ci_low": 0.008544303797468353,
+      "ci_high": 0.19831474784006428,
+      "unique_wafers": 80,
+      "components": 76
+    },
+    {
+      "role": "audit",
+      "metric": "normal_to_scratch_rate",
+      "seed": 42,
+      "estimate": -0.0010011262670504317,
+      "ci_low": -0.0021333762445198876,
+      "ci_high": -0.00012599179168351878,
+      "unique_wafers": 7991,
+      "components": 344
+    },
+    {
+      "role": "audit",
+      "metric": "normal_to_scratch_rate",
+      "seed": 123,
+      "estimate": -0.0002502815667626079,
+      "ci_low": -0.0006381010367530542,
+      "ci_high": 0.0,
+      "unique_wafers": 7991,
+      "components": 344
+    },
+    {
+      "role": "audit",
+      "metric": "normal_to_scratch_rate",
+      "seed": 2026,
+      "estimate": -0.00012514078338130396,
+      "ci_low": -0.0005251497552526359,
+      "ci_high": 0.0002604633233657065,
+      "unique_wafers": 7991,
+      "components": 344
+    },
+    {
+      "role": "audit",
+      "metric": "normal_to_scratch_rate",
+      "seed": "mean_across_seeds",
+      "estimate": -0.0004588495390647812,
+      "ci_low": -0.000948602009477196,
+      "ci_high": -4.411402864913933e-05,
+      "unique_wafers": 7991,
+      "components": 344
+    },
+    {
+      "role": "audit",
+      "metric": "normal_any_defect_rate",
+      "seed": 42,
+      "estimate": -0.005881616818921287,
+      "ci_low": -0.01020602904632839,
+      "ci_high": -0.0021999946482798268,
+      "unique_wafers": 7991,
+      "components": 344
+    },
+    {
+      "role": "audit",
+      "metric": "normal_any_defect_rate",
+      "seed": 123,
+      "estimate": -0.004379927418345639,
+      "ci_low": -0.0076781172035782054,
+      "ci_high": -0.0017410715680248648,
+      "unique_wafers": 7991,
+      "components": 344
+    },
+    {
+      "role": "audit",
+      "metric": "normal_any_defect_rate",
+      "seed": 2026,
+      "estimate": -0.0052559129020147664,
+      "ci_low": -0.009488810606357834,
+      "ci_high": -0.0017497515392852377,
+      "unique_wafers": 7991,
+      "components": 344
+    },
+    {
+      "role": "audit",
+      "metric": "normal_any_defect_rate",
+      "seed": "mean_across_seeds",
+      "estimate": -0.005172485713093896,
+      "ci_low": -0.008919911480395353,
+      "ci_high": -0.002112391779064298,
+      "unique_wafers": 7991,
+      "components": 344
+    }
+  ],
+  "interpretation": "Consistent joint point-estimate improvement on reused development audit.",
+  "claims_allowed": [
+    "Six frozen new RF fits, identical train/tune/audit rows and fixed hyperparameters, test one six-feature block.",
+    "All three RF seeds improved Scratch true positives and reduced both normal-to-Scratch and total normal false positives on this reused development audit.",
+    "Point-estimate improvement is consistent across seeds; it does not establish statistical significance for every seed or independent generalization.",
+    "PCA anisotropy is recoverable from the original covariance: the empirical redundancy audit spans all 54355 development wafers.",
+    "Feature/error associations, gallery impressions and size-coverage concentrations are descriptive, not proven causes."
+  ],
+  "claims_not_supported": [
+    "A new independent test success, production readiness, or replacement of the original final model.",
+    "Six independent new information sources, or an isolated causal effect of PCA.",
+    "Three seeds triple the number of independent evaluation wafers.",
+    "A controlled CPU-versus-GPU latency benchmark or a claim that all Scratch recall weaknesses are solved."
+  ]
+}

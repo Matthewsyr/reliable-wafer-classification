@@ -1,0 +1,224 @@
+{
+  "stage": "cnn_validation_and_frozen_final_test",
+  "class_order": [
+    "Center",
+    "Donut",
+    "Edge-Loc",
+    "Edge-Ring",
+    "Loc",
+    "Near-full",
+    "Random",
+    "Scratch",
+    "none"
+  ],
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "input_sha256": "1d04fccb3dd3176b276878b926b20fead7e077c5751e4d353ea9741a5e7b5c65",
+  "baseline_run_provenance_sha256": "f32c0bd04982766fdc48892e487a50455ba53333c3eff381698af94125d3a28f",
+  "image_size": 64,
+  "preprocessing": "Separate binary valid-die and failed-die masks; centered zero square padding; area resize to 64x64; channels [valid,failed], float32. No fitted normalization or augmentation.",
+  "epochs": 8,
+  "batch_size": 256,
+  "budget_rationale": {
+    "revised_utc": "2026-10-22T00:24:59.9369062Z",
+    "previous_epochs": 12,
+    "fixed_epochs": 8,
+    "decision_state": "before any real-data CNN fitting or validation scores",
+    "scope": "All devices and configurations use eight epochs; the fixed 18-run matrix is unchanged. No score-dependent budget adaptation.",
+    "evidence": {
+      "source": "Kaggle notebook version 360950931, synthetic CPU benchmark",
+      "kaggle_version": 360950931,
+      "synthetic_only": true,
+      "batch_size": 256,
+      "small": {
+        "training_samples_per_second": 291.41045,
+        "prediction_samples_per_second": 675.0552
+      },
+      "medium": {
+        "training_samples_per_second": 124.16624,
+        "prediction_samples_per_second": 285.0802
+      }
+    },
+    "reason": "The synthetic CPU rates imply approximately 9.5 hours for the original 12-epoch validation matrix, before final fitting and additional I/O. Reduce the fixed initial compute budget before observing real-data CNN results; benchmark extrapolations are not runtime guarantees."
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.0001
+  },
+  "model_specs": {
+    "cnn_small_unweighted": {
+      "model_size": "small",
+      "weighting": "none"
+    },
+    "cnn_small_sqrt_inverse": {
+      "model_size": "small",
+      "weighting": "sqrt_inverse"
+    },
+    "cnn_medium_unweighted": {
+      "model_size": "medium",
+      "weighting": "none"
+    }
+  },
+  "architecture": {
+    "name": "WaferCNN_singleconv_v1",
+    "channels": {
+      "small": [
+        16,
+        32,
+        64
+      ],
+      "medium": [
+        32,
+        64,
+        128
+      ]
+    },
+    "classifier": "three Conv2d/BatchNorm/ReLU/MaxPool blocks, AvgPool2d(2), linear nine-class logits"
+  },
+  "preprocessing_contract": {
+    "size": 64,
+    "channels": [
+      "valid_die_coverage",
+      "failed_die_coverage"
+    ],
+    "padding": "zero pad to max(H,W) square, centred; extra odd cell on bottom/right",
+    "resize": "CPU float32 torch.nn.functional.interpolate mode=area",
+    "normalization": "none; mask coverage values remain in [0,1]",
+    "augmentation": "none"
+  },
+  "selection_rule": "Mean lot-validation Macro-F1 across seeds 42/123/2026 at fraction=1; descending score then ascending model name. Random validation and learning curves are ineligible.",
+  "best_epoch_rule": "Earliest epoch attaining maximum validation Macro-F1, without changing the eight-epoch budget.",
+  "final_cnn_epochs_rule": "Integer median of the three selected configuration best epochs; reinitialize with seed 42 and fit all development wafers without final-test early stopping.",
+  "rf_policy": "Use the existing stage-2 selected RF configuration without reselection, refit all development features with seed 42.",
+  "final_subsets": [
+    "all",
+    "nonidentical_to_development"
+  ],
+  "final_subset_rule": "The second subset excludes test maps whose precomputed map_sha256 appears anywhere in full development; it is a predeclared sensitivity analysis, not a replacement primary endpoint.",
+  "primary_metric": "Fixed nine-class unweighted Macro-F1 with zero_division=0; per-class recall is uninterpretable when support is zero.",
+  "statistical_note": "SD over three overlapping development holdouts is descriptive, not a confidence interval. Random/lot differences mix group similarity, composition, and sample difficulty.",
+  "test_policy": "Write and hash selection_freeze.json before final-test preprocessing, prediction, or scoring. Score both frozen models; do not use scores to choose or revise models.",
+  "cache_policy": "Temporary memory-mapped preprocessed images are not deliverables and are removed after use.",
+  "device": "cpu",
+  "run_mode": "full",
+  "torch_cpu_threads": 2,
+  "experiment_matrix": [
+    {
+      "protocol": "lot",
+      "seed": 42,
+      "model": "cnn_small_unweighted",
+      "fraction": 1.0
+    },
+    {
+      "protocol": "random",
+      "seed": 42,
+      "model": "cnn_small_unweighted",
+      "fraction": 1.0
+    },
+    {
+      "protocol": "lot",
+      "seed": 42,
+      "model": "cnn_small_sqrt_inverse",
+      "fraction": 1.0
+    },
+    {
+      "protocol": "lot",
+      "seed": 42,
+      "model": "cnn_medium_unweighted",
+      "fraction": 1.0
+    },
+    {
+      "protocol": "lot",
+      "seed": 42,
+      "model": "cnn_small_unweighted",
+      "fraction": 0.1
+    },
+    {
+      "protocol": "lot",
+      "seed": 42,
+      "model": "cnn_small_unweighted",
+      "fraction": 0.3
+    },
+    {
+      "protocol": "lot",
+      "seed": 123,
+      "model": "cnn_small_unweighted",
+      "fraction": 1.0
+    },
+    {
+      "protocol": "random",
+      "seed": 123,
+      "model": "cnn_small_unweighted",
+      "fraction": 1.0
+    },
+    {
+      "protocol": "lot",
+      "seed": 123,
+      "model": "cnn_small_sqrt_inverse",
+      "fraction": 1.0
+    },
+    {
+      "protocol": "lot",
+      "seed": 123,
+      "model": "cnn_medium_unweighted",
+      "fraction": 1.0
+    },
+    {
+      "protocol": "lot",
+      "seed": 123,
+      "model": "cnn_small_unweighted",
+      "fraction": 0.1
+    },
+    {
+      "protocol": "lot",
+      "seed": 123,
+      "model": "cnn_small_unweighted",
+      "fraction": 0.3
+    },
+    {
+      "protocol": "lot",
+      "seed": 2026,
+      "model": "cnn_small_unweighted",
+      "fraction": 1.0
+    },
+    {
+      "protocol": "random",
+      "seed": 2026,
+      "model": "cnn_small_unweighted",
+      "fraction": 1.0
+    },
+    {
+      "protocol": "lot",
+      "seed": 2026,
+      "model": "cnn_small_sqrt_inverse",
+      "fraction": 1.0
+    },
+    {
+      "protocol": "lot",
+      "seed": 2026,
+      "model": "cnn_medium_unweighted",
+      "fraction": 1.0
+    },
+    {
+      "protocol": "lot",
+      "seed": 2026,
+      "model": "cnn_small_unweighted",
+      "fraction": 0.1
+    },
+    {
+      "protocol": "lot",
+      "seed": 2026,
+      "model": "cnn_small_unweighted",
+      "fraction": 0.3
+    }
+  ],
+  "source_sha256": {
+    "cnn_pipeline.py": "af419ed89c7c70ef538f40df3337a0f1396f8397ff0857c722ddfa05770a02c4",
+    "wafer_cnn.py": "88671864f38eb400c9ee9678a71cfa3abf8015c74e5fa6b48b911cf00c71582d",
+    "wafer_features.py": "0dc546f82fe12a1ec054db26692597ae727c8195e24c428eb0b9c0afceb3e0f4"
+  }
+}

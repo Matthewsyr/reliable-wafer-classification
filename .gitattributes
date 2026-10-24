@@ -1,0 +1,3 @@
+# Keep source and evidence hashes stable across Windows/Linux checkouts.
+# These files contain frozen byte-level provenance, so do not normalize EOLs.
+* -text

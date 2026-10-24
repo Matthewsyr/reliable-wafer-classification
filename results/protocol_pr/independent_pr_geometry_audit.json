@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "audited_at_utc": "2026-10-24T17:57:23.331206+00:00",
+  "checks_total": 14317,
+  "checks_failed": 0,
+  "failures": [],
+  "scope": "Independent sklearn AP and nine-class metrics, independent ascending-score threshold search, direct binary grid decisions, full geometry probability/hash/row-order validation. No training code or main PR metric functions imported.",
+  "geometry_probability_records_verified": 18,
+  "pr_model_seed_role_records_verified": 18,
+  "threshold_grid_rows_verified": 396,
+  "thresholds_selected": 9,
+  "no_rule_selected": 0,
+  "formal_test_rescored": false,
+  "new_independent_confirmation": false,
+  "geometry_incremental_value": [
+    {
+      "role": "tune",
+      "seed": 42,
+      "macro_f1_delta": 0.03394842427160194,
+      "scratch_precision_delta": 0.5,
+      "scratch_recall_delta": 0.08080808080808077,
+      "scratch_average_precision_ovr_delta": 0.32886975386785144,
+      "normal_any_defect_count_delta": -57,
+      "normal_to_scratch_count_delta": -42
+    },
+    {
+      "role": "tune",
+      "seed": 123,
+      "macro_f1_delta": 0.0301633837452997,
+      "scratch_precision_delta": 0.49966777408637875,
+      "scratch_recall_delta": 0.02020202020202022,
+      "scratch_average_precision_ovr_delta": 0.30228978236273857,
+      "normal_any_defect_count_delta": -74,
+      "normal_to_scratch_count_delta": -50
+    },
+    {
+      "role": "tune",
+      "seed": 2026,
+      "macro_f1_delta": 0.03791289691285382,
+      "scratch_precision_delta": 0.5251196172248804,
+      "scratch_recall_delta": 0.07070707070707072,
+      "scratch_average_precision_ovr_delta": 0.2951118500924581,
+      "normal_any_defect_count_delta": -69,
+      "normal_to_scratch_count_delta": -38
+    },
+    {
+      "role": "audit",
+      "seed": 42,
+      "macro_f1_delta": 0.031132266598676406,
+      "scratch_precision_delta": 0.4392857142857142,
+      "scratch_recall_delta": 0.07500000000000001,
+      "scratch_average_precision_ovr_delta": 0.2422506567634395,
+      "normal_any_defect_count_delta": -47,
+      "normal_to_scratch_count_delta": -8
+    },
+    {
+      "role": "audit",
+      "seed": 123,
+      "macro_f1_delta": 0.034909727589474304,
+      "scratch_precision_delta": 0.37743589743589745,
+      "scratch_recall_delta": 0.11249999999999999,
+      "scratch_average_precision_ovr_delta": 0.2385298786958831,
+      "normal_any_defect_count_delta": -35,
+      "normal_to_scratch_count_delta": -2
+    },
+    {
+      "role": "audit",
+      "seed": 2026,
+      "macro_f1_delta": 0.03415130707498393,
+      "scratch_precision_delta": 0.3793859649122807,
+      "scratch_recall_delta": 0.11249999999999999,
+      "scratch_average_precision_ovr_delta": 0.24294172210498655,
+      "normal_any_defect_count_delta": -42,
+      "normal_to_scratch_count_delta": -1
+    }
+  ],
+  "hashes": {
+    "pr_protocol": "bf33f6f4b65788ddc0a770ceac9eaa922116b162ceee52a11f71e2828227889a",
+    "threshold_selection": "1ec272e31c88335fc049bf01845611ac8f30ed5c2744f287bc0e5c0fa90e7b5a",
+    "pr_results": "0a29c8648defa187ba21e39d56131f24b07af970b37f88e318a00a028d7a4633",
+    "geometry_protocol": "694d55963076f770211075653f423f16c3f62e500f798c70572dbd7efa059a76"
+  }
+}

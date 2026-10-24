@@ -1,0 +1,71 @@
+{
+  "verification_status": "passed",
+  "scope": "full_results",
+  "real_data_input_sha256": "1d04fccb3dd3176b276878b926b20fead7e077c5751e4d353ea9741a5e7b5c65",
+  "baseline_run_provenance_sha256": "f32c0bd04982766fdc48892e487a50455ba53333c3eff381698af94125d3a28f",
+  "validation": {
+    "validated_completed_runs": 18,
+    "prediction_rows": 197190,
+    "full_matrix_complete": true,
+    "parameter_count_by_size": {
+      "small": 32777,
+      "medium": 111625
+    }
+  },
+  "final_evaluation_verified": true,
+  "limitations": [
+    "CSV consistency checks do not independently rerun training or prove execution order.",
+    "Training Macro-F1 and reported runtimes are range-checked; training predictions are not exported.",
+    "Loss weights and index hashes are checked from checkpoint JSON; model evaluation mode and no-test-tuning also require source review."
+  ],
+  "selection": {
+    "cnn_model": "cnn_medium_unweighted",
+    "final_epochs": 7,
+    "rf_model": "rf_weighted_full",
+    "freeze_sha256": "ab0ba9c73ee60dd992e8945e0a17bc52e3f77ae12609cb932ed757811e57810a"
+  },
+  "final": {
+    "final_model_count": 2,
+    "prediction_rows": 237190,
+    "recomputed_final_scores": [
+      {
+        "model": "cnn_medium_unweighted",
+        "subset": "all",
+        "seed": 42,
+        "rows": 118595,
+        "lots": 4953,
+        "accuracy": 0.4778784940343185,
+        "macro_f1": 0.45155098402073984
+      },
+      {
+        "model": "cnn_medium_unweighted",
+        "subset": "nonidentical_to_development",
+        "seed": 42,
+        "rows": 115437,
+        "lots": 4953,
+        "accuracy": 0.46406264889073695,
+        "macro_f1": 0.448847048554895
+      },
+      {
+        "model": "rf_weighted_full",
+        "subset": "all",
+        "seed": 42,
+        "rows": 118595,
+        "lots": 4953,
+        "accuracy": 0.697145748134407,
+        "macro_f1": 0.4486722365067695
+      },
+      {
+        "model": "rf_weighted_full",
+        "subset": "nonidentical_to_development",
+        "seed": 42,
+        "rows": 115437,
+        "lots": 4953,
+        "accuracy": 0.6889818688981869,
+        "macro_f1": 0.444346501354044
+      }
+    ],
+    "excluded_identical_test_rows": 3158
+  },
+  "verified_artifact_count": 130
+}

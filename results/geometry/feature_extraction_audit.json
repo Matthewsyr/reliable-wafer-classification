@@ -1,0 +1,24 @@
+{
+  "protocol_sha256": "694d55963076f770211075653f423f16c3f62e500f798c70572dbd7efa059a76",
+  "rows": 54355,
+  "raw_maps_read": 54355,
+  "official_test_maps_read": 0,
+  "all_per_map_sha256_verified": true,
+  "original_feature_replays": 25,
+  "features": [
+    "pca_anisotropy_existing_moments",
+    "strip_failed_share",
+    "strip_excess_failed_share",
+    "strip_span_fraction",
+    "strip_axial_occupancy",
+    "strip_rms_halfwidth"
+  ],
+  "linearity_features_sha256": "93039e3cbeb64fb3ebacc730e150edf4e3ee980fefd7fb09857fee261c6c8865",
+  "elapsed_seconds": 403.84451769990847,
+  "role_counts": {
+    "train": 31457,
+    "tune": 11307,
+    "audit": 11591
+  },
+  "all_finite": true
+}

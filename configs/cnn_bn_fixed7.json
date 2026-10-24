@@ -1,0 +1,6 @@
+{
+  "kind": "cnn", "seed": 42, "fit_roles": ["train"], "validation_role": "tune",
+  "model_size": "medium", "weighting": "none", "epochs": 7, "batch_size": 256,
+  "fixed_epochs": true,
+  "purpose": "Fixed-epoch historical BN architecture with natural training order; portable reference implementation, not a claim of bit-exact GPU replay."
+}

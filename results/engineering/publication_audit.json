@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "tracked_files": 155,
+  "staged_bytes_equal_working_bytes": true,
+  "text_files_scanned": 125,
+  "local_markdown_links_checked": 52,
+  "source_manifest_hashes_checked": 70,
+  "bytes_total": 27792208,
+  "largest_file_bytes": 4905991,
+  "patterns_checked": [
+    "private_key",
+    "github_token",
+    "openai_key",
+    "aws_access_key",
+    "personal_machine_path"
+  ],
+  "findings": [],
+  "limitations": "Pattern scan is not a guarantee against all secrets. Raw images/model binaries are checked separately by check_publish.py."
+}
