@@ -1,0 +1,18 @@
+{
+  "version": "wm811k-blind-review-08-v1",
+  "historical_reference_commit": "4b2f0123ea429fa7b1b5e5e2139148dc789c3b2d",
+  "class_order": ["Center","Donut","Edge-Loc","Edge-Ring","Loc","Near-full","Random","Scratch","none"],
+  "operational_seed": 42,
+  "upstream": {"model":"rf_original71_s42","sha256":"27cb744cf7a5b798d4b55df77d056a93b2034cd874f19a4939fb3df09d36687f","inverse_temperature":1.9147552052282766,"minimum_calibrated_p_defect":0.5},
+  "ranker": {"model":"rf_linearity77_s42","sha256":"09edefdb9ebbbc847a2817d10e826b1d999251b8d388a2010b472ac67167ffa2","inverse_temperature":2.036757049926612},
+  "probability_floor": 1e-12,
+  "queue": {"alerted":1000,"maximum_reviews":200,"tail":"floor(n/5)","order":"UTC arrival time, then stable wafer ID","tie_seed":20261101},
+  "baseline_A":"RF77 calibrated P(any defect), descending, fill budget",
+  "challenger_B":"0.9 * sum_c P(c)*L(c) - 0.1; descending, strictly positive, up to budget",
+  "primary": {"units":"hypothetical relative loss units per 1000 eligible arrivals","normal":0,"other_defect":1,"scratch":5,"efficacy":0.9,"review_fee":0.1,"contrast":"B minus A"},
+  "sensitivity":"Reprice the same two locked lists with Scratch loss 1. No re-ranking.",
+  "cohort_days_utc":30,
+  "sampling":{"selected_by_either":1.0,"alerted_selected_by_neither":0.10,"unflagged":0.10,"stratify_by":"lot and disposition","draw":"within stratum simple random sample without replacement; ceil(rate*N), minimum 2 up to census"},
+  "inference":{"replicates":2000,"resampling_seed":20261102,"cluster":"connected groups of lots linked by identical maps","minimum_clusters_for_recommendation":30,"alpha":0.05,"decision":"If the paired interval for B-A lies below zero, favor B; if above zero, favor A; otherwise inconclusive. One fixed stop, no interim model changes."},
+  "modeling_scope":"Seed 123 and 2026 belong to retrospective sensitivity, not prospective model selection."
+}

@@ -1,0 +1,45 @@
+{
+  "status": "pass",
+  "groups": 219,
+  "checked_fields": 24,
+  "max_abs_differences": {
+    "predicted_scratch_n": 4.960867272529867e-10,
+    "predicted_defect_n": 4.991163038425839e-10,
+    "mean_p_scratch": 4.8936632524032575e-11,
+    "observed_scratch_rate": 3.33333360913457e-11,
+    "scratch_overprediction": 4.8936632524032575e-11,
+    "realized_net_benefit": 2.2737367544323206e-13,
+    "predicted_net_benefit": 4.986588919564383e-10
+  },
+  "result_sha256": [
+    "be2062bf5ffdd1120620720a4048294e5a979442b828aec7f3afd46c9d32a9bc"
+  ],
+  "expected_sha256": "bad7d49b68a301403fa27579fefdd95418dc9c7006c2c37b38d529b89d0b7bb2",
+  "acquisition": "Native Snowsight result-grid copy, including headers, to tab-delimited files. Original TSV bytes retained. Integer fields matched exactly. Floating observations may reflect displayed precision.",
+  "native_tsv": {
+    "snowflake_s42.tsv": {
+      "rows": 76,
+      "columns": 24,
+      "sha256": "f138b003aef5497e7bc7a788080c79a8a6fcc67868c514c659d608aac8636244"
+    },
+    "snowflake_s123.tsv": {
+      "rows": 71,
+      "columns": 24,
+      "sha256": "de9bc28b076826f1ce8de63035d494a47e1d74be198bc5b88b405bb8b54810d2"
+    },
+    "snowflake_s2026.tsv": {
+      "rows": 72,
+      "columns": 24,
+      "sha256": "cb47e4c1065c26214c12a70ac6305c257a90e28f0a124bcd5b4d187d74c0754e"
+    }
+  },
+  "matched_cells": 5256,
+  "count_atol": 0,
+  "float_abs_tolerance": 1e-08,
+  "float_rel_tolerance": 1e-10,
+  "scope": "Separate SQL reconstruction from the same selected-list union and historical labels. No new factory labels or independent model inference.",
+  "per_seed_queues_audited": 50,
+  "unique_seed_queue_pairs": 150,
+  "shared_inputs_and_expected_sha": "149ca030b8cdf18972e2d80583577a80803795130e3588bf7a675561fb3ec7f1",
+  "private_worksheet_repair_sha": "efe6413b9131d85f7bf4c0751ac96268b625769e6001d1cf92012edb7ce6cc1d"
+}

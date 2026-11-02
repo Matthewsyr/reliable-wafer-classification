@@ -1,0 +1,23 @@
+{
+  "status": "complete",
+  "input_union_sha256": "0f4a16e7c9301453e23dcf1c7b19610c8ff9941fd2d284c20df81ecd614bbd0d",
+  "independent_class_cells_sha256": "ae2838769b5e283897644e9699897ca5071fc9fe8b38f1c0528bb299f35943ee",
+  "template_sha256": "fb3552fd02e26efb6c14544c80554c3426f7c965accb77496b92283ab7c59fff",
+  "generator_sha256": "8c8c8628ede0b08d59ddcd44754d7a4a7ce0165719fb560128ce0094f78dcf6d",
+  "expected_csv_sha256": "bad7d49b68a301403fa27579fefdd95418dc9c7006c2c37b38d529b89d0b7bb2",
+  "expected_groups": 219,
+  "sql": {
+    "08_private_exchange_s42.sql": {
+      "bytes": 573307,
+      "sha256": "05525d0a799edafc2c8236ca136c8bbb2288e7f98983f3ded51ae653a04fca12"
+    },
+    "08_private_exchange_s123.sql": {
+      "bytes": 545671,
+      "sha256": "dc5b15c3031d9ed1be50f3652bfa669f6d9a27769ae9279389a3e2f0929df596"
+    },
+    "08_private_exchange_s2026.sql": {
+      "bytes": 527799,
+      "sha256": "b3616007489acd691ed08b2e6702073e248cb9fd8a1e6ceb1d735a5c9966eadc"
+    }
+  }
+}

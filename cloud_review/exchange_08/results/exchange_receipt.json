@@ -1,0 +1,38 @@
+{
+  "status": "complete",
+  "repo_pin": "4b2f0123ea429fa7b1b5e5e2139148dc789c3b2d",
+  "script_sha256": "c0fcb2596519fba826dea2769543becd3d843ba3f5e7f71f3d4ed9fb54afb7a5",
+  "private07_sha256": "3d0660a6a956762d979cff978f7620642d2da08edb074cbf595e0a18b6b4c56b",
+  "inputs07_sha256": "54a2a6269136af87939eb553e2805f18f8443bb2a91d9814066bf9a5dec4b421",
+  "score_receipt_sha256": "84a075730d0e5b79ed44f325c883ec9137639f9b6aa545f003eb07acf2ffa45c",
+  "calibration_sha256": "f95fde21e70b8bf0fc582c8953bedf8825994c45c47032a7debd3a90a25b4a54",
+  "decision_sha256": "7a89039475d80a9417407cd4d1c63ddeebda85ea9217518439448185c962164c",
+  "development_reference_sha256": "4e6564b2b8cd090353f65b7389b9e80eba768f138faf9ef95e3e3130f8fcd879",
+  "model_seeds": [
+    42,
+    123,
+    2026
+  ],
+  "original_full_arrivals": 118595,
+  "candidates": 49229,
+  "lots": 4953,
+  "capacity": 9845,
+  "ranking_A": "any_defect_fixed",
+  "ranking_B": "benefit_positive_cap",
+  "strata": "normal count at exact ordered height,width in train only (31,457 rows; 20,780 normals): 0 / 1-24 / 25+",
+  "target34": "Separate historical test-normal geometry target absent from all development normals; never used to rank",
+  "diagnostics": "Every score-table diagnostic is conditional on XOR of selected A and B lists for each seed. Joint selections cancel. Bins are left-closed, final upper bound inclusive. Repeated seeds reuse the same arrivals.",
+  "cost_gap": "B minus A. Price sensitivity holds memberships fixed. True Scratch/other reviewed deltas price observed losses; this does not identify factory prices or establish global calibration.",
+  "historical_reconciliation": "Candidate gate, both policies' per-queue counts, target-normal occupancy, Scratch/normal counts, upstream losses and total costs reproduced for each seed.",
+  "outputs": {
+    "private/exclusive_wafers.csv.gz": "3625814b2cda5dd8af5e07b7f0d712daba3c50a28747db51d4b6bfc2689dc809",
+    "private/selected_union.csv.gz": "0f4a16e7c9301453e23dcf1c7b19610c8ff9941fd2d284c20df81ecd614bbd0d",
+    "public/arm_cost_components.csv": "db862ef2eaccd3f42eed9d318bd7c329e5935a6cea08a3fff768facb385e959b",
+    "public/exchange_cells.csv": "a86b0a3ce77773a211fc21ce034fb119aed4ce44323d218f66ef167db13545e3",
+    "public/exchange_seed_summary.csv": "5c607c3ea90b30598f69317115b0903d38778056b8adbdd4833a436741a51614",
+    "public/exchange_size_calibration.csv": "bcc7b6d970cb1d216083d4d2d99f7e54b9c5e363d08e612f99e44d3af7747013",
+    "public/exchange_sql_cells.csv": "ae2838769b5e283897644e9699897ca5071fc9fe8b38f1c0528bb299f35943ee",
+    "public/reliability_cells.csv": "5937748c70dfb8e72ef90df7802dcad22cf93c5640123771a538eac2a58d0f3a",
+    "public/target34_exchange.csv": "9f7c86cc8a130a7986969d415879a8a2a709966d44af80495ff0cacebf12bb0a"
+  }
+}

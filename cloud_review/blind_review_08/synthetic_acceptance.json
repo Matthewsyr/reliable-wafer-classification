@@ -1,0 +1,26 @@
+{
+  "scope": "Hosted Colab CPU acceptance on synthetic inputs only. No new production lots or expert labels were used.",
+  "status": "passed",
+  "scikit_learn": "1.6.1",
+  "checkpoint_smoke": {
+    "frozen_seed": 42,
+    "synthetic_maps": 15,
+    "alerted": 15,
+    "nine_class_probability_vectors_verified": true
+  },
+  "workflow_smoke": {
+    "synthetic_arrivals": 1310,
+    "independent_group_quarantine": true,
+    "membership_sampling_strata": 5,
+    "two_readers_and_disagreement_adjudication": true,
+    "whole_stream_cost_ledgers": 2,
+    "includes_unflagged": true,
+    "zero_alert_handling": true
+  },
+  "sha256": {
+    "prospective.py": "a1dc87668ea428a2ff3be6efa3a6f453d9ea8c3bf3532cb2cd16a13b49d86200",
+    "synthetic_check.py": "cbf96a368cedf48e7e6e83c3411ec7e5ae03bd24f34ad5068554f5c545b13542",
+    "build_registry.py": "1ef0f9f66d780145d734c3a691e3a5bdeb5c6a874893ac0f1c17faa469592a68",
+    "frozen_policy.json": "576496ab576144bc39a0ac1fcb5442dc8ee63281844bd16e50ce4b0408a62db0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "08_private_exchange_s42_v2.sql": {
+    "old_sha256": "05525d0a799edafc2c8236ca136c8bbb2288e7f98983f3ded51ae653a04fca12",
+    "sha256": "8a9e53b5d4b20f808b50b43ceb15bd4b50e0a5f74c7390587c84d7a587713dd5",
+    "bytes": 573299
+  },
+  "08_private_exchange_s123_v2.sql": {
+    "old_sha256": "dc5b15c3031d9ed1be50f3652bfa669f6d9a27769ae9279389a3e2f0929df596",
+    "sha256": "1d55ee430eec1d6ccb8d827fa09d2770494ea849c6f5b505d27f953bafacbcd8",
+    "bytes": 545663
+  },
+  "08_private_exchange_s2026_v2.sql": {
+    "old_sha256": "b3616007489acd691ed08b2e6702073e248cb9fd8a1e6ceb1d735a5c9966eadc",
+    "sha256": "5752f874265a7623dce86f0a096d824c414ce9396822b04c5807558cdf904766",
+    "bytes": 527791
+  }
+}
