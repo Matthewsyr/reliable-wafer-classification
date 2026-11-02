@@ -157,14 +157,26 @@ def analyze(data, main, source, out):
         writer.writeheader()
         writer.writerows(chosen_rows+audit_rows)
     passed=len(conclusion["audit_passing_seeds"])
-    statement=(f"CE 与自身比较的差值恒为 0，本次保留了监督基线。" if chosen=="cnn_ce" else
-        f"入选训练臂在已见开发审计上有 {passed}/3 个种子守住全部约束。")
-    note=["# 联合约束下的补充选模","主分析按五臂验证 Macro-F1 排名。补充分析在每个种子上分别与本轮 CE 比较，要求真实划痕命中数不降、正常总误报数和正常误判划痕数均不升。",
-        f"验证合格候选为 {', '.join(candidates)}。其中按三种子平均 Macro-F1 选中 {chosen}（{float(means[chosen]):.2%}），主分析选择 {main['downstream_model']}。",
-        statement,"| 审计种子 | 真划痕命中变化 | 正常总误报变化 | 正常→划痕变化 | 同时守住 |\n|---|---:|---:|---:|---|\n"+
-        "\n".join(f"| {r['seed']} | {r['scratch_tp_delta']:+d} | {r['normal_any_fp_delta']:+d} | {r['normal_scratch_fp_delta']:+d} | {'是' if r['all_three_hold'] else '否'} |" for r in selected),
-        f"三个种子在同一组 {selected[0]['scratch_n']} 张真实划痕和 {selected[0]['normal_n']} 张正常片上复查。所有臂的对照差值均保存在 paired_guard_deltas.csv。最终独立验证仍需新批次。"]
-    (out/"BRIEF.zh-CN.md").write_text("\n\n".join(note)+"\n",encoding="utf8")
+    if chosen == "cnn_ce":
+        statement = "CE is the retained control. Its paired differences against itself are zero."
+    else:
+        statement = f"The selected arm met all three audit constraints in {passed}/3 seeds."
+    note = [
+        "# CNN selection with joint Scratch and false-alarm constraints",
+        "Each of the three seeds must preserve the matched CE Scratch hit count and increase neither "
+        "total false alarms on normal wafers nor normal-to-Scratch errors. Among eligible arms, selection "
+        "uses mean nine-class Macro-F1 across seeds.",
+        f"Eligible arms: {', '.join(candidates)}. The selected arm was {chosen} "
+        f"({float(means[chosen]):.2%} Macro-F1). The unrestricted comparison selected {main['downstream_model']}.",
+        statement,
+        "| Audit seed | Scratch hit change | Normal false-alarm change | Normal-to-Scratch change | All conditions held |\n"
+        "|---|---:|---:|---:|---|\n" + "\n".join(
+            f"| {r['seed']} | {r['scratch_tp_delta']:+d} | {r['normal_any_fp_delta']:+d} | "
+            f"{r['normal_scratch_fp_delta']:+d} | {'Yes' if r['all_three_hold'] else 'No'} |" for r in selected),
+        f"All three seeds saw the same {selected[0]['scratch_n']} scratches and {selected[0]['normal_n']:,} normal wafers. "
+        "See paired_guard_deltas.csv for every arm. Independent validation requires new lots.",
+    ]
+    (out/"BRIEF.md").write_text("\n\n".join(note)+"\n",encoding="utf8")
     return conclusion
 
 

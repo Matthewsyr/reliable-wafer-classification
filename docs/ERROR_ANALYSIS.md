@@ -77,4 +77,4 @@ The existing positive geometry result does not settle retraining stability, chro
 - [Full nine-class confusion counts](../results/geometry/confusions.csv)
 - [Paired uncertainty and limits](../results/geometry/conclusion.json)
 - [Original final-test metrics](../results/historical/cnn_and_final/final_test_per_class.csv)
-- [AI assistance and personal verification](AI_ASSISTANCE.md)
+- [Evidence and verification](REPRODUCIBILITY.md#evidence-and-verification)

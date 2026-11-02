@@ -1,37 +1,37 @@
-# 固定报警池中的复检排序
+# Inspection ranking in a fixed development alert pool
 
-回测使用历史开发审计集中原数据记录的缺陷或正常标签。训练和调参使用了与审计集分开的批次和同图连接组。该审计集已被查看，真实工厂复检结果和新批次独立验证尚缺。
+This retrospective simulation uses the original labels of the development audit, which had been inspected during research. Lots and exact-image components were separated across training, tuning and audit.
 
-1000 张指模拟上游报警片。RF71 种子 42 在调参集校准后，在 11,591 张来片中按缺陷概率 ≥ 0.5 筛出 3,642 张，来自 903 个批次。三个完整队列各有 200 个名额，642 张的尾队有 128 个，共 728 个。三个模型在同一组晶圆、相同队列和名额上比较。
+After calibration on tuning batches, RF71 seed 42 screened 3,642 of 11,591 arrivals at an any-defect probability of at least 0.5. The 903 contributing lots formed three full 1,000-alert queues and a final queue of 642. Their capacities were 200, 200, 200 and 128, for 728 total inspections. Every model used the same alerts, order and capacity.
 
-普通缺陷漏损取 1、正常为 0。另分别将 Scratch 或 Near-full 漏损提高到 5。每次复检收费 0.1，假设可避免该缺陷漏损的 90%。不复检某张晶圆计其真实类别漏损 L，复检则计 0.1 + 0.1L。排序用校准概率估计 0.9 × 各类别概率加权漏损 − 0.1；最后按真实类别结算。这些数值是相对单位。
+An unreviewed defect incurs a loss of 1, or 5 for Scratch or Near-full in the corresponding scenario. Normal loss is 0. Each review costs 0.1 and is assumed to prevent 90% of the defect loss. Reviewed wafers cost 0.1 + 0.1L. Expected net benefit is 0.9 times probability-weighted loss minus 0.1. Outcomes use observed labels. Costs are hypothetical relative units.
 
-## 每千张报警候选的模拟总成本
+## Simulated cost per 1,000 alerted candidates
 
-每格按训练种子 42、123、2026 排列，相同的三位小数合并显示。成本越低越好。随机复用固定的同一份抽样名单。
+Cells list seeds 42, 123 and 2026 in order. Identical rounded results are shown once. Lower cost is preferable. The random reference is the same frozen draw.
 
-| 情景 | 模型 | 随机检满 | 按任意缺陷概率检满 | 按净收益检满 | 只检正净收益、最多 200 |
+| Scenario | Ranker | Random, fill capacity | Any-defect probability, fill | Net benefit, fill | Positive net benefit, capped |
 |---|---|---:|---:|---:|---:|
-| 各缺陷相同 | RF71 | 803.624 | 796.705 | 796.705 | 796.705 |
-| 各缺陷相同 | RF77 | 803.624 | 796.705 | 796.705 | 796.705 |
-| 各缺陷相同 | CNN | 803.624 | 796.705 | 796.705 | 796.705 |
-| Scratch 五倍 | RF71 | 856.892 | 864.800 | 833.169 / 830.203 / 831.439 | 833.169 / 830.203 / 831.439 |
-| Scratch 五倍 | RF77 | 856.892 | 864.800 | 814.388 / 813.893 / 815.376 | 814.388 / 813.893 / 815.376 |
-| Scratch 五倍 | CNN | 856.892 | 864.800 | 825.261 / 831.439 / 825.508 | 825.261 / 831.439 / 825.508 |
-| Near-full 五倍 | RF71 | 808.347 | 801.428 | 797.474 | 797.474 |
-| Near-full 五倍 | RF77 | 808.347 | 800.439 / 801.428 / 800.439 | 797.474 | 797.474 |
-| Near-full 五倍 | CNN | 808.347 | 797.474 / 797.474 / 800.439 | 797.474 | 797.474 |
+| Equal losses | RF71 | 803.624 | 796.705 | 796.705 | 796.705 |
+| Equal losses | RF77 | 803.624 | 796.705 | 796.705 | 796.705 |
+| Equal losses | CNN | 803.624 | 796.705 | 796.705 | 796.705 |
+| Scratch 5x | RF71 | 856.892 | 864.800 | 833.169 / 830.203 / 831.439 | 833.169 / 830.203 / 831.439 |
+| Scratch 5x | RF77 | 856.892 | 864.800 | 814.388 / 813.893 / 815.376 | 814.388 / 813.893 / 815.376 |
+| Scratch 5x | CNN | 856.892 | 864.800 | 825.261 / 831.439 / 825.508 | 825.261 / 831.439 / 825.508 |
+| Near-full 5x | RF71 | 808.347 | 801.428 | 797.474 | 797.474 |
+| Near-full 5x | RF77 | 808.347 | 800.439 / 801.428 / 800.439 | 797.474 | 797.474 |
+| Near-full 5x | CNN | 808.347 | 797.474 / 797.474 / 800.439 | 797.474 | 797.474 |
 
-本次各个队列都有足够多的正净收益候选。有限额的正净收益策略实际用完 728 个名额，与净收益检满策略成本相同。108 条完整记录还保留实际复检数、正常片复检数、未获复检的真实缺陷数、候选池外漏损和每千张全来片成本。详见 `relative_policy_matrix.csv`。
+All queues contained enough positive-benefit candidates to fill all 728 slots. The [full matrix](relative_policy_matrix.csv) gives 108 combinations with number reviewed, normals reviewed, unreviewed defects, loss outside the alert pool and whole-stream cost per 1,000 arrivals.
 
-## RF77 换入和换出的晶圆
+## Which wafers changed places with RF77?
 
-下表固定 Scratch 五倍损失及满额净收益策略。计入未报警晶圆时，两种模型都承担相同的上游漏损，节省的分母从 3,642 扩至 11,591。区间为给定模型、队列和已选名单下的配对批次重抽样区间。
+The table holds full-capacity benefit ranking and fivefold Scratch loss fixed. RF71 and RF77 share an upstream miss cost. Including these misses changes the denominator from 3,642 alerts to 11,591 arrivals. Intervals resample paired lots conditional on the models, queues and selected lists.
 
-| 种子 | 换入 / 换出 | 换入 / 换出划痕 | 换入 / 换出正常片 | 节省 / 千张候选（95% 区间） | 节省 / 千张全来片 |
+| Seed | Entered / displaced | Scratch entered / displaced | Normal entered / displaced | Savings per 1,000 alerts [95% interval] | Savings per 1,000 arrivals |
 |---:|---:|---:|---:|---:|---:|
 | 42 | 339 / 339 | 3 / 0 | 3 / 67 | 18.781 [1.225, 39.414] | 5.901 |
 | 123 | 340 / 340 | 3 / 1 | 2 / 60 | 16.310 [1.255, 32.729] | 5.125 |
 | 2026 | 322 / 322 | 3 / 1 | 2 / 59 | 16.063 [0.111, 31.598] | 5.047 |
 
-在等损失与 Near-full 五倍损失情景下，RF77 相对 RF71 的成本差均为数值精度下的零。逐种子、逐情景的换入换出数及区间见 `relative_geometry_swaps.csv`。三个种子复用同一批晶圆，不能算作三个新的验证队列。
+Under equal losses or fivefold Near-full loss the realized RF77 versus RF71 cost differences were zero to numerical precision. Each seed uses the same cohort. [Per-seed entries, displacements and uncertainty](relative_geometry_swaps.csv)

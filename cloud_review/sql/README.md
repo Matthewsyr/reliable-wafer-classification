@@ -1,6 +1,6 @@
 # Snowflake review-cost analysis
 
-Hosted receipts from the 2026-11-01 Los Angeles run: `00_connection_check.sql` returned one row; 01 returned three passing checks; 02 returned fifteen passing scenario checks. The Drive handoff also contains 06, a seed-42, per-wafer Snowsight query generated inside the existing Colab runtime from its hash-verified scores. It ranks 3,642 real candidates in four virtual queues, compares both 728-wafer lists with the saved reference IDs, and checks the realized costs. The final query passed. See [Chinese readout](../RESULTS.zh-CN.md) for floating-point tie handling and the preserved first-attempt rounding failure. Files 03 and 04 are optional templates for a broader import of aggregated evidence; their execution is not claimed here.
+In the hosted run, worksheet 00 returned one connection row, worksheet 01 passed three checks and worksheet 02 passed fifteen. The private per-wafer replay in worksheet 06 reconstructed the two frozen 728-wafer lists from 3,642 real alerts across four queues. The original scores, tie ordering and final double-precision cost calculation reproduced both lists and costs. Worksheets 03 and 04 provide an optional aggregate import and have no execution claim here. [Audit readout and first-attempt rounding failure](../RESULTS.md)
 
 The two short worksheets run as independent, read-only queries in Snowsight. Neither uses a staged file, creates an object or trains a model. Their `VALUES` rows come from the completed hosted Colab run `20261102T042635Z_bf1507`, evaluated on the previously examined development audit.
 
@@ -8,8 +8,6 @@ The two short worksheets run as independent, read-only queries in Snowsight. Nei
 |---|---|
 | [01_validate_colab_summary.sql](01_validate_colab_summary.sql) | Six RF71/RF77 records for matched seeds. Reconstructs the flagged-pool and full-arrival costs under `scratch_5x`, checks the recorded paired differences and reconciles the change in reviewed Scratch counts. Expect three rows with `PASS`. |
 | [02_fixed_list_sensitivity.sql](02_fixed_list_sensitivity.sql) | Twenty-seven paired class-level slot exchanges. Reprices the fixed 5× Scratch lists at loss multipliers 0, 1, 2, 5 and 10. Reports the gain per 1,000 candidates, the break-even multiplier and a reference check for each seed. Expect 15 rows with `PASS`. |
-
-Use the existing trial-only Snowflake account if the account status and remaining allowance confirm this run cannot produce additional charges. A remaining promotional balance can coexist with on-demand billing after an upgrade. A trial that ends without upgrading is suspended. If trial-only billing cannot be verified, keep the existing hosted Colab results and the SQL for later. These worksheets require no subscription change, payment details, service integration, new warehouse or new account. [Snowflake trial terms](https://docs.snowflake.com/en/user-guide/admin-trial-account)
 
 ## Frozen experiment
 
@@ -34,7 +32,7 @@ Import four CSVs from the same cloud result's `cost/` folder. Only aggregate row
 | `slot_swaps.csv` | paired model comparison × pool × seed × ranking scenario × benefit policy × true class | 648 |
 | `gate.csv` | true class × counts entering and excluded | 9 |
 
-1. Use one verified trial-only session with an existing database and schema. Run [03_session_inputs.sql](03_session_inputs.sql). Its stage and tables are temporary.
+1. Use a single Snowflake session with a current warehouse, database and schema. Run [03_session_inputs.sql](03_session_inputs.sql). Its stage and tables are temporary.
 2. Stage the four **uncompressed** CSVs under their exact names. In a supported Snowflake client in the same session, issue e.g. `PUT file:///absolute/path/per_class.csv @WM_REVIEW_TRIAL_STAGE AUTO_COMPRESS=FALSE` and repeat for the other files. A session in a separate client cannot address this temporary stage. For an existing authorized stage, adjust the four COPY source locations accordingly. The first two worksheets need no file upload. [Snowflake PUT](https://docs.snowflake.com/en/sql-reference/sql/put)
 3. Execute [04_full_cost_analysis.sql](04_full_cost_analysis.sql) in that session. It reconstructs all 270 original policies' aggregate costs from truth counts and all 288 original/alternative fixed-list paired comparisons from slot exchanges. Require all eight initial result checks to report `PASS`. Then use the second result set for the 270 original operating points and the third for the RF77/RF71 sensitivity comparison.
 4. Add a hypothetical price/efficacy/fee schedule to `WM_REVIEW_VALUES` for additional fixed-list analysis. Adjust the 288 comparison-count assertion for an expanded schedule count (72 original paired comparisons × number of valuations). Close the session when finished. Review capacity applies to each virtual queue in the source Colab replay. The SQL aggregate check verifies total reviewed counts and their capacity.

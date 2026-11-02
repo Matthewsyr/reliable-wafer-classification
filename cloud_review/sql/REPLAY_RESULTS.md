@@ -1,7 +1,7 @@
-# 07 · 复检成本与队列名额复核
+# Review-cost and queue-capacity replay
 
-在 Snowsight 实际执行了 [07_cost_capacity_replay.sql](07_cost_capacity_replay.sql)。将导出表头统一为小写，再按情景与策略配对，Snowflake 和 SQLite 返回的 **18 组、180 个单元格逐一相同**。[Snowflake 原始聚合返回](../results/sql/snowflake_replay.csv) · [SQLite 对照](../results/sql/sqlite_replay.csv)
+The Snowflake and SQLite runs of worksheet 07 returned identical values in all 180 result cells across 18 scenario-policy pairs after normalizing header case and aligning rows by key. [Worksheet](07_cost_capacity_replay.sql) · [Snowflake results](../results/sql/snowflake_replay.csv) · [SQLite results](../results/sql/sqlite_replay.csv)
 
-SQL 用已完成的开发审计实验中逐类漏检和正常片复检的计数，重算了 **486 组模拟美元成本**，涵盖 9 个模型、3 个种子、2 个损失情景和 9 种策略。两种情景都假设每张被复检的正常片花费 5 美元，每张漏检的普通缺陷片损失 1,000 美元。漏检划痕分别计 1,000 或 3,000 美元。复算总成本与冻结结果的差异有 **0 组**，逐类计数与总体计数的差异也有 **0 组**。数据来自此前已查看的开发审计集，模型、校准和排名均沿用冻结结果。
+Using frozen per-class missed-defect and reviewed-normal counts, the query recomputed **486 hypothetical costs** across nine models, three seeds, two loss scenarios and nine policies. Both scenarios charged $5 per inspected normal and $1,000 per missed ordinary defect. A missed Scratch cost $1,000 or $3,000. All totals matched the frozen results and all per-class counts reconciled with their overall counts. The inputs came from the previously examined development audit with model fits, calibration and rankings fixed.
 
-随机排序、按缺陷概率排序、按预期收益排序共用 4 个候选队列，分别有 1,000、1,000、1,000、642 张，名额为 200、200、200、128 张。对每种情景、模型、种子和排序，SQL 核对实际复检数是否超过当批名额，并将各批复检数加回总体结果。**648 次队列核验中，逐批超额、总额超限、分批加总不符均为 0**。这 648 次复用了同样的 4 个队列。另 6 种策略不强制逐批限额，返回表以 `NO_HARD_QUEUE` 标明。[实际复检计数](../results/sql/batches.csv) · [来源收据](../results/sql/batches.csv.json)
+Random, defect-probability and expected-benefit rankings shared alert queues of 1,000, 1,000, 1,000 and 642 with respective capacities of 200, 200, 200 and 128. All **648 queue checks** stayed within local and total capacity, and the queue sums matched the reported inspection counts. These checks reuse the same four queues. The other six policies had no hard queue limits and are marked `NO_HARD_QUEUE` in the output. [Queue counts](../results/sql/batches.csv) · [Input provenance](../results/sql/batches.csv.json)

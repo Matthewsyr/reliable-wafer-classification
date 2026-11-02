@@ -1,41 +1,45 @@
-# 07 回放的固定规则
+# Frozen rules for the historical inspection replay
 
-本文件在查看 07 的真实排序、成本和尺寸占位结果前写定。原测试早已用于历史误差诊断。保留既有模型、校准、门槛、随机种子和成本定义，不据 07 结果调整训练或挑选报价情景。新的、从未查看的产线批次仍需另行取得。
+These rules were recorded before examining stage 07 ranking, cost or size-occupancy results. The original test labels had already informed error analysis. All weights, temperatures, gates, seeds and cost scenarios were fixed for the replay.
 
-## 人群、尺寸与分母
+## Populations and denominators
 
-主目标尺寸集合 T 为原测试正常片出现过、却未在所有开发正常片中出现过的精确有序 `(height,width)`。开发集为 54,355 张有标签晶圆，其中 36,730 张正常。已知的参照计数是原测试正常片中 78,158 / 110,701 属于 T（70.60%）。尺寸集合在过滤前确定，对三个人群保持一致。T 与真实类别仅用于回顾性分层。
+Define T as ordered native (height, width) pairs observed among original-test normals but absent among all 36,730 normals in the 54,355-wafer labeled development set. Of 110,701 original-test normals, 78,158 (70.60%) fall in T. Define T before filtering and use it for retrospective stratification in all three populations.
 
-| 预定人群 | 纳入条件 | 用途 |
-|---|---|---|
-| 原测试全集 | 118,595 张已标注测试片，4,953 个 lot | 回答这些尺寸实际上占用了多少模拟复检名额 |
-| 排除开发重复图 | 从全集剔除与开发集中任意图的高宽及像素哈希完全相同的 3,158 张测试片 | 检查直接重复图对结果的影响 |
-| 排除与开发相连的整个组件 | 在全 811,457 张晶圆上，以原始 lot 或相同图像哈希逐跳连接，排除所有接触任何开发 lot 的完整组件 | 检查经未标注晶圆或中间批次形成的间接重叠 |
-
-以上三个嵌套人群分别重建队列，均按已知真实标签结算。严格组件隔离控制可观察的同批及同图关联，无法消除设备、时间、工艺等未记录关联，也无法恢复这份测试集的盲态。原测试内部保留的重复到片按实际记录计数；此处两个敏感性人群针对的是与开发数据的重叠。
-
-## 排序和成本
-
-- 推理使用已封存的 RF71、加六个几何特征的 RF77、七轮自然采样 CNN，种子各为 42、123、2026。04 的九个单温度参数只用开发调参片拟合，并在 07 直接复用。原始九类概率先截下限 `1e-12`，再做温度变换。
-- 所有模型都使用同一上游门槛。种子 42 的 RF71 取固定逆温度 1.9147552052282766，校准后任一缺陷概率 ≥ 0.5 即入池。对每个人群先过滤行，再将入池行依原 04 规则按 lot 与行标识的固定散列排序，队列种子为 20261101。每满 1,000 张**报警候选**有 200 个名额，尾队大小为 n 时取 floor(n/5)。这些队列模拟处理能力，没有实测的每日到片时间。
-- 比较不复检、固定随机检满、按任意缺陷概率检满、按净收益检满，以及只选净收益为正的候选且最多检满。设漏掉真实类别 c 的损失为 L(c)，正常为 0，普通缺陷为 1。三个预设情景分别令全部缺陷损失相同、Scratch 为 5、Near-full 为 5。每次复检费用为 0.1，假设人工处置平均避免 90% 的缺陷损失。模型排序以 `0.9 × Σp(c)L(c) − 0.1` 估计收益。选定名单后使用数据集标签结算，未选晶圆计 L(c)，入选晶圆计 0.1 + 0.1L(c)。数值均为假设相对单位。
-- 对每种模型、种子、情景和策略，同报 T 内所有晶圆、T 内正常片和 T 内真实划痕。名额占用率用入选片数 / 全部可用名额，实际复检占比用入选片数 / 实际复检总数。来片占比与报警候选占比分别使用全来片和全部候选作分母。分母为零时留空。
-- 主要经营比较使用每千张全来片成本，计入未入池缺陷的漏损。同时保留每千报警候选成本，便于把上游覆盖问题与下游排序拆开。同模型种子和情景相同地比较 RF77 与 RF71，将 RF71 成本减 RF77 成本定义为节省。逐种子报告数值与换入、换出类别，三个种子复用同一组到片。已实现的 500 次批次重抽样区间以固定模型、固定候选队列和名单为条件，用于描述估计不确定度。
-
-## 固定输入与模型身份
-
-输入位级校验适用于以下文件版本。源仓库提交为 `92d2002c2b76e2db2fec492bda72ea66605d5e35`。
-
-| 输入 | SHA-256 |
+| Population | Inclusion |
 |---|---|
-| 07 私有输入包 | `54a2a6269136af87939eb553e2805f18f8443bb2a91d9814066bf9a5dec4b421` |
-| Kaggle v1 原始 pickle | `1d04fccb3dd3176b276878b926b20fead7e077c5751e4d353ea9741a5e7b5c65` |
-| 原测试清单 / 开发版本用于完整性核对 | `e47a81e1d2d162961dea3f40819fa9edb9fea38b98b8a9e2eabfd8673c8c650e` / `4e6564b2b8cd090353f65b7389b9e80eba768f138faf9ef95e3e3130f8fcd879` |
-| 全源 lot 与组件映射 | `ae0587ed311b19d702d5e61f200aaeae4e8e49acd47cc557cbe15f78d71600d9` |
-| 04 成本协议 / 决策源码 | `9e8411c52e0e11357547353a21621d956c049439daaafbf4a1b6daf3896753af` / `7a89039475d80a9417407cd4d1c63ddeebda85ea9217518439448185c962164c` |
-| 04 温度冻结 / 原概率清单 | `f95fde21e70b8bf0fc582c8953bedf8825994c45c47032a7debd3a90a25b4a54` / `c86c2c3d77762d6d8083545bbb3377b09c13eb09d7119c17426b933602d0a0a7` |
+| Original test | All 118,595 labeled test wafers in 4,953 lots. |
+| Exclude direct development duplicates | Drop 3,158 test wafers sharing exact native shape and pixel hash with a development map. |
+| Exclude development-linked components | Across all 811,457 wafers, connect wafers by original lot or identical map hash and remove every component touching a development lot. |
 
-| 训练种子 | RF71 权重 SHA-256 | RF77 权重 SHA-256 | CNN 权重 SHA-256 |
+Rebuild alert queues independently for each nested population. Within-test repeats remain recorded arrivals. Component exclusion controls observable multi-hop overlap through batches and maps, including unlabeled maps. Equipment, time and process relationships are unobserved.
+
+## Models, review and cost
+
+Use the frozen RF71, RF77 (six additional geometry features) and seven-epoch naturally sampled CNN for seeds 42, 123 and 2026. Reuse the nine development-tuned stage 04 temperatures. Floor each nine-class raw probability at 1e-12 before the temperature transform.
+
+RF71 seed 42 supplies a common upstream gate at calibrated any-defect probability ≥0.5 and inverse temperature 1.9147552052282766. Filter the population, then order alerted candidates by the frozen stage 04 lot and wafer hashes (seed 20261101). Each 1,000 **alerts** permit up to 200 reviews. The final queue of n alerts permits floor(n/5). Ordering simulates arrivals because WM-811K lacks timestamps.
+
+Compare no reviews, fixed random selection, any-defect ranking, full-capacity net-benefit ranking, and reviewing positive net benefit up to capacity. The missed loss L is zero for normal and one for an ordinary defect. Scenarios give equal defect losses, fivefold Scratch loss, or fivefold Near-full loss. Each review costs 0.1 and is assumed to prevent 90% of the loss. Predicted net benefit is `0.9 × Σ p(c)L(c) − 0.1`. Use observed labels for settlement. An unreviewed wafer costs L and a reviewed wafer 0.1 + 0.1L. All units are hypothetical.
+
+Report total target wafers, target normals and target scratches across policies and seeds. Divide reviewed counts by available capacity for slot occupancy and by actual reviews for review composition. Arrival and candidate shares use the corresponding population totals. Leave undefined rates blank.
+
+The primary comparison uses total cost per 1,000 **arrivals**, including upstream misses. Also report per-1,000-alert cost. Define model savings as RF71 cost minus RF77 cost at the same seed and scenario. Report entries and displacements by true class. The 500 paired lot bootstrap replicates condition on the fixed model, candidate queues and decisions. All seeds replay the same arrivals.
+
+## Frozen inputs
+
+Historical reference checkout: `92d2002c2b76e2db2fec492bda72ea66605d5e35`.
+
+| Input | SHA-256 |
+|---|---|
+| Private stage 07 input archive | `54a2a6269136af87939eb553e2805f18f8443bb2a91d9814066bf9a5dec4b421` |
+| Original Kaggle v1 pickle | `1d04fccb3dd3176b276878b926b20fead7e077c5751e4d353ea9741a5e7b5c65` |
+| Protected test manifest / development reference | `e47a81e1d2d162961dea3f40819fa9edb9fea38b98b8a9e2eabfd8673c8c650e` / `4e6564b2b8cd090353f65b7389b9e80eba768f138faf9ef95e3e3130f8fcd879` |
+| Full lot/component mapping | `ae0587ed311b19d702d5e61f200aaeae4e8e49acd47cc557cbe15f78d71600d9` |
+| Stage 04 cost protocol / decision source | `9e8411c52e0e11357547353a21621d956c049439daaafbf4a1b6daf3896753af` / `7a89039475d80a9417407cd4d1c63ddeebda85ea9217518439448185c962164c` |
+| Frozen tuning temperatures / original probability manifest | `f95fde21e70b8bf0fc582c8953bedf8825994c45c47032a7debd3a90a25b4a54` / `c86c2c3d77762d6d8083545bbb3377b09c13eb09d7119c17426b933602d0a0a7` |
+
+| Seed | RF71 weights | RF77 weights | CNN weights |
 |---:|---|---|---|
 | 42 | `27cb744cf7a5b798d4b55df77d056a93b2034cd874f19a4939fb3df09d36687f` | `09edefdb9ebbbc847a2817d10e826b1d999251b8d388a2010b472ac67167ffa2` | `3c9fbb2c2b58d20d3986b80186a692474137ef40694f98aceaac58ef5277179e` |
 | 123 | `0fe40e3569964a8393794faa68b87170d7c0e1fa7b3f9ce4bce7e6e3478121dc` | `a13e0110999f488ea084a5a5d5e640049fb3818532f4f02a042830d185b082f6` | `6a81fa4f6b101c005329e7f54234ae03ec4a5c75acc3569fd66ff51487ac359d` |

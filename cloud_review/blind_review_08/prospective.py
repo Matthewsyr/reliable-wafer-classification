@@ -1,4 +1,4 @@
-"""Register an unseen cohort, freeze blinded packets, then settle A/B costs. See PROTOCOL.zh-CN.md."""
+"""Register an unseen cohort, freeze blinded packets, then settle A/B costs. See PROTOCOL.md."""
 import argparse
 import csv
 import gzip

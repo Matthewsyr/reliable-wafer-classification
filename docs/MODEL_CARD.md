@@ -58,4 +58,4 @@ The fixed RF geometry block raised audit mean Scratch recall from 32.08% to 42.0
 
 Code, seeds, configuration, split manifests, saved measurement tables, training histories, source hashes and validation records are included. Raw data and large model binaries are excluded from Git. [Reproduction instructions](REPRODUCIBILITY.md) identify the data source, checksum, historical Kaggle versions and weight-recovery/retraining options. Fixed seeds do not ensure bit-identical results across CPU/GPU, library versions and operating systems.
 
-AI assistance and the difference between computed evidence, inspection notes and hypotheses are documented in [AI_ASSISTANCE.md](AI_ASSISTANCE.md).
+The reproduction guide documents how to distinguish measured outcomes, image inspection notes and manufacturing hypotheses. [Evidence and verification](REPRODUCIBILITY.md#evidence-and-verification)

@@ -7,7 +7,6 @@
   "render_script_sha256": "c30fb26d021d7ab9eacba759b13dccb3305d4d26a7f47adb6fd83c6e7aa40f48",
   "files": {
     "SUMMARY.md": "1c274cb2b484bcb2a9c6f8cc9941d7b3c89ff84d2a9e890dca739c83c41d18e5",
-    "SUMMARY.zh-CN.md": "ac3d72734098c5d6dbb3887e62f5d6acff2a7ebcea2ebd1bd9bd604550e8fc47",
     "calibration.csv.gz": "4a074e189bec0f19b5c5e66b68c19f73b481284264fe8a57e50964aed8cd88e8",
     "calibration_reliability.png": "3de1efc0ba4575e153d40b1bda65074c26524cd4a144ef9f63223a0c150170b7",
     "classification.csv.gz": "6452ad45a8a117213006ef43cd57f35bf946037443cbb7e0d5080a77f8d71a4d",
@@ -24,5 +23,11 @@
     "split_support.csv.gz": "eaedf72e97866afe3ef9a4b89ab0ffcd47f4bf240d02adc5c50c60452a4cdd07",
     "threshold_curves.csv.gz": "42e18c0ced682eb00de23ca4878deb5f13da1d28c1d7480907a9ba219c4231cf",
     "threshold_precision_recall_cost.png": "dc9fa54ab9d5ece98435d8b52f92034f2b48e46333941f127659b37b49e90836"
+  },
+  "historical_release": {
+    "commit": "c216b86bd3573bf35326c38aae542f3ce0b99663",
+    "path": "cloud_review/results/full/manifest.json",
+    "sha256": "e6da1aa923e7e63b5b666f3cb5572ad4fe6a6e1f0496f9c4aa50ff6790a8d827",
+    "scope": "The historical manifest records the original bilingual release. This English distribution contains the same quantitative tables, figures and policy, with the duplicate summary omitted."
   }
 }

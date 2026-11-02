@@ -1,29 +1,29 @@
-# P1 未标注审计与 P3 对照试验
+# Unlabeled coverage and masked pretraining
 
-全量原始文件包含 638,507 张未标注图、54,355 张有标签开发图和 118,595 张原测试图。未标注图来自 41,608 个批次，按原始高宽和像素计算出 533,150 个不同哈希。66,666 张未标注片与开发片同批，5,230 张与测试片同批；相同像素图分别涉及 1,816 和 5,666 张未标注片。上述条件可同时成立。
+WM-811K contains 638,507 unlabeled maps, 54,355 labeled development maps and 118,595 labeled original-test maps. The unlabeled pool spans 41,608 lots and 533,150 distinct native-shape and pixel hashes. Of the unlabeled wafers, 66,666 share a development lot and 5,230 share a test lot. Exact map matches affect 1,816 and 5,666 unlabeled wafers respectively. Conditions can overlap.
 
-### 失效 die 的比例
+## Failed-die fraction
 
-每张图使用失效 die 数除以有效 die 数。全量未标注图中有 58,327 张的比例为零。标签为正常描述整张晶圆的缺陷模式，不能用零失效或小比例给未标注片补类标。
+Divide the number of failed dies by the number of valid dies. A normal label describes the whole-wafer pattern. A small fraction or zero failed dies does not establish a label for an unlabeled wafer. Zero failures occur on 58,327 unlabeled maps.
 
-| 原始组 | 晶圆数 | 第 25 百分位 | 中位数 | 第 75 百分位 |
+| Population | Wafers | 25th percentile | Median | 75th percentile |
 |---|---:|---:|---:|---:|
-| 未标注 | 638,507 | 1.40% | 5.25% | 13.79% |
-| 有标签开发 | 54,355 | 10.89% | 15.44% | 19.72% |
-| 已查看的原测试 | 118,595 | 6.09% | 9.08% | 12.37% |
+| Unlabeled | 638,507 | 1.40% | 5.25% | 13.79% |
+| Labeled development | 54,355 | 10.89% | 15.44% | 19.72% |
+| Previously inspected original test | 118,595 | 6.09% | 9.08% | 12.37% |
 
-来源为托管 CPU 的 04 号运行 `20261102T042635Z_bf1507/shift/quantiles.csv` 与 `group_counts.csv`。复现时由 `portfolio/cloud_review/extension/shift_audit_v1.py` 对同一原文件计算。两个组的失效比例分箱总变差距离为未标注对开发 0.4532、未标注对原测试 0.3780。公开的 `portfolio/cloud_review/results/legacy_04/shift/shift_summary.json` 保存该距离和交叠统计。
+The stage 04 cloud run `20261102T042635Z_bf1507` produced the quantiles and counts. Total variation distances between binned fractions were 0.4532 (unlabeled versus development) and 0.3780 (unlabeled versus original test). [Shift evidence](../results/legacy_04/shift/shift_summary.json) · [Reproduction code](../extension/shift_audit_v1.py)
 
-### 同尺寸训练覆盖与历史目标的边界
+## Which sizes are covered?
 
-历史目标有 **34 种精确原始高宽**。这些尺寸出现于原测试的正常类，在全部开发正常片中都没有出现，共对应原测试正常片 78,158 / 110,701（70.60%）。直接排除与有标签片同批或同图后的未标注池，覆盖了其中 78,154 张测试正常片的尺寸。
+Exactly 34 native sizes occurred among original-test normals and no development normals. These sizes account for 78,158/110,701 (70.60%) test normals. After direct lot or image exclusions, the remaining unlabeled pool covered the sizes of 78,154 of these test normals.
 
-冻结 04 复检名单的开发审计对象共有 11,591 张。若只以 31,457 张训练片建立正常尺寸表，零正常支持层有 3,181 张，种子 42/123/2026 的 RF71 分别占用 617/601/605 个名额，其中正常 82/75/76 张；RF77 分别占用 539/540/538 个名额，其中正常 19/18/20 张。每次一共 728 个名额。这一层既包括整个开发集都缺少正常片的尺寸，也包括只在验证或审计正常类见过的尺寸。
+Using only the 31,457 training wafers as the reference for normal sizes gives a different cohort. The earlier 11,591-wafer development audit contains 3,181 wafers whose sizes lacked a training normal. For seeds 42, 123 and 2026, RF71 assigned 617/601/605 of 728 slots to that cohort, including 82/75/76 normals. RF77 assigned 539/540/538 slots, including 19/18/20 normals.
 
-精确匹配上述历史 34 种尺寸后，开发审计为 209 张真缺陷，206 张进入队列。按原先的划痕五倍损失满额策略，RF71 在这些尺寸实际复检 64/59/63 张，RF77 复检 67/80/74 张。各模型和种子均复检到其中 2 张真实划痕、0 张正常片。这里的 0 由定义决定，每张开发审计正常片已纳入“全部开发正常片”的尺寸表。此检查只连接 `work/diagnosis/cohorts/shape_label_support.csv` 与原云端 `shift_followup/cost/audit_cost_shapes.csv.gz` 两张聚合表。原测试已有的预测归档仅含九分类硬标签。原测试真实名额占用应以 07 号冻结概率回放为准。
+At precisely the 34 target sizes, the development audit contains 209 true defects, 206 of them alerted. Under fivefold Scratch loss and full-capacity benefit ranking, RF71 reviewed 64/59/63 of those wafers and RF77 reviewed 67/80/74. Every model and seed reviewed two true scratches and zero normals at these sizes. The zero follows from the target definition, which excludes all development normals at these sizes. [Original-test queue replay](REPORT.md)
 
-### 隔离与自监督的决策
+## Isolated unlabeled pool and pilot
 
-沿同批次、同像素关系做传递闭包后，含有标签的 8,848 个连通组件整体排除。484,982 张合格的未标注片经内部同图去重后，保留 434,498 个唯一候选，来自 25,762 个组件，比仅排除直接交叠少 31,247 个。安全池覆盖上述 3,181 张开发审计零训练正常支持层中 2,455 张的尺寸，占 77.18%。未标注图只能提供输入和覆盖信息。
+Exclude all 8,848 components connected to labeled wafers by lot or exact map. This leaves 484,982 eligible unlabeled records and, after within-pool deduplication, 434,498 distinct candidates across 25,762 components. Multi-hop exclusions removed 31,247 more distinct images than direct overlap exclusions alone. Remaining sizes cover 2,455 of the 3,181 audit wafers lacking training-normal size support (77.18%).
 
-在通过隔离检查的安全池中预先固定 50,000 张，增加一轮、391 次遮蔽区域失效密度自监督更新，再与种子 42 的随机初始化 CNN 使用相同结构、标注训练片和七轮监督预算配对。开发选择分区多认对 6 张划痕，正常总误报多 35 张。已查看审计集的真实划痕从 38/80 升至 45/80；正常总误报从 264/7,991 升至 328/7,991，正常误判划痕从 205 张增至 208 张。冻结三项约束未同时满足，停止扩大该预训练方案。来源为 `portfolio/cloud_review/results/ssl_paired/pilot_summary.json`、`portfolio/cloud_review/results/shift/pool_summary.json` 和 `portfolio/cloud_review/extension/ssl_pilot.py`。
+The pilot used 50,000 prespecified isolated unlabeled maps for one masked-density epoch with 391 updates. A seed-42 control used random initialization, the same architecture, labeled rows and seven supervised epochs. On development selection, pretraining found six more scratches and raised normal false alarms by 35. On the historical audit, Scratch hits rose from 38/80 to 45/80, total normal false alarms from 264/7,991 to 328/7,991, and normal-to-Scratch errors from 205 to 208. The pilot failed the joint criteria. [Pool summary](../results/shift/pool_summary.json) · [Paired pilot](../results/ssl_paired/pilot_summary.json) · [Pilot code](../extension/ssl_pilot.py)

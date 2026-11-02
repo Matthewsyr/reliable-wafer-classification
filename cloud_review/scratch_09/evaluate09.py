@@ -243,37 +243,48 @@ def run(args, out):
 
 
 def render(out, tables, grades, audit_grade, passed, arms):
-    names = {BASE: "A 原始 CNN", "real_repeat": "B 重复真实划痕", "synthetic": "C 合成划痕", STUDENT: "D 学生 CNN"}
-    words = {"failed": "至少一种子越界", "improved": "三种子守住且有改善", "tied": "三种子三指标均持平",
-             "fp_transfer_only": "仅将正常误报转到其他缺陷"}
-    lines = ["# 开发集划痕训练实验", "", "逐张晶圆只计一次。分母为该阶段所有真实划痕或所有真实正常晶圆。"
-             "正常总误报包括八种缺陷。报告逐种子展示同一批真实晶圆的表现，三个种子的晶圆数不能相加。",
-             "", "| 开发子集 | 方法 | 种子 | 划痕命中/真实 | 划痕召回 | 划痕精度 | 正常总误报/正常 | 正常→划痕 | Macro-F1 |",
+    names = {BASE: "A. Baseline CNN", "real_repeat": "B. Repeated real Scratch",
+             "synthetic": "C. Synthetic Scratch", STUDENT: "D. Student CNN"}
+    words = {"failed": "At least one seed failed", "improved": "All seeds passed with a gain",
+             "tied": "All seeds tied on all three counts", "fp_transfer_only": "False alarms shifted to another defect"}
+    lines = ["# Scratch training on the development set", "",
+             "Each row counts distinct labeled wafers. Scratch recall uses all true Scratch wafers in the partition. "
+             "Normal false alarms include all eight defect classes. Each seed was scored on the same wafers.",
+             "", "| Partition | Method | Seed | Scratch hits / actual | Scratch recall | Scratch precision | "
+             "Normal false alarms / normals | Normal called Scratch | Macro-F1 |",
              "|---|---|---:|---:|---:|---:|---:|---:|---:|"]
     for r in tables["classification"]:
-        phase = "开发选择" if r["phase"] == "selection" else "开发审计（探索）"
+        phase = "Selection" if r["phase"] == "selection" else "Historical audit"
         lines.append(f'| {phase} | {names[r["arm"]]} | {r["seed"]} | {r["scratch_tp"]}/{r["scratch_n"]} | '
                      f'{r["scratch_recall"]:.1%} | {r["scratch_precision"]:.1%} | '
                      f'{r["normal_any_fp"]}/{r["normal_n"]} ({r["normal_any_fpr"]:.2%}) | '
                      f'{r["normal_scratch_fp"]} | {r["macro_f1"]:.2%} |')
-    lines += ["", "## 配对判断", "", "| 对照 | 开发选择 | 开发审计（探索） |", "|---|---|---|"]
+    lines += ["", "## Paired comparisons", "", "| Comparison | Selection | Historical audit |", "|---|---|---|"]
     for pair in grades:
         left, right = pair.split("_vs_")
-        caveat = "（仅描述）" if left == STUDENT else ""
-        lines.append(f"| {names[left]} 对 {names[right]} | {words[grades[pair]]}{caveat} | {words[audit_grade[pair]]} |")
-    lines += ["", "所有配对按 42、123、2026 三个相同随机种子比较。每个种子均须守住划痕命中、正常总误报和正常→划痕。"
-              "真实划痕命中或正常总误报至少有一项改善才进入成本复算，仅更改误报类别单列。"
-              "C 对 B 比较相同替换预算下的整套合成方案。C 的供体还受几何与背景匹配限制，可能与 B 不同。",
-              "", "开发审计批次在历史研究中已使用，只能作为探索性复核。正式测试集未用于本轮实验。"]
+        caveat = " (descriptive only)" if left == STUDENT else ""
+        lines.append(f"| {names[left]} vs. {names[right]} | {words[grades[pair]]}{caveat} | {words[audit_grade[pair]]} |")
+    lines += ["",
+              "The comparisons pair seeds 42, 123 and 2026. Each seed must retain its true Scratch hits, "
+              "with no increase in total normal false alarms or normals called Scratch. A cost replay also requires "
+              "at least one additional true Scratch hit or one fewer total normal false alarm in at least one seed. "
+              "Changing only the defect category assigned to a normal wafer earns no gain.",
+              "",
+              "C versus B compares the full synthesis recipe at the same number of replacement training slots. "
+              "Geometry and background constraints can change the donor wafer selected for C.",
+              "",
+              "These audit lots had been inspected during earlier development. This comparison is exploratory. "
+              "The original frozen test remained outside the study."]
     if STUDENT in arms:
-        lines.append("学生 CNN 的教师在开发选择批次上通过准入检查，因此学生在该批次的结果仅可描述。"
-                     "判断其泛化能力仍需新的独立批次。")
+        lines.append("The selection lots contributed to teacher admission. The student's selection results are "
+                     "descriptive. An independent set of labeled lots is required to evaluate generalization.")
     if passed:
-        lines.append("通过选择门槛的训练方案已按同一 3,642 张报警片和 728 个名额复算。"
-                     "cost.csv 给出真实标签结算的两种假设成本，包含全来片的上游漏损、下游漏损和复检费。")
+        lines.append("Qualifying arms entered a cost replay on the same 3,642 alerts with 728 review slots. "
+                     "The two hypothetical scenarios in `cost.csv` include losses before screening, losses among "
+                     "unreviewed alerts and the review fees across all arrivals.")
     else:
-        lines.append("B 和 C 均未达到进入成本模拟所需的改善门槛，本轮保留既有复检方案。")
-    (out / "REPORT.zh-CN.md").write_text("\n".join(lines)+"\n", encoding="utf8")
+        lines.append("Neither B nor C qualified for the cost replay. The existing review policy was retained.")
+    (out / "REPORT.md").write_bytes(("\n".join(lines)+"\n").encode("utf8"))
 
 
 def self_test(repo):

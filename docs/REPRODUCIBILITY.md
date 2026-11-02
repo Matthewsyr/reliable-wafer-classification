@@ -121,3 +121,7 @@ python -I scripts/recompute_decisions.py
 The publication check excludes raw/model binaries, credential filenames and files larger than 10 MiB. It does not establish absence of every possible secret; the delivery also performs a content-pattern scan and reviews the staged file list. Tests, provenance and metric checks complement one another and do not certify operational reliability.
 
 To regenerate the saved historical CNN training curves, install the optional `matplotlib` package and run `python scripts/plot_training_history.py`. It reads the committed epoch CSVs and performs no training.
+
+## Evidence and verification
+
+The project used AI assistance for implementation, experiment execution, diagnostics and documentation. Reported model metrics come from saved predictions and reference labels. File checksums, test fixtures and independent metric replay check the implementation. Descriptions of visible patterns in the wafer gallery are inspection notes. Establishing the physical cause of a pattern requires independent expert review and process data.
