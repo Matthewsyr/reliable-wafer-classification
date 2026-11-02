@@ -83,3 +83,21 @@ subprocess.run([sys.executable, str(extension / "render_evidence.py"),
 先查看汇总目录内的 `SUMMARY.zh-CN.md` 或 `SUMMARY.md`，再解压查看 `per_class.csv.gz`、`confusion.csv.gz` 和 `scratch_guard.csv.gz`。阈值曲线、概率可靠性图与 `five_stages.csv.gz` 分别解释分类质量、校准、路由与检验容量。三个种子面对同一批晶圆，审计中的真实划痕仍然是同一组样本。独立生产效果需要新的、有标签的批次。
 
 公开材料使用 `render_evidence.py` 生成的 `aggregate_evidence.zip` 或其解压后的双语摘要、汇总表、图和哈希清单。原始数据、缓存、检查点、逐片概率、复检名单及笔记本最后导出的训练证据 ZIP 保存在自己的存储中。原始/未标注数据分布与历史成本的深入排查是独立流程；`shift_followup.py` 的输入与阶段参数可由 `--help` 查看。现有数据可继续保留在原处，按需传递汇总证据。
+
+## 5. 可选的单种子自监督试验
+
+需要先具备已签署的安全池、其私有辅助表、原始文件、已完成的 `cnn_ce_s42` 及与对照相同的免费托管 GPU。安全池按批次和相同图像的多跳关系隔离了所有有标签分区。CPU 在 434,498 张唯一图中按固定哈希顺序选出 50,000 张，逐片校验图像并导出仅含偏移、尺寸和哈希的索引。GPU 使用同 SHA 的原始文件重新读取所选图。仅需跨会话传输 `seed42_offsets.csv.gz` 和 `receipt.json`，并核对 CPU 日志打印的收据 SHA。
+
+在托管 Colab 终端运行以下步骤。将大写路径占位符替换为自己的云端路径，评估使用新的输出目录。训练需要同目录的 `train_imbalance.py`，评估需要同目录的 `decision_study.py`。
+
+```bash
+timeout 12m python -u ssl_pilot.py pack --pool POOL_STAGE --raw LSWMD.pkl --out PACK
+timeout 50m python -u ssl_pilot.py train --pack PACK --pack-sha CPU_RECEIPT_SHA \
+  --control TRAINING_ROOT --repo PINNED_REPO --raw LSWMD.pkl --cache CLOUD_CACHE --out SSL_RUN
+timeout 8m python -u ssl_evaluate.py --archive PINNED_REPO/results/probabilities \
+  --control TRAINING_ROOT --pilot SSL_RUN --out SSL_COMPARISON
+```
+
+预训练将图划成 8 × 8 个区域，随机遮去部分区域的失效晶粒信号，保留有效晶粒轮廓，用周围信号估计被遮区域的失效密度。模型只需一次遍历，最多更新 391 步；随后与对照相同，使用种子 42 和七轮监督训练。其额外计算开销必须单列。训练中断后可在原绝对截止时间前续跑，已完成的 SSL 分段及监督轮次从检查点恢复。不要通过反复新建输出目录绕过预算。
+
+评估在相同晶圆、候选入口和名额上比较两种初始化，报告真实划痕命中、正常片总误报、正常片划痕误报和假设成本。主比较使用九类默认分类，另报在验证集冻结划痕阈值后的表现。单种子和已查看的开发审计只能支持探索性结论；推广前需要新的有标签独立批次。
