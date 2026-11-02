@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "panels": 18,
+  "private_rows": 7020,
+  "verified_class_panels": 162,
+  "archived_inputs": {
+    "06_seed42_wafer_replay.sql": "4be9525569be1a291afd6ac2d2d79f159843392f778524fc6c0c38c9246ea783",
+    "cost/protocol.json": "9e8411c52e0e11357547353a21621d956c049439daaafbf4a1b6daf3896753af",
+    "cost/summary.csv": "d21bbb9e3b42bd5b258ed2cb82e0355324cb0168eb5a36c7d534388834c169ee",
+    "cost/paired_models.csv": "737f63921faf76ba902be248b8178f7cb5236ba6c43c48fd0692e4a0bfaaebad",
+    "cost/slot_swaps.csv": "86eb4604648b3a8fa0d2e9cc62a52d1839f0fa252355d65e10545667e68edaec"
+  },
+  "sha256": {
+    "PRIVATE_dev_swaps.csv.gz": "c165a73095f01c8855c694d1b8daf647e58089a4897df4aef6a0de652ff3d08e",
+    "dev_swap_panels.csv": "5a0ddadc64cf2e7a5d1b5ab0a04dfa28a2b8645a6ad473919d0a89c45d6c58b4"
+  },
+  "script_sha256": "90df91952571dbd172f5d7839603dadb3bb791dbfb8de878313bc97ede32a7ac",
+  "interpretation": "Positive savings are relative simulated cost RF71 minus RF77. No artificial one-to-one pairing of wafers. Each side is identified within the same queue."
+}

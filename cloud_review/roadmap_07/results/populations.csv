@@ -1,0 +1,4 @@
+population,arrivals,lots,components,candidates,true_defects,true_scratch,upstream_fn,target_arrivals,target_normals,capacity
+original_full,118595,4953,3721,49229,7894,693,1891,83525,78158,9845
+no_direct_dev_duplicate,115437,4953,3721,49150,7793,682,1867,83525,78158,9830
+no_transitive_dev_component,105655,4315,3719,44385,7133,615,1579,77260,72160,8877

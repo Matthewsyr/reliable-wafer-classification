@@ -1,0 +1,65 @@
+{
+  "status": "pass",
+  "scope": "Separate readback and arithmetic on the same recorded simulation outputs. No fresh factory cohort, independent labels, or second inference run.",
+  "file_integrity_sha256": {
+    "dev_swap_panels.csv": "5a0ddadc64cf2e7a5d1b5ab0a04dfa28a2b8645a6ad473919d0a89c45d6c58b4",
+    "dev_swap_receipt.json": "2c3eea12c49fa891992cadcf289165108405a64ef7a266f342fa970ecd9c06d5",
+    "model_pairs.csv": "644c246b0a12d6e71bc837f3a7ca21e176da97742e5e9bbd925dc89fb5b83035",
+    "policy_costs.csv": "01ec88f6ecd3f6985f832b55870b95f27373463eb724dffa32f42c4f61a68200",
+    "populations.csv": "2384d99ad5d2b37215e94c445d991d2a2027f84b08a35457050f2d33b638476c",
+    "queue_usage.csv.gz": "d97d7efca1e362f1d229c02915abe6c65766612068c8e6b3af484b76cf55e549",
+    "queues.csv": "2d91677bc09c0ffa7502202e13729419b3c14b26f3bb3303dde05693425f4779",
+    "run_receipt.json": "f60d3f1eef14fb348ed9d67f849da6a00e7c012e2229547b20a12f6b2da9b608",
+    "score_receipt.json": "84a075730d0e5b79ed44f325c883ec9137639f9b6aa545f003eb07acf2ffa45c",
+    "swaps_by_class.csv": "933817ffca15d383b05e8bfffab97e2b6c89c6d02939216f81c6971345d700c2",
+    "target_occupancy.csv": "d414313ff38ea867b4bdafb9920adccc6045b5131f035ca536b012135070575c",
+    "target_shapes.csv": "7bd49b38f4a8bc3544e211e7e21703da2f0d672600ff27444076598fbca1af34"
+  },
+  "public_zip_sha256": "73d4ed1ef04332c46a1974a4d316bcffcfde344e4e37aad50d6d8296fd36b060",
+  "private_zip_sha256": "3d0660a6a956762d979cff978f7620642d2da08edb074cbf595e0a18b6b4c56b",
+  "private_archive_verification": {
+    "manifest_bound_members": 16,
+    "method": "Verified member SHA-256 by streaming opaque bytes. No private CSV/NPZ decoded or exported."
+  },
+  "public_checks": {
+    "populations": 3,
+    "policy_panels": 405,
+    "queue_by_panel_checks": 19575,
+    "target_panels": 1620,
+    "model_pair_contrasts": 54,
+    "checked_by": "check_replay_aggregates.py"
+  },
+  "hand_counts_full_seed42_scratch5": {
+    "global_all_arrivals": 118595,
+    "global_true_defects": 7894,
+    "global_true_scratch": 693,
+    "capacity": 9845,
+    "base_loss_without_review": "10666",
+    "RF71_cost": "11242.8",
+    "RF77_cost": "10458.9",
+    "savings": "783.9",
+    "RF77_reviewed_any_defect": 684,
+    "RF77_reviewed_scratch": 160,
+    "RF77_all_34_sizes_reviews": 9253,
+    "RF77_true_normal_34_sizes_reviews": 8631,
+    "all_34_sizes_share_of_capacity": 0.9398679532757745,
+    "true_normal_34_sizes_share_of_capacity": 0.8766886744540375
+  },
+  "within_model_scratch5_ranking": [
+    {
+      "population": "original_full",
+      "panels": 9,
+      "P_any_defect_cost_lower_than_positive_benefit_panels": 9
+    },
+    {
+      "population": "no_direct_dev_duplicate",
+      "panels": 9,
+      "P_any_defect_cost_lower_than_positive_benefit_panels": 9
+    },
+    {
+      "population": "no_transitive_dev_component",
+      "panels": 9,
+      "P_any_defect_cost_lower_than_positive_benefit_panels": 9
+    }
+  ]
+}

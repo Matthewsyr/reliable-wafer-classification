@@ -1,0 +1,69 @@
+{
+  "status": "complete",
+  "test_status": "Retrospective replay of previously inspected test labels.",
+  "candidate_rule": "Original 04 calibrated RF71 seed 42 P(any defect)>=0.5. No threshold or model was selected on test.",
+  "scope": "Each retained population forms its own simulated flagged queues, cap=floor(N/5) per 1000. Upstream misses included in full-arrival costs.",
+  "costs": "Relative hypothetical units, label-settled. Review fee .1, 90% loss avoidance, equal, Scratch 5x, or Near-full 5x.",
+  "model_pair_intervals": "500 paired lot bootstrap samples, candidate-normalized, conditional on fitted models/gate/fixed selections. Not a new blind test.",
+  "target": "Exact ordered (height,width) present among original-test normals and absent from the normal class within all 54,355 labeled development wafers.",
+  "score_receipt_sha256": "84a075730d0e5b79ed44f325c883ec9137639f9b6aa545f003eb07acf2ffa45c",
+  "protocol_sha256": "9e8411c52e0e11357547353a21621d956c049439daaafbf4a1b6daf3896753af",
+  "calibration_sha256": "f95fde21e70b8bf0fc582c8953bedf8825994c45c47032a7debd3a90a25b4a54",
+  "decision_sha256": "7a89039475d80a9417407cd4d1c63ddeebda85ea9217518439448185c962164c",
+  "development_reference_sha256": "4e6564b2b8cd090353f65b7389b9e80eba768f138faf9ef95e3e3130f8fcd879",
+  "lot_components_sha256": "ae0587ed311b19d702d5e61f200aaeae4e8e49acd47cc557cbe15f78d71600d9",
+  "source_sha256": "079ac57cb9daefb48f9d1c5bfd58ebb94a9bcf77405f764c0e3b92d4f366e20e",
+  "populations": [
+    {
+      "population": "original_full",
+      "arrivals": 118595,
+      "lots": 4953,
+      "components": 3721,
+      "candidates": 49229,
+      "true_defects": 7894,
+      "true_scratch": 693,
+      "upstream_fn": 1891,
+      "target_arrivals": 83525,
+      "target_normals": 78158,
+      "capacity": 9845
+    },
+    {
+      "population": "no_direct_dev_duplicate",
+      "arrivals": 115437,
+      "lots": 4953,
+      "components": 3721,
+      "candidates": 49150,
+      "true_defects": 7793,
+      "true_scratch": 682,
+      "upstream_fn": 1867,
+      "target_arrivals": 83525,
+      "target_normals": 78158,
+      "capacity": 9830
+    },
+    {
+      "population": "no_transitive_dev_component",
+      "arrivals": 105655,
+      "lots": 4315,
+      "components": 3719,
+      "candidates": 44385,
+      "true_defects": 7133,
+      "true_scratch": 615,
+      "upstream_fn": 1579,
+      "target_arrivals": 77260,
+      "target_normals": 72160,
+      "capacity": 8877
+    }
+  ],
+  "panels": 405,
+  "sha256": {
+    "model_pairs.csv": "644c246b0a12d6e71bc837f3a7ca21e176da97742e5e9bbd925dc89fb5b83035",
+    "policy_costs.csv": "01ec88f6ecd3f6985f832b55870b95f27373463eb724dffa32f42c4f61a68200",
+    "populations.csv": "2384d99ad5d2b37215e94c445d991d2a2027f84b08a35457050f2d33b638476c",
+    "private/rf77_vs_rf71_scratch5_slot_changes.csv.gz": "3671285df7f7596a9ce2a96b85d3110d03249e6b65299b5a16340b36a38e1148",
+    "queue_usage.csv.gz": "d97d7efca1e362f1d229c02915abe6c65766612068c8e6b3af484b76cf55e549",
+    "queues.csv": "2d91677bc09c0ffa7502202e13729419b3c14b26f3bb3303dde05693425f4779",
+    "swaps_by_class.csv": "933817ffca15d383b05e8bfffab97e2b6c89c6d02939216f81c6971345d700c2",
+    "target_occupancy.csv": "d414313ff38ea867b4bdafb9920adccc6045b5131f035ca536b012135070575c",
+    "target_shapes.csv": "7bd49b38f4a8bc3544e211e7e21703da2f0d672600ff27444076598fbca1af34"
+  }
+}

@@ -47,6 +47,7 @@ Scratch AP in the geometry table uses archived raw probabilities. The newer deci
 
 ## Read the project
 
+- [Frozen review queues on the historical test lots (中文)](cloud_review/roadmap_07/REPORT.zh-CN.md) measures how many inspection slots went to normal wafers at dimensions absent from development normals. It replays the same models and costs after excluding directly duplicated maps and entire components connected to development.
 - [English project report](reports/Project_Report.md) — protocols, final-test degradation, ablation, PR decisions and limitations.
 - [中文技术总结](docs/TECHNICAL_SUMMARY.zh-CN.md) — 用中文解释结果与取舍。
 - [Error analysis and real Scratch examples](docs/ERROR_ANALYSIS.md).

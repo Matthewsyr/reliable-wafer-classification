@@ -1,0 +1,4 @@
+g,rows,lots,pixel_hashes,valid_map_and_dieSize,all_pass_wafer_rows,fail_ratio_denominator
+development,54355,5809,54261,54355,1,54355
+test,118595,4953,118595,118595,0,118595
+unlabeled,638507,41608,533150,638507,58327,638507
