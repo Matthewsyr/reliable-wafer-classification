@@ -1,0 +1,357 @@
+{
+  "scope": "Existing development audit has been seen; no untouched final test in this experiment.",
+  "split_method": "SHA256(utf8(salt + component)).digest()[0] < 128 gets calibration; all other tune components select policies.",
+  "component_salt": "wm811k-decision-component-20261101-v1|",
+  "legacy_gate_beta": 1.9147552052282766,
+  "legacy_gate_source": "Completed Colab cost/tune_calibration_freeze.json, RF71 seed 42 (historical full tune).",
+  "gate_rule": "1-P(none) >= .5 after legacy temperature; fixed for every model/seed and policy.",
+  "fit_method": "Each probability matrix gets one NLL-minimizing inverse-temperature bounded [0.125,8], floor 1e-12; ensemble averages raw RF77/CNN first.",
+  "model_choice": "Max mean selection nine-class macro-F1 across matched seeds in the five new CNN arms; CE eligible, first declared arm breaks ties. Archive-only uses the historical CNN for downstream illustration.",
+  "cost_choice": "Min observed selection cost on calibrated expected net benefit, ties fewer reviews. The separate analytic comparator routes strictly positive net benefit.",
+  "capacity_choice": "F1 uses all distinct P(any defect) cutoffs, ties fewer reviews. Capacity threshold maximizes true positives under floor(selection n/5), ties fewer reviews; operational queue enforces its own batch quotas.",
+  "scratch_choice": "Scratch priority versus argmax of remaining classes. Maximize true Scratch hits, then minimize total normal false alarms, then normal-to-Scratch; all three must match or improve same model/seed selection argmax. Identity if no improvement.",
+  "simulation": "Perfect human inspection; $5 charged only for inspected normals. All missed defects cost $1000 except Scratch costs $3000 in the differential scenario. Synthetic queues contain 1000 flagged wafers each; final fractional queue floors 20%.",
+  "queue_seed": 20261101,
+  "archive_manifest_sha256": "c86c2c3d77762d6d8083545bbb3377b09c13eb09d7119c17426b933602d0a0a7",
+  "new_manifest_sha256": "63e1a73d248d56a44576598ec008cb9e2d88ed56c46043e3306dec03d40826e7",
+  "source_sha256": "8b05f0bdcc13a20ac032e58eecd7862cba085cd56be9ec121d54cebcd40a8c67",
+  "downstream_model": "cnn_ce",
+  "lowest_queue_cost_model": "rf_linearity77",
+  "mean_selection_scores": {
+    "cnn_bn_natural_7ep": {
+      "macro_f1": 0.8446140298861486,
+      "queue_cost_per_1000": 251359.49441505
+    },
+    "cnn_ce": {
+      "macro_f1": 0.8432878105191938,
+      "queue_cost_per_1000": 252123.45679012345
+    },
+    "cnn_focal": {
+      "macro_f1": 0.8245417876092329,
+      "queue_cost_per_1000": 252122.8689006467
+    },
+    "cnn_rot180": {
+      "macro_f1": 0.8101146958560562,
+      "queue_cost_per_1000": 252476.1904761905
+    },
+    "cnn_sampled": {
+      "macro_f1": 0.7669003946265202,
+      "queue_cost_per_1000": 251845.0911228689
+    },
+    "cnn_weighted": {
+      "macro_f1": 0.741139714576736,
+      "queue_cost_per_1000": 252136.39035861255
+    },
+    "ensemble_rf77_cnn": {
+      "macro_f1": 0.8823624026009246,
+      "queue_cost_per_1000": 249883.00999412112
+    },
+    "rf_linearity77": {
+      "macro_f1": 0.887956731529115,
+      "queue_cost_per_1000": 246154.9088771311
+    },
+    "rf_original71": {
+      "macro_f1": 0.853969112437452,
+      "queue_cost_per_1000": 252127.5720164609
+    }
+  },
+  "params": [
+    {
+      "model": "rf_original71",
+      "seed": 42,
+      "beta": 1.8108644605597988,
+      "temperature": 0.552222445014392,
+      "f1": 0.582794947448435,
+      "capacity": 0.9983066326753712,
+      "scratch": 0.4667885061790705,
+      "uniform_1000": -2.576448342460278,
+      "scratch_3000": -2.576448342460278
+    },
+    {
+      "model": "rf_original71",
+      "seed": 123,
+      "beta": 1.8725831906012331,
+      "temperature": 0.5340216685801438,
+      "f1": 0.6150731720679719,
+      "capacity": 0.9984474335754376,
+      "scratch": null,
+      "uniform_1000": -3.226799551598268,
+      "scratch_3000": -3.226799551598268
+    },
+    {
+      "model": "rf_original71",
+      "seed": 2026,
+      "beta": 1.8139650995353236,
+      "temperature": 0.5512785225339595,
+      "f1": 0.6183249196375217,
+      "capacity": 0.9983488913732287,
+      "scratch": 0.454839264176481,
+      "uniform_1000": -3.251763904371094,
+      "scratch_3000": -3.251763904371094
+    },
+    {
+      "model": "rf_linearity77",
+      "seed": 42,
+      "beta": 1.8349541524527808,
+      "temperature": 0.544972744230858,
+      "f1": 0.46029711996790124,
+      "capacity": 0.9977577618970263,
+      "scratch": null,
+      "uniform_1000": -1.8624877924417085,
+      "scratch_3000": -1.4885364104199148
+    },
+    {
+      "model": "rf_linearity77",
+      "seed": 123,
+      "beta": 2.004304120202221,
+      "temperature": 0.4989262806580005,
+      "f1": 0.4352847652166393,
+      "capacity": 0.998607663013422,
+      "scratch": 0.4570643013908311,
+      "uniform_1000": -3.0792132749596464,
+      "scratch_3000": -3.024620523290248
+    },
+    {
+      "model": "rf_linearity77",
+      "seed": 2026,
+      "beta": 1.920882921650616,
+      "temperature": 0.5205939355953559,
+      "f1": 0.37580413779873,
+      "capacity": 0.9981095610353814,
+      "scratch": null,
+      "uniform_1000": 10.235858765872738,
+      "scratch_3000": 10.235858765872738
+    },
+    {
+      "model": "cnn_bn_natural_7ep",
+      "seed": 42,
+      "beta": 0.9272017948916869,
+      "temperature": 1.078513874228228,
+      "f1": 0.7564047811407562,
+      "capacity": 0.9999891679674001,
+      "scratch": null,
+      "uniform_1000": -2.4201609078117725,
+      "scratch_3000": -0.747359849938808
+    },
+    {
+      "model": "cnn_bn_natural_7ep",
+      "seed": 123,
+      "beta": 0.9096731659763577,
+      "temperature": 1.0992959201195014,
+      "f1": 0.5076068469554895,
+      "capacity": 0.9992635293236506,
+      "scratch": 0.3335174358094891,
+      "uniform_1000": 2.8565566213570808,
+      "scratch_3000": 28.492474919908318
+    },
+    {
+      "model": "cnn_bn_natural_7ep",
+      "seed": 2026,
+      "beta": 1.1710111057312247,
+      "temperature": 0.8539628660272708,
+      "f1": 0.9467746951008731,
+      "capacity": 0.999999901635341,
+      "scratch": null,
+      "uniform_1000": 22.54533176865974,
+      "scratch_3000": 55.628125710147216
+    },
+    {
+      "model": "cnn_ce",
+      "seed": 42,
+      "beta": 0.8103709466413989,
+      "temperature": 1.2340027787823875,
+      "f1": 0.7495356596093352,
+      "capacity": 0.9998706116568744,
+      "scratch": 0.3745312000152186,
+      "uniform_1000": -3.3468908271090148,
+      "scratch_3000": -2.919926247637726
+    },
+    {
+      "model": "cnn_ce",
+      "seed": 123,
+      "beta": 0.8141842449311412,
+      "temperature": 1.2282232261624935,
+      "f1": 0.4048958373030689,
+      "capacity": 0.996982894769557,
+      "scratch": 0.3118274626959458,
+      "uniform_1000": -2.2771907738477943,
+      "scratch_3000": 0.783989181991978
+    },
+    {
+      "model": "cnn_ce",
+      "seed": 2026,
+      "beta": 1.2345249747860976,
+      "temperature": 0.8100281650221511,
+      "f1": 0.9593081192893911,
+      "capacity": 0.999999979958437,
+      "scratch": 0.4013019876821914,
+      "uniform_1000": 31.77618474753489,
+      "scratch_3000": 85.42499597063382
+    },
+    {
+      "model": "cnn_weighted",
+      "seed": 42,
+      "beta": 1.0247411425537507,
+      "temperature": 0.9758562025800063,
+      "f1": 0.9781832316305571,
+      "capacity": 0.9999978235902358,
+      "scratch": 0.4028303917304561,
+      "uniform_1000": 133.1351367428725,
+      "scratch_3000": 174.21445754703274
+    },
+    {
+      "model": "cnn_weighted",
+      "seed": 123,
+      "beta": 1.0741039195119697,
+      "temperature": 0.9310086126995611,
+      "f1": 0.7273511948212092,
+      "capacity": 0.9998922399485058,
+      "scratch": 0.41329068983453693,
+      "uniform_1000": -4.351462824088968,
+      "scratch_3000": 10.32433143449624
+    },
+    {
+      "model": "cnn_weighted",
+      "seed": 2026,
+      "beta": 0.41261536852488234,
+      "temperature": 2.423564598611639,
+      "f1": 0.9639487765935015,
+      "capacity": 0.9980557502223998,
+      "scratch": 0.2673431002219705,
+      "uniform_1000": 801.3021514494437,
+      "scratch_3000": 985.3557874686662
+    },
+    {
+      "model": "cnn_sampled",
+      "seed": 42,
+      "beta": 0.39327416959866923,
+      "temperature": 2.5427553531432943,
+      "f1": 0.9834461740888367,
+      "capacity": 0.999646091617993,
+      "scratch": null,
+      "uniform_1000": 835.9283974295826,
+      "scratch_3000": 962.6556157709498
+    },
+    {
+      "model": "cnn_sampled",
+      "seed": 123,
+      "beta": 0.6100243899737166,
+      "temperature": 1.6392787180904125,
+      "f1": 0.8714571438217151,
+      "capacity": 0.9974537414225315,
+      "scratch": 0.4336145948011689,
+      "uniform_1000": -2.2154909665317084,
+      "scratch_3000": -1.209622659880398
+    },
+    {
+      "model": "cnn_sampled",
+      "seed": 2026,
+      "beta": 0.6535926243325889,
+      "temperature": 1.5300050257163509,
+      "f1": 0.9912120180365673,
+      "capacity": 0.9999993954652946,
+      "scratch": 0.3809675835724708,
+      "uniform_1000": 526.6918624089556,
+      "scratch_3000": 659.783997042675
+    },
+    {
+      "model": "cnn_rot180",
+      "seed": 42,
+      "beta": 1.0376685659023792,
+      "temperature": 0.9636988464909103,
+      "f1": 0.8375624795491197,
+      "capacity": 0.999998493022027,
+      "scratch": 0.3905726241151082,
+      "uniform_1000": 27.326198151793967,
+      "scratch_3000": 11.530141039005905
+    },
+    {
+      "model": "cnn_rot180",
+      "seed": 123,
+      "beta": 0.6284834911228359,
+      "temperature": 1.5911316910065851,
+      "f1": 0.2689234965285695,
+      "capacity": 0.9602855971369755,
+      "scratch": 0.31703647492642745,
+      "uniform_1000": -3.743178162444689,
+      "scratch_3000": -2.9034482036460996
+    },
+    {
+      "model": "cnn_rot180",
+      "seed": 2026,
+      "beta": 1.1091408496936879,
+      "temperature": 0.901598746702162,
+      "f1": 0.9821813588914482,
+      "capacity": 0.9999999914444607,
+      "scratch": 0.390459739606187,
+      "uniform_1000": 336.068762667768,
+      "scratch_3000": 533.931066315917
+    },
+    {
+      "model": "cnn_focal",
+      "seed": 42,
+      "beta": 1.6248328927449052,
+      "temperature": 0.6154479051138938,
+      "f1": 0.9321721510687594,
+      "capacity": 0.9999938188118384,
+      "scratch": 0.40113670559955195,
+      "uniform_1000": 0.052628860576307446,
+      "scratch_3000": 8.830897088314472
+    },
+    {
+      "model": "cnn_focal",
+      "seed": 123,
+      "beta": 1.3145690495313715,
+      "temperature": 0.7607055714239493,
+      "f1": 0.473300730419291,
+      "capacity": 0.9975403694493392,
+      "scratch": 0.3661209696682106,
+      "uniform_1000": 5.562275126039037,
+      "scratch_3000": 6.731515443431064
+    },
+    {
+      "model": "cnn_focal",
+      "seed": 2026,
+      "beta": 1.823014028384307,
+      "temperature": 0.5485421310149081,
+      "f1": 0.8922540618451972,
+      "capacity": 0.9999982964826386,
+      "scratch": null,
+      "uniform_1000": 17.860352577103434,
+      "scratch_3000": 18.831932905742498
+    },
+    {
+      "model": "ensemble_rf77_cnn",
+      "seed": 42,
+      "beta": 1.7047805995451313,
+      "temperature": 0.5865857461463484,
+      "f1": 0.7060294808204792,
+      "capacity": 0.9989533212907481,
+      "scratch": 0.41859819588203945,
+      "uniform_1000": -2.332231797171568,
+      "scratch_3000": -2.3320581967364253
+    },
+    {
+      "model": "ensemble_rf77_cnn",
+      "seed": 123,
+      "beta": 1.7204982073121187,
+      "temperature": 0.5812269932918264,
+      "f1": 0.23655105211570715,
+      "capacity": 0.9987889044409778,
+      "scratch": 0.3518925462722809,
+      "uniform_1000": -0.3095383496294577,
+      "scratch_3000": -0.1814359108272786
+    },
+    {
+      "model": "ensemble_rf77_cnn",
+      "seed": 2026,
+      "beta": 2.043007996286576,
+      "temperature": 0.4894743446024811,
+      "f1": 0.753727349568974,
+      "capacity": 0.9997179905917271,
+      "scratch": 0.43970652835810586,
+      "uniform_1000": 9.796100434776147,
+      "scratch_3000": 9.84748757959159
+    }
+  ]
+}

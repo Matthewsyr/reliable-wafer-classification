@@ -1,0 +1,58 @@
+{
+  "rule": "9-class argmax. A candidate must meet all three inequalities versus seed-matched cnn_ce on every selection seed: Scratch TP >= CE, normal-to-any-defect FP <= CE, normal-to-Scratch FP <= CE. Rank eligible arms by highest exact three-seed mean nine-class Macro-F1. Break ties by declared arm order. Freeze before interpreting audit.",
+  "arm_order": [
+    "cnn_ce",
+    "cnn_weighted",
+    "cnn_sampled",
+    "cnn_rot180",
+    "cnn_focal"
+  ],
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "selection_macro_f1": {
+    "cnn_ce": 0.8432878105191938,
+    "cnn_weighted": 0.741139714576736,
+    "cnn_sampled": 0.7669003946265203,
+    "cnn_rot180": 0.8101146958560562,
+    "cnn_focal": 0.8245417876092329
+  },
+  "selection_all_three_all_seeds": {
+    "cnn_ce": true,
+    "cnn_weighted": false,
+    "cnn_sampled": false,
+    "cnn_rot180": false,
+    "cnn_focal": false
+  },
+  "eligible_candidates": [
+    "cnn_ce"
+  ],
+  "frozen_arm": "cnn_ce",
+  "main_unconstrained_choice": "cnn_ce",
+  "source_script_sha256": "2c7769d58c2f8fdba818a1874e50e69aed0d3d142516b105d66d9950b60f199b",
+  "source_receipt_sha256": "e6da1aa923e7e63b5b666f3cb5572ad4fe6a6e1f0496f9c4aa50ff6790a8d827",
+  "main_policy_sha256": "a1e27a2bbbb5ff0ed8c49cd0cf9317ac5ff3dcbd03d046f0265af0444221905d",
+  "source_table_sha256": {
+    "classification": "f50b97d0bb811e1b79d4c4cc7d8eee786747df456dcf41a8f0f41d325ac801dc",
+    "confusion": "39023dafdc83e233d556d69c6781571ad60563c167c29d5a5c4e52c289c98f13",
+    "per_class": "7ef658e7c0376e38a7c21f906d98b9343e2858017834c0558b772c0890e01394"
+  },
+  "audit_all_three_all_seeds": {
+    "cnn_ce": true,
+    "cnn_weighted": false,
+    "cnn_sampled": false,
+    "cnn_rot180": false,
+    "cnn_focal": false
+  },
+  "audit_passing_seeds": [
+    42,
+    123,
+    2026
+  ],
+  "audit_all_three_for_frozen_arm": true,
+  "audit_any_strict_gain_for_frozen_arm": false,
+  "audit_strict_gain_on_every_seed_for_frozen_arm": false,
+  "scope": "Existing development audit; same wafers across seeds; exploratory. Audit was never used to replace the frozen selection."
+}

@@ -1,0 +1,19 @@
+{
+  "stage": "pool",
+  "lineage": {
+    "script": "f586554c5c0dc8eff5f62e0c1b98be275af99f6cc124e9ff2800b4c507188ea6",
+    "inputs": {
+      "reference": "4e6564b2b8cd090353f65b7389b9e80eba768f138faf9ef95e3e3130f8fcd879",
+      "raw": "1d04fccb3dd3176b276878b926b20fead7e077c5751e4d353ea9741a5e7b5c65",
+      "shift": "a87f50f5edfbaa886b950f75ac22ef0cc203733f390ba093e641ad6d0d013378",
+      "indexer": "786692eaea13c1b0a6d52d821e443e00f546735aa353a24d034caec94638b7e2"
+    }
+  },
+  "outputs": {
+    "components.csv.gz": "ccf2ba310a5d39213cb2b6fd224ce0731bb29330945e28a3836bfa049f2ed1d3",
+    "eligible_shapes.csv": "b175e4a88d2c00d5f1e0c865bbb8c6e6be1c25f6626c409e6ee543b65f834ae4",
+    "lot_components.csv.gz": "ae0587ed311b19d702d5e61f200aaeae4e8e49acd47cc557cbe15f78d71600d9",
+    "pool_summary.json": "2e4eee1ee341896c2aa664a04f09976f831fc02e20fd7dc96adf75bf48d19836",
+    "ssl_pool.csv.gz": "467e7ac5c779ad15037da83e1d22ae88b705e90c61edf604d9a389cd3f54f776"
+  }
+}

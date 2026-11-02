@@ -1,0 +1,5 @@
+phase,model,seed,threshold,scratch_tp_delta,normal_any_fp_delta,normal_scratch_fp_delta,all_three_hold
+selection,cnn_ce,42,0.3745312000152186,0,-1,-2,True
+selection,ssl_masked_s42,42,0.4113664326241076,2,-5,-15,True
+ssl_audit_exploratory,cnn_ce,42,0.3745312000152186,-4,-14,-32,False
+ssl_audit_exploratory,ssl_masked_s42,42,0.4113664326241076,-2,-11,-42,False

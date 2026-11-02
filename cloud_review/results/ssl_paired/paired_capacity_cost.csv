@@ -1,0 +1,2 @@
+seed,scenario,rule,components,reps,savings_per_1000_arrivals,lo_95,hi_95,interpretation
+42,scratch_3000,queue_expected_value,1172,500,-87.5679406436028,-2755.293274071646,2371.9144929676954,"Positive saves simulated dollars. Conditional on seed 42, fixed models, gate and queues."

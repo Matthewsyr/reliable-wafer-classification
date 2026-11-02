@@ -1,0 +1,97 @@
+{
+  "seed": 42,
+  "primary_rule": "argmax",
+  "secondary_rule": "scratch_joint",
+  "criterion": "Compare SSL with seed-42 supervised CE under each matched rule. Primary argmax must retain true Scratch hits and not increase either kind of normal false positive. Report strict improvement separately from ties; never switch the primary rule using audit.",
+  "scope": "Single-seed exploratory pilot. The original 15-fit selection remains frozen. Shadow audit even if selection guards fail.",
+  "gate": {
+    "model": "rf_original71",
+    "seed": 42,
+    "beta": 1.9147552052282766,
+    "p_any_cutoff": 0.5
+  },
+  "component_split_salt": "wm811k-decision-component-20261101-v1|",
+  "decision_source_sha256": "8b05f0bdcc13a20ac032e58eecd7862cba085cd56be9ec121d54cebcd40a8c67",
+  "evaluator_sha256": "00d8b3c6cd30a1e73a96b0e566f2784b32f0f6288483b8bdd4215889ebef6f19",
+  "archive_manifest_sha256": "c86c2c3d77762d6d8083545bbb3377b09c13eb09d7119c17426b933602d0a0a7",
+  "selection": [
+    {
+      "phase": "selection",
+      "rule": "argmax",
+      "seed": 42,
+      "scratch_n": 60,
+      "normal_n": 3999,
+      "control_scratch_tp": 27,
+      "control_normal_any_fp": 88,
+      "control_normal_scratch_fp": 85,
+      "pilot_scratch_tp": 33,
+      "pilot_normal_any_fp": 123,
+      "pilot_normal_scratch_fp": 84,
+      "scratch_tp_delta": 6,
+      "normal_any_fp_delta": 35,
+      "normal_scratch_fp_delta": -1,
+      "all_three_hold": false,
+      "strict_improvement": false
+    },
+    {
+      "phase": "selection",
+      "rule": "scratch_joint",
+      "seed": 42,
+      "scratch_n": 60,
+      "normal_n": 3999,
+      "control_scratch_tp": 27,
+      "control_normal_any_fp": 87,
+      "control_normal_scratch_fp": 83,
+      "pilot_scratch_tp": 35,
+      "pilot_normal_any_fp": 118,
+      "pilot_normal_scratch_fp": 69,
+      "scratch_tp_delta": 8,
+      "normal_any_fp_delta": 31,
+      "normal_scratch_fp_delta": -14,
+      "all_three_hold": false,
+      "strict_improvement": false
+    }
+  ],
+  "params": [
+    {
+      "model": "rf_original71",
+      "seed": 42,
+      "beta": 1.8108644605597988,
+      "temperature": 0.552222445014392,
+      "f1": 0.582794947448435,
+      "capacity": 0.9983066326753712,
+      "scratch": 0.4667885061790705,
+      "uniform_1000": -2.576448342460278,
+      "scratch_3000": -2.576448342460278
+    },
+    {
+      "model": "cnn_ce",
+      "seed": 42,
+      "beta": 0.8103709466413989,
+      "temperature": 1.2340027787823875,
+      "f1": 0.7495356596093352,
+      "capacity": 0.9998706116568744,
+      "scratch": 0.3745312000152186,
+      "uniform_1000": -3.3468908271090148,
+      "scratch_3000": -2.919926247637726
+    },
+    {
+      "model": "ssl_masked_s42",
+      "seed": 42,
+      "beta": 1.0146754696991707,
+      "temperature": 0.9855367847775786,
+      "f1": 0.8928702401534836,
+      "capacity": 0.9999996776448435,
+      "scratch": 0.4113664326241076,
+      "uniform_1000": 30.41562229106445,
+      "scratch_3000": 19.377915860851374
+    }
+  ],
+  "pilot_receipt_sha256": "d547979794326901c6765ab9710f36b894ab868679bd2ca6b30c57d7316a3397",
+  "control_run_sha256": "6fcbc977b0c802be23fb723f4864713e7754e482c78c7a820028954740ef4d14",
+  "train_run_sha256": "ee08ca7dd8b718f1836fa538b5d5d15ccb3d0b8e739633ff386daab05917ac7b",
+  "pool_receipt_sha256": "534e62fb56a4ccff0a49d5bb9ca762b48b8a9fb5013e59e19479fb71625656a5",
+  "pack_receipt_sha256": "cdf38b57a875fe22d903576f660f0b4483fa4534d9908fe785908317733fad68",
+  "script_sha256": "501ba3d765e41dbe06a9e7be597dd6449eac73ece0dfe00399c9238e2fc0a0b1",
+  "pretraining_sha256": "a009056c64241c9405961c6f800a0066122713be7916b410356f18c36d876bfd"
+}

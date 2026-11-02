@@ -1,0 +1,7 @@
+phase,queue,candidates,slots,lots
+selection,0,1000,200,263
+selection,1,678,135,195
+ssl_audit_exploratory,0,1000,200,275
+ssl_audit_exploratory,1,1000,200,251
+ssl_audit_exploratory,2,1000,200,235
+ssl_audit_exploratory,3,642,128,143

@@ -1,0 +1,18 @@
+{
+  "unique_candidate_maps": 434498,
+  "eligible_before_dedup": 484982,
+  "components": 34610,
+  "protected_components": 8848,
+  "labeled_component_unlabeled_rows": 153525,
+  "all_rows": 811457,
+  "candidate_components": 25762,
+  "direct_filter_unique_maps": 465745,
+  "unique_maps_removed_by_multihop": 31247,
+  "raw_sha256": "1d04fccb3dd3176b276878b926b20fead7e077c5751e4d353ea9741a5e7b5c65",
+  "indexer_sha256": "786692eaea13c1b0a6d52d821e443e00f546735aa353a24d034caec94638b7e2",
+  "initial_free_gib": 11.14,
+  "map_hash": "SHA256(int64 little-endian [height,width] followed by C-order uint8 pixels)",
+  "component_id": "Lexicographically smallest original lot in connected component",
+  "admission": "Only unlabeled rows with valid maps, raw split empty/train, and no labeled row anywhere in their lot/pixel connected component. Retain lowest raw source_row per identical map.",
+  "labels_assigned": false
+}

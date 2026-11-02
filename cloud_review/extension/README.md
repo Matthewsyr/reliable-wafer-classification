@@ -82,7 +82,7 @@ subprocess.run([sys.executable, str(extension / "render_evidence.py"),
 
 先查看汇总目录内的 `SUMMARY.zh-CN.md` 或 `SUMMARY.md`，再解压查看 `per_class.csv.gz`、`confusion.csv.gz` 和 `scratch_guard.csv.gz`。阈值曲线、概率可靠性图与 `five_stages.csv.gz` 分别解释分类质量、校准、路由与检验容量。三个种子面对同一批晶圆，审计中的真实划痕仍然是同一组样本。独立生产效果需要新的、有标签的批次。
 
-公开材料使用 `render_evidence.py` 生成的 `aggregate_evidence.zip` 或其解压后的双语摘要、汇总表、图和哈希清单。原始数据、缓存、检查点、逐片概率、复检名单及笔记本最后导出的训练证据 ZIP 保存在自己的存储中。原始/未标注数据分布与历史成本的深入排查是独立流程；`shift_followup.py` 的输入与阶段参数可由 `--help` 查看。现有数据可继续保留在原处，按需传递汇总证据。
+公开材料使用 `render_evidence.py` 生成的 `aggregate_evidence.zip` 或其解压后的双语摘要、汇总表、图和哈希清单。原始数据、缓存、检查点、逐片概率、复检名单及笔记本最后导出的训练证据 ZIP 保存在自己的存储中。原始图、未标注分布和历史复检成本另有[复现说明](SHIFT_REPLAY.md)，列出了固定输入、云端命令和公开复核范围。
 
 ## 5. 可选的单种子自监督试验
 

@@ -1,0 +1,5 @@
+phase,rule,seed,scratch_n,normal_n,control_scratch_tp,control_normal_any_fp,control_normal_scratch_fp,pilot_scratch_tp,pilot_normal_any_fp,pilot_normal_scratch_fp,scratch_tp_delta,normal_any_fp_delta,normal_scratch_fp_delta,all_three_hold,strict_improvement
+selection,argmax,42,60,3999,27,88,85,33,123,84,6,35,-1,False,False
+selection,scratch_joint,42,60,3999,27,87,83,35,118,69,8,31,-14,False,False
+ssl_audit_exploratory,argmax,42,80,7991,38,264,205,45,328,208,7,64,3,False,False
+ssl_audit_exploratory,scratch_joint,42,80,7991,34,250,173,43,317,166,9,67,-7,False,False

@@ -1,0 +1,21 @@
+{
+  "status": "complete",
+  "sha256": {
+    "calibration.csv": "30c7984387149e86b72d621593b3acf3711df8b76c94db12d0506a8520efb88c",
+    "classification.csv": "37775c2ed8eec5ca1676490708206cee3e528167262bc6514673cf25122b3402",
+    "confusion.csv": "9d154900ebc15c2f2e4c316692d1c26869e1bb2ddb7348cbb8336937180cdc78",
+    "inspection_by_class.csv": "cd4b5adc1f4c0946a67c9e3d616637accf106e102b56fef41c23136116ef9e28",
+    "paired_capacity_cost.csv": "6841dfa5ceaa649d7b25f9b89f2425e781937bab672ba556523de80e17907451",
+    "paired_scratch_guard.csv": "f7199f1de3c5c22b503dac7d7ad2cd54e9ac39536dd9bc824ea6644f20d527c0",
+    "per_class.csv": "a33ca3e3597bfd11bea04437c98c2b3598255d76c842ad5f07934f60a8d4b6a8",
+    "pilot_summary.json": "3573ec2c876253e9325116707a24cb88ac42cd40e2fe94801baa3f45bef057a5",
+    "pilot_validation_freeze.json": "5fa2274b853a2beff484feeecf980f1b5e44ca3f1047894630256670571eb7c6",
+    "queue_inventory.csv": "81617b30480d17035835a41ad09dd51a1740fc8c0a8a873869d2718080c28b08",
+    "reliability.csv": "cca10227944852022a6d2838c6ee03c9b1e3cfafb80803cc67b2c3ca12502d9d",
+    "routing.csv": "f899463c1c481c76799175decbd2d03f08dc1fbd998292ca21b13937ed2306e6",
+    "scratch_guard.csv": "f3beb349f73912c4802fe95e6c8251fda2e8677daea6a3fa5227e034610d8711",
+    "threshold_curves.csv": "b7c913c3921e8d3695438bfe0328272a956457a48d4b4d45dc0851ab8f05bd05"
+  },
+  "primary_rule": "argmax",
+  "seed": 42
+}

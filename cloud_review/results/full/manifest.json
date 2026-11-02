@@ -1,0 +1,28 @@
+{
+  "scope": "Previously inspected development audit. No new official test. Aggregate-only evidence.",
+  "training_extension": true,
+  "model_seed_pairs": 27,
+  "source_receipt_sha256": "8b2e53437ea9c6b1acd805bfb4a85e82bf8f6cd8fc10e5a790d2709fa330ec72",
+  "source_policy_sha256": "a1e27a2bbbb5ff0ed8c49cd0cf9317ac5ff3dcbd03d046f0265af0444221905d",
+  "render_script_sha256": "c30fb26d021d7ab9eacba759b13dccb3305d4d26a7f47adb6fd83c6e7aa40f48",
+  "files": {
+    "SUMMARY.md": "1c274cb2b484bcb2a9c6f8cc9941d7b3c89ff84d2a9e890dca739c83c41d18e5",
+    "SUMMARY.zh-CN.md": "ac3d72734098c5d6dbb3887e62f5d6acff2a7ebcea2ebd1bd9bd604550e8fc47",
+    "calibration.csv.gz": "4a074e189bec0f19b5c5e66b68c19f73b481284264fe8a57e50964aed8cd88e8",
+    "calibration_reliability.png": "3de1efc0ba4575e153d40b1bda65074c26524cd4a144ef9f63223a0c150170b7",
+    "classification.csv.gz": "6452ad45a8a117213006ef43cd57f35bf946037443cbb7e0d5080a77f8d71a4d",
+    "confusion.csv.gz": "bc2bb70d78bf551f400448b0ddf49e7e849c8942b39d7a953bee46d2e34c3108",
+    "five_stages.csv.gz": "e4581cc5cd329ccfea99f5574d73ac5aa40adbc82c3d392c93391976df514fd7",
+    "frozen_validation_policy.json": "a1e27a2bbbb5ff0ed8c49cd0cf9317ac5ff3dcbd03d046f0265af0444221905d",
+    "inspection_by_class.csv.gz": "91c063768576bef632882ccd4a531c9f06326779d14bbdf6d4b557b3215e7b5e",
+    "paired_cost.csv.gz": "16a1ac5f66c51dbb19274813efd503341851686b6a334da961d3d59897aca98e",
+    "per_class.csv.gz": "5ee4c6a504fa80c06662d529b1d71647213462e713314d54f975236f843b0b22",
+    "queue_inventory.csv.gz": "c7daeb190e87e1bc515d98cb3c1fb03d9465da1ed5ecf80722d268879c481fdd",
+    "reliability.csv.gz": "56589ec76ebb3543b4d5ae013293054208e2319fc9ad994ff1b1845795ebfacf",
+    "routing.csv.gz": "09932667b11bab2d53f93eab23bf7fc45606f749c43de3eb1ddb993d9d6d5018",
+    "scratch_guard.csv.gz": "00a2a8e9b8c249439e92a0b6435c462f8cea511528067b88194d7d2ca99258c9",
+    "split_support.csv.gz": "eaedf72e97866afe3ef9a4b89ab0ffcd47f4bf240d02adc5c50c60452a4cdd07",
+    "threshold_curves.csv.gz": "42e18c0ced682eb00de23ca4878deb5f13da1d28c1d7480907a9ba219c4231cf",
+    "threshold_precision_recall_cost.png": "dc9fa54ab9d5ece98435d8b52f92034f2b48e46333941f127659b37b49e90836"
+  }
+}

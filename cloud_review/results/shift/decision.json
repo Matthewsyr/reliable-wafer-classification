@@ -1,0 +1,13 @@
+{
+  "status": "defer_self_supervised_training",
+  "trained": false,
+  "pseudo_labels": false,
+  "evidence": "Read pool_support_and_cost.csv for actual development-audit loss and counts at dimensions available in the isolated unlabeled pool. The same rows recur across seed/model combinations.",
+  "rationale": "Shape availability and residual loss can locate a possible pilot cohort. They cannot identify unlabeled defect morphology or demonstrate learnable benefit beyond the supervised alternative. Capacity losses may persist even with perfect rankings.",
+  "pilot_prerequisites": [
+    "Reserve a new representative lot-independent evaluation cohort with labeled Scratch and normals at target dimensions.",
+    "On identical train/validation lots and budget, compare random-init CNN with self-supervised initialization; freeze the same review gate, capacity, Scratch recall and total normal false-positive constraints.",
+    "Measure paired loss and uncertainty by lot; also report queue allocation and upstream misses before claiming incremental benefit."
+  ],
+  "test_use": "No final-test predictions or tuning. All labeled components, including original test, are excluded from pretraining."
+}

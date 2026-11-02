@@ -1,0 +1,63 @@
+{
+  "policy": "benefit_fixed",
+  "scenario": "scratch_5x",
+  "interpretation": "Relative hypothetical units. Mutually exclusive strata within each grouping; seeds reuse wafers.",
+  "missing_group": "Omitted group cells have zero rows; rates have no denominator.",
+  "population": "All fixed development audit arrivals, including common gate misses.",
+  "results": [
+    {
+      "seed": 42,
+      "model": "RF71",
+      "arrivals": 11591,
+      "flagged": 3642,
+      "reviewed": 728,
+      "full_arrival_cost": 3222.3999999999996,
+      "residual_loss": 3149.6
+    },
+    {
+      "seed": 42,
+      "model": "RF77",
+      "arrivals": 11591,
+      "flagged": 3642,
+      "reviewed": 728,
+      "full_arrival_cost": 3154.0,
+      "residual_loss": 3081.2
+    },
+    {
+      "seed": 123,
+      "model": "RF71",
+      "arrivals": 11591,
+      "flagged": 3642,
+      "reviewed": 728,
+      "full_arrival_cost": 3211.6,
+      "residual_loss": 3138.7999999999997
+    },
+    {
+      "seed": 123,
+      "model": "RF77",
+      "arrivals": 11591,
+      "flagged": 3642,
+      "reviewed": 728,
+      "full_arrival_cost": 3152.2,
+      "residual_loss": 3079.3999999999996
+    },
+    {
+      "seed": 2026,
+      "model": "RF71",
+      "arrivals": 11591,
+      "flagged": 3642,
+      "reviewed": 728,
+      "full_arrival_cost": 3216.1,
+      "residual_loss": 3143.2999999999997
+    },
+    {
+      "seed": 2026,
+      "model": "RF77",
+      "arrivals": 11591,
+      "flagged": 3642,
+      "reviewed": 728,
+      "full_arrival_cost": 3157.6,
+      "residual_loss": 3084.7999999999997
+    }
+  ]
+}

@@ -8,6 +8,8 @@ This is a guide to explaining the actual repository, including negative results.
 
 The final geometry block raised exploratory audit mean Scratch recall from 32.08% to 42.08% and reduced normal total errors from 12.35 to 7.17 per 1,000. The illustrative 80%-precision rule was rejected because it lost Scratch hits and increased normal total errors relative to that model’s argmax. Explain both findings together and retain the already-observed-audit qualification.
 
+**If asked whether to increase minority sampling.** “I compared five CNN training methods across three seeds with identical supervised budgets. Weighted sampling increased audit Scratch recall from 43.75% to 74.17%, but total false alarms jumped from 3.03% to 26.91% of normal wafers. Only ordinary cross-entropy met all three validation criteria on every seed. In a separate single-seed pilot, masked pretraining found seven extra scratches and raised total normal false alarms by 64. I would freeze the policy and collect independently labeled lots at the underrepresented wafer sizes before recommending a change.” If the interviewer asks about workload, explain the difference between flagging a wafer and allocating one of the 728 review slots among 3,642 flagged candidates. [Five-arm comparison](cloud_review/results/full/SUMMARY.md) · [Joint criteria](cloud_review/results/guarded/guarded_summary.json) · [Paired pilot](cloud_review/results/ssl_paired/pilot_summary.json)
+
 ## 1. Walk through the data flow
 
 1. Acquire the original dataset from the cited provider and verify the recorded SHA256. A pickle can execute code: deserialize only a trusted, verified source. The raw dataset is not committed to Git.

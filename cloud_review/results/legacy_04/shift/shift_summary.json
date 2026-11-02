@@ -1,0 +1,119 @@
+{
+  "counts": {
+    "development": 54355,
+    "test": 118595,
+    "unlabeled": 638507
+  },
+  "unlabeled_overlap_with": {
+    "development": {
+      "lot": {
+        "unlabeled_rows_with_this_field": 638507,
+        "unlabeled_rows_matching_reference": 66666,
+        "distinct_shared_values": 4952
+      },
+      "digest": {
+        "unlabeled_rows_with_this_field": 638507,
+        "unlabeled_rows_matching_reference": 1816,
+        "distinct_shared_values": 1690
+      }
+    },
+    "test": {
+      "lot": {
+        "unlabeled_rows_with_this_field": 638507,
+        "unlabeled_rows_matching_reference": 5230,
+        "distinct_shared_values": 1125
+      },
+      "digest": {
+        "unlabeled_rows_with_this_field": 638507,
+        "unlabeled_rows_matching_reference": 5666,
+        "distinct_shared_values": 5408
+      }
+    },
+    "any_labeled": {
+      "lot": {
+        "unlabeled_rows_with_this_field": 638507,
+        "unlabeled_rows_matching_reference": 71896,
+        "distinct_shared_values": 6077
+      },
+      "digest": {
+        "unlabeled_rows_with_this_field": 638507,
+        "unlabeled_rows_matching_reference": 6598,
+        "distinct_shared_values": 6249
+      }
+    }
+  },
+  "shape_coverage": {
+    "unlabeled_shapes_not_in_development": {
+      "rows": 31211,
+      "denominator_valid_shapes": 638507,
+      "row_share": 0.048881218216871546,
+      "unique_new_shapes": 293
+    },
+    "unlabeled_shapes_not_in_test": {
+      "rows": 464449,
+      "denominator_valid_shapes": 638507,
+      "row_share": 0.7273984466889165,
+      "unique_new_shapes": 572
+    },
+    "test_shapes_not_in_development": {
+      "rows": 8263,
+      "denominator_valid_shapes": 118595,
+      "row_share": 0.06967410093174249,
+      "unique_new_shapes": 11
+    },
+    "test_shapes_not_in_unlabeled": {
+      "rows": 4,
+      "denominator_valid_shapes": 118595,
+      "row_share": 3.372823474851385e-05,
+      "unique_new_shapes": 4
+    },
+    "test_none_shapes_not_in_development_none": {
+      "rows": 78158,
+      "denominator_valid_shapes": 110701,
+      "row_share": 0.7060279491603508
+    },
+    "novel_test_all_versus_development_all_covered_by_unlabeled": {
+      "test_rows_at_novel_dimensions": 8263,
+      "covered_by_any_unlabeled": 8259,
+      "covered_by_conservative_pool": 8259,
+      "fraction_covered_by_any_unlabeled": 0.9995159143168341,
+      "fraction_covered_by_conservative_pool": 0.9995159143168341
+    },
+    "novel_test_none_versus_development_none_covered_by_unlabeled": {
+      "test_rows_at_novel_dimensions": 78158,
+      "covered_by_any_unlabeled": 78154,
+      "covered_by_conservative_pool": 78154,
+      "fraction_covered_by_any_unlabeled": 0.9999488216177487,
+      "fraction_covered_by_conservative_pool": 0.9999488216177487
+    }
+  },
+  "total_variation": {
+    "height_width": {
+      "unlabeled_vs_development": 0.7376484891931437,
+      "unlabeled_vs_test": 0.8149250493946811,
+      "development_vs_test": 0.8216128230802022
+    },
+    "failed_fraction_bins": {
+      "unlabeled_vs_development": 0.4532359616052666,
+      "unlabeled_vs_test": 0.37795049594109337,
+      "development_vs_test": 0.3660546244212641
+    }
+  },
+  "conservative_pretraining_pool": {
+    "eligible_before_internal_hash_dedup": 565879,
+    "unique_map_rows": 465745,
+    "unique_lots_after_dedup": 34582,
+    "exported_manifest": false
+  },
+  "raw_sha256": "1d04fccb3dd3176b276878b926b20fead7e077c5751e4d353ea9741a5e7b5c65",
+  "source_sha256": "786692eaea13c1b0a6d52d821e443e00f546735aa353a24d034caec94638b7e2",
+  "cloud": "Colab",
+  "initial_available_gib": 11.28,
+  "python": "3.13.18",
+  "quality_flags": {},
+  "versions": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "psutil": "5.9.5"
+  }
+}
