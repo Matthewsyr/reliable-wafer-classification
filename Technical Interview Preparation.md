@@ -2,6 +2,10 @@
 
 This is a guide to explaining the actual repository, including negative results. Read the linked reports and run the tests before presenting the work as your own understanding. AI assistance is disclosed in `docs/AI_ASSISTANCE.md`.
 
+## Why stop training here?
+
+The original frozen test answers how the first models generalized. The later audit compares model choices on historical development lots. In one audit seed, synthetic augmentation changed 165 normal wafers from Scratch to Loc and recovered only 32 of the 224 original normal-to-Scratch errors as correct normal predictions. It also lost 17 true Scratch hits. This is why the project tracks Scratch recall and **all** normal false alarms together. The review baseline remains RF77. A decision to replace it requires independently labeled lots, a fixed alert pool and the same inspection capacity. [Three-seed paired results](cloud_review/scratch_09/README.md) · [Blind evaluation protocol](cloud_review/blind_review_08/PROTOCOL.zh-CN.md)
+
 ## A defensible 90-second introduction
 
 “I investigated reliability rather than just accuracy on WM-811K. The historical experiment compared random forests with a compact 111,625-parameter CNN, using production-lot-aware development splits and a frozen original test evaluation. Development Macro-F1 was around 85% for both families, but the original-test Macro-F1 fell to about 45%. I preserved that failure instead of replacing it with a favorable validation score. Subsequent development-only work investigated normal-wafer size coverage, retraining instability, explicit line geometry, and the precision–recall cost of Scratch decisions. The repository contains executable pipelines, frozen protocols, real results, tests, and a record of what cannot be established from this dataset.”
