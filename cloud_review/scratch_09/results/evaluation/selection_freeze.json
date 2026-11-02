@@ -1,0 +1,44 @@
+{
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "role_counts": {
+    "train": 31457,
+    "calibration": 5637,
+    "selection": 5670,
+    "audit": 11591
+  },
+  "selection_outcome": {
+    "real_repeat_vs_baseline": "failed",
+    "synthetic_vs_baseline": "failed",
+    "synthetic_vs_real_repeat": "failed"
+  },
+  "cost_eligible": [],
+  "decision": "argmax of uncalibrated nine-class probabilities; deterministic first class on exact tie",
+  "guard": "For each paired seed require Scratch TP >= A, normal-any FP <= A and normal-Scratch FP <= A. At least one strict improvement in Scratch TP or normal-any FP over the three seeds required for cost replay. Redirection of normal FPs to another defect alone is not improvement. Synthetic versus real-repeat separately tests substitution at equal sample budget.",
+  "student_selection": "descriptive only; both tune subpartitions used to qualify RF77 pseudo-labels",
+  "cost_scenarios": [
+    "equal",
+    "scratch_5x"
+  ],
+  "fixed_alerts": 3642,
+  "fixed_slots": 728,
+  "cost_policy": "RF71 s42 gate (>=0.5); fixed queue; rank by calibrated probability of any defect",
+  "cnn_inverse_temperatures_from_calibration_only": {
+    "baseline_s42": 0.8103709466413989,
+    "baseline_s123": 0.8141842449311412,
+    "baseline_s2026": 1.2345249747860976,
+    "real_repeat_s42": 0.8689508169798614,
+    "real_repeat_s123": 0.9024900794493647,
+    "real_repeat_s2026": 1.2103027460894396,
+    "synthetic_s42": 1.0980669556349199,
+    "synthetic_s123": 0.9014689322802383,
+    "synthetic_s2026": 1.1818951572495848
+  },
+  "operational_rf77_s42_beta": 2.036757049926612,
+  "historical_04_temperature_receipt_sha256": "f95fde21e70b8bf0fc582c8953bedf8825994c45c47032a7debd3a90a25b4a54",
+  "training_manifest_sha256": "73dae268724b51eab9e1ca49fb6e537f593e18b7780f76333217a26c3b9199e4",
+  "pseudo_decision_sha256": "2c3728863a7df48bb6463be6c39b2c52db4f5cbdbb18540a009fbe3038802443"
+}

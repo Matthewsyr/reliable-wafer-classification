@@ -1,0 +1,16 @@
+{
+  "complete": true,
+  "selection_changes": false,
+  "draws": 1000,
+  "estimand": "paired per-wafer rate difference within each fixed seed; resample complete lot/image-linked components with replacement; percentile intervals conditional on the trained fits, no independence across seeds or multiplicity adjustment",
+  "official_test_used": false,
+  "history_confusion_sha256": "bc2bb70d78bf551f400448b0ddf49e7e849c8942b39d7a953bee46d2e34c3108",
+  "training_manifest_sha256": "73dae268724b51eab9e1ca49fb6e537f593e18b7780f76333217a26c3b9199e4",
+  "eval_receipt_sha256": "323693273148fc1ca2d60cc6e67acd6ea6664f45ea61672251e485c8460a4b88",
+  "script_sha256": "93220a86e38aa6574535f09f7ce1be7d5995d624ed99fc86b20b32f91ba31650",
+  "files": {
+    "historical_ce_replication.csv": "9da2ad781a1de0f94931f54f77390b5add0ad1485f6afecfc2f9c4b89d147dc2",
+    "paired_component_intervals.csv": "a7570bfc7742c73a75a0ef0e04ed87f57f0d6b89a95127f29d10f5cbb96e9caf",
+    "synthesis_epoch_qa.csv": "3128461bac8333d13698f50c5a8316899d1fc6f463f56bb67cc354c3d6a0e6fc"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "status": "complete",
+  "rule": {
+    "model": "rf_linearity77",
+    "seed": 42,
+    "target": "Scratch",
+    "prediction": "raw nine-way argmax",
+    "design": "historical tune/calibration components",
+    "confirmation": "historical tune/selection components",
+    "size_support": "number of real supervised training normals of identical ordered (height,width)",
+    "size_bands": [
+      "0",
+      "1-24",
+      "25+"
+    ],
+    "threshold_candidates": [
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      0.95
+    ],
+    "min_wafers": 12,
+    "min_lots": 5,
+    "min_precision": 0.9,
+    "min_wilson_lower_one_sided_95": 0.75,
+    "confirm_min_leave_one_lot_out_precision": 0.8,
+    "threshold_choice": "max accepted design wafers, tie highest threshold; each band confirmed once",
+    "student_max_unique": 80,
+    "student_max_per_lot": 2,
+    "pseudo_classes": [
+      "Scratch"
+    ]
+  },
+  "source_sha256": "51f7b05f300c4d34be90ed27aefd183e6f938f59709f7c99318c4af680821c41",
+  "reference_sha256": "4e6564b2b8cd090353f65b7389b9e80eba768f138faf9ef95e3e3130f8fcd879",
+  "manifest_sha256": "c86c2c3d77762d6d8083545bbb3377b09c13eb09d7119c17426b933602d0a0a7",
+  "score_sha256": "5179e91f32ce8a5e5192f999ce9e88fda68825d4ce111fa70df78bda805ecb52",
+  "unique_counts_by_partition": {
+    "train": {
+      "lot": 3451,
+      "map_sha256": 31404,
+      "component": 3432
+    },
+    "design": {
+      "lot": 578,
+      "map_sha256": 5627,
+      "component": 575
+    },
+    "confirmation": {
+      "lot": 593,
+      "map_sha256": 5667,
+      "component": 592
+    },
+    "audit": {
+      "lot": 1187,
+      "map_sha256": 11563,
+      "component": 1172
+    }
+  },
+  "partition_crossings": {
+    "lot": 0,
+    "map_sha256": 0,
+    "component": 0
+  },
+  "design_freeze_sha256": "7caf9c23cfb2b4f216cada3ce1191e9a1e048739430132452a65b536be5e6144",
+  "design_thresholds": {},
+  "confirmed": [],
+  "qualified_bands": {},
+  "needs_unlabeled_scoring": false,
+  "artifacts": {
+    "design_grid.csv": "a12b2778555167596cbcf4b0f1e708a663a9004c61c03e2bedda66c94f21fe32",
+    "confirmation.csv": "a9c2d614b4160f2ae43ba8c0b20d4841195c858756f4cd695d27c494f52679be",
+    "descriptive_by_size.csv": "0f318e8d2bd9069233027b8ce9956e2bc33226d634b614ce17959795b9bec637"
+  }
+}

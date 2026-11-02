@@ -1,0 +1,37 @@
+{
+  "rule": {
+    "model": "rf_linearity77",
+    "seed": 42,
+    "target": "Scratch",
+    "prediction": "raw nine-way argmax",
+    "design": "historical tune/calibration components",
+    "confirmation": "historical tune/selection components",
+    "size_support": "number of real supervised training normals of identical ordered (height,width)",
+    "size_bands": [
+      "0",
+      "1-24",
+      "25+"
+    ],
+    "threshold_candidates": [
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      0.95
+    ],
+    "min_wafers": 12,
+    "min_lots": 5,
+    "min_precision": 0.9,
+    "min_wilson_lower_one_sided_95": 0.75,
+    "confirm_min_leave_one_lot_out_precision": 0.8,
+    "threshold_choice": "max accepted design wafers, tie highest threshold; each band confirmed once",
+    "student_max_unique": 80,
+    "student_max_per_lot": 2,
+    "pseudo_classes": [
+      "Scratch"
+    ]
+  },
+  "score_sha256": "5179e91f32ce8a5e5192f999ce9e88fda68825d4ce111fa70df78bda805ecb52",
+  "thresholds": {}
+}

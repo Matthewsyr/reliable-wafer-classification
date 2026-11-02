@@ -1,0 +1,7 @@
+phase,seed,identical_cells,cells,exact_confusion_match,max_abs_cell_change,scratch_tp_delta,normal_any_fp_delta
+selection,42,81,81,True,0,0,0
+selection,123,81,81,True,0,0,0
+selection,2026,81,81,True,0,0,0
+audit_exploratory,42,81,81,True,0,0,0
+audit_exploratory,123,81,81,True,0,0,0
+audit_exploratory,2026,81,81,True,0,0,0

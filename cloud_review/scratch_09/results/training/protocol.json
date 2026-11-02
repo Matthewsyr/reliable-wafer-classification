@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "stage": "09",
+  "raw_sha256": "1d04fccb3dd3176b276878b926b20fead7e077c5751e4d353ea9741a5e7b5c65",
+  "reference_sha256": "4e6564b2b8cd090353f65b7389b9e80eba768f138faf9ef95e3e3130f8fcd879",
+  "cnn_sha256": "88671864f38eb400c9ee9678a71cfa3abf8015c74e5fa6b48b911cf00c71582d",
+  "stage05_trainer_sha256": "3982640b77227e34ebbf69854c2b61f8246840b051aa3291deab8c5b3a086661",
+  "script_sha256": "01acc9a461c72e6c97d7a49eb4581e88f432bb2d244241964ffd9ae0d2c55cea",
+  "class_order": [
+    "Center",
+    "Donut",
+    "Edge-Loc",
+    "Edge-Ring",
+    "Loc",
+    "Near-full",
+    "Random",
+    "Scratch",
+    "none"
+  ],
+  "architecture": "medium",
+  "epochs": 7,
+  "batch_size": 128,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "arms": [
+    "baseline",
+    "real_repeat",
+    "synthetic",
+    "student"
+  ],
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "foreach": false
+  },
+  "training_rows": 31457,
+  "roles": {
+    "train": 31457,
+    "tune": 11307,
+    "audit": 11591
+  },
+  "cache_sha256": "c959e8be2f81ca229303ba6b51e573a6809c0f907bba2bb45e5be6096d91e950",
+  "class_counts": [
+    2022,
+    223,
+    1375,
+    5318,
+    1005,
+    36,
+    377,
+    321,
+    20780
+  ],
+  "extra_train_slots": 80,
+  "procedure": "80 train-normal slots/epoch replaced by genuine Scratch draws or train-only native trace transplants; D uses m<=80 gated Scratch targets",
+  "synthesis": "5-degree band search; max 4-pitch gaps; span>=max(4,.15*min(H,W)); aspect>=3; nearest compatible H,W in [.8,1.25] donor; integer center-align/jitter +/-2; native pitch preserved; retention>=.90; newly failed>=max(3,.50*trace); train-Scratch q95 failure-density cap",
+  "student_weight": 0.25,
+  "audit": "historically inspected development role",
+  "predicted_roles": [
+    "tune",
+    "audit"
+  ]
+}

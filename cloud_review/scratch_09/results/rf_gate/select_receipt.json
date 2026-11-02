@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "rows": 0,
+  "pseudo_train": false,
+  "qualified_bands": {},
+  "qualification_sha256": "b7de1e80571e79e86d7b4aad7395ed1e61b39ccab965e8fb8c701c7e96c667df",
+  "student_pseudo_sha256": "8cd3f5ffe762331852ca292339b5de08b44c971745086e8fd37215d0c2d2fd84",
+  "reason": "No size band passed the frozen Scratch gate."
+}

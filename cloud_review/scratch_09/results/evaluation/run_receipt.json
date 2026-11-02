@@ -1,0 +1,28 @@
+{
+  "complete": true,
+  "script_sha256": "1555a91b59ab288c97304c6e6ae9b84c556f4d67aec1d21c666835cef7bcb4ed",
+  "source_unit": "unique labeled source_row; nine-class argmax",
+  "official_test_used": false,
+  "frozen_development_split_sha256": "e467d05e96c0f477554969048e4c265a3686b0232add057170c2007b1ec27c3a",
+  "training_manifest_sha256": "73dae268724b51eab9e1ca49fb6e537f593e18b7780f76333217a26c3b9199e4",
+  "archive_manifest_sha256": "c86c2c3d77762d6d8083545bbb3377b09c13eb09d7119c17426b933602d0a0a7",
+  "selection": {
+    "real_repeat_vs_baseline": "failed",
+    "synthetic_vs_baseline": "failed",
+    "synthetic_vs_real_repeat": "failed"
+  },
+  "audit_exploratory": {
+    "real_repeat_vs_baseline": "failed",
+    "synthetic_vs_baseline": "failed",
+    "synthetic_vs_real_repeat": "failed"
+  },
+  "cost_eligible": [],
+  "files": {
+    "REPORT.zh-CN.md": "d48a7cd4ac624cf149ffb1e60dc04516346ecb161e90b6975de93095b9451248",
+    "classification.csv": "586d3a0597660a3de950ab66ea3834b40fc6fa925f02a843bca6b0342e90dfe6",
+    "confusion.csv": "004c9d6fe7430c339871ff651c67efb31fd7de719962eb1642de6ec91bd00701",
+    "paired.csv": "856e8e7e11627989f49a9fbefd7a4502a94385781d13fd574bf3220b15d44f6c",
+    "per_class.csv": "46d5c20a32cc2d9fa2290d151a4451e36fd1a2a9ed746b7156174efa7bcbabb3",
+    "selection_freeze.json": "a038be859a1da9c8a9442325472aa35077fbc6c2d9cc5fb7c26c741e312a636b"
+  }
+}

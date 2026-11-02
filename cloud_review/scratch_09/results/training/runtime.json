@@ -1,0 +1,13 @@
+{
+  "protocol_sha256": "3cc77dbfa19b0ed01d398aa98bf08a07915b7b4e612a5aeac0794e5b58b96f6f",
+  "runtime": {
+    "python": "3.13.16",
+    "numpy": "2.4.6",
+    "torch": "2.11.0+cu130",
+    "device": "cuda",
+    "hardware": "Tesla T4",
+    "cuda": "13.0",
+    "cudnn": 92700,
+    "threads": 2
+  }
+}

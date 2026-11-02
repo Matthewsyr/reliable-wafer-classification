@@ -1,0 +1,1 @@
+band,threshold,passed,band_rows,truth,accepted,tp,fp,normal_as_target,other_as_target,precision,lower95_one_sided,recall,coverage,accepted_lots,accepted_components,accepted_unique_images,dedup_precision_conservative,worst_leave_one_lot_out_precision
